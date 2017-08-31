@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byType">
+    <bean id="bowtie2Execute" class="ChIP_Seq.execute.Bowtie2Execute"></bean>
+    <bean id="bowtie2Service" class="ChIP_Seq.service.Bowtie2Service"></bean>
+
+    <bean id="samToolsExecute" class="ChIP_Seq.execute.SamToolsExecute"></bean>
+    <bean id="samToolsService" class="ChIP_Seq.service.SamToolsService"></bean>
+
+    <bean id="macsExecute" class="ChIP_Seq.execute.MacsExecute"></bean>
+    <bean id="macsService" class="ChIP_Seq.service.MacsService"></bean>
+
+    <bean id="bwaExecute" class="ChIP_Seq.execute.BWAExecute"></bean>
+    <bean id="bwaService" class="ChIP_Seq.service.BWAService"></bean>
+
+    <bean id="sicerExecute" class="ChIP_Seq.execute.SICERExecute"></bean>
+    <bean id="sicerService" class="ChIP_Seq.service.SICERService"></bean>
+
+    <bean id="bowtieExecute" class="ChIP_Seq.execute.BowtieExecute"></bean>
+    <bean id="bowtieService" class="ChIP_Seq.service.BowtieService"></bean>
+
+    <bean id="peakSeqExecute" class="ChIP_Seq.execute.PeakSeqExecute"></bean>
+    <bean id="peakSeqService" class="ChIP_Seq.service.PeakSeqService"></bean>
+
+    <bean id="homerExecute" class="ChIP_Seq.execute.HOMERExecute"></bean>
+    <bean id="homerService" class="ChIP_Seq.service.HOMERService"></bean>
+
+    <bean id="goMoExecute" class="ChIP_Seq.execute.GOMoExecute"></bean>
+    <bean id="goMoService" class="ChIP_Seq.service.GOMoService"></bean>
+
+    <bean id="igvExecute" class="ChIP_Seq.execute.IGVExecute"></bean>
+    <bean id="igvService" class="ChIP_Seq.service.IGVService"></bean>
+
+    <bean id="igv_peakExecute" class="ChIP_Seq.execute.IGV_PeakExecute"></bean>
+    <bean id="igv_peakService" class="ChIP_Seq.service.IGV_PeakService"></bean>
+
+    <bean id="peakRangerExecute" class="ChIP_Seq.execute.PeakRangerExecute"></bean>
+    <bean id="peakRangerService" class="ChIP_Seq.service.PeakRangerService"></bean>
+
+    <bean id="macs2Execute" class="ChIP_Seq.execute.Macs2Execute"></bean>
+    <bean id="macs2Service" class="ChIP_Seq.service.Macs2Service"></bean>
+
+    <bean id="pePrExecute" class="ChIP_Seq.execute.PePrExecute"></bean>
+    <bean id="pePrService" class="ChIP_Seq.service.PePrService"></bean>
+
+    <bean id="bcpExecute" class="ChIP_Seq.execute.BCPExecute"></bean>
+    <bean id="bcpService" class="ChIP_Seq.service.BCPService"></bean>
+
+    <bean id="diffRepsExecute" class="ChIP_Seq.execute.diffRepsExecute"></bean>
+    <bean id="diffrepService" class="ChIP_Seq.service.diffRepService"></bean>
+
+    <bean id="sissrExecute" class="ChIP_Seq.execute.SISSRExecute"></bean>
+    <bean id="sissrService" class="ChIP_Seq.service.SISSRService"></bean>
+
+    <bean id="findPeaksExecute" class="ChIP_Seq.execute.FindPeaksExecute"></bean>
+    <bean id="findPeaksService" class="ChIP_Seq.service.FindPeaksService"></bean>
+
+    <bean id="soapExecute" class="ChIP_Seq.execute.SOAPExecute"></bean>
+    <bean id="soapService" class="ChIP_Seq.service.SOAPService"></bean>
+
+    <bean id="blastExecute" class="ChIP_Seq.execute.BlastExecute"></bean>
+    <bean id="blastService" class="ChIP_Seq.service.BlastService"></bean>
+
+    <bean id="subreadExecute" class="ChIP_Seq.execute.SubreadExecute"></bean>
+    <bean id="subreadService" class="ChIP_Seq.service.SubreadService"></bean>
+
+    <bean id="ngmExecute" class="ChIP_Seq.execute.NGMExecute"></bean>
+    <bean id="ngmService" class="ChIP_Seq.service.NGMService"></bean>
+
+    <bean id="aremExecute" class="ChIP_Seq.execute.AREMExecute"></bean>
+    <bean id="aremService" class="ChIP_Seq.service.AREMService"></bean>
+
+    <bean id="fseqExecute" class="ChIP_Seq.execute.FseqExecute"></bean>
+    <bean id="fseqService" class="ChIP_Seq.service.FseqService"></bean>
+
+    <bean id="broadPeakExecute" class="ChIP_Seq.execute.BroadPeakExecute"></bean>
+    <bean id="broadPeakService" class="ChIP_Seq.service.BroadPeakService"></bean>
+
+    <bean id="iPAGExecute" class="ChIP_Seq.execute.iPAGExecute"></bean>
+    <bean id="iPAGEService" class="ChIP_Seq.service.iPAGEService"></bean>
+
+    <bean id="bamCoverageExecute" class="ChIP_Seq.execute.BamCoverageExecute"></bean>
+    <bean id="bamCoverageService" class="ChIP_Seq.service.BamCoverageService"></bean>
+
+    <bean id="multiBamSummaryExecute" class="ChIP_Seq.execute.multiBamSummaryExecute"></bean>
+    <bean id="multiBamSummaryService" class="ChIP_Seq.service.multiBamSummaryService"></bean>
+</beans>
