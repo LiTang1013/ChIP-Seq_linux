@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <%@ page import="ChIP_Seq.TokenProcessor" %>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -331,6 +334,7 @@
 </head>
 <body onLoad="javascript:document.getElementById('center_2').reset()">
 <div id="back">
+<<<<<<< HEAD
     <%
         //获取令牌类实例
         TokenProcessor processor = TokenProcessor.getInstance();
@@ -338,6 +342,8 @@
         String token = processor.getToken(request);
     %>
     <input type="hidden" name="org.sunxin.token" value="<%=token%>"/>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     <div id="banner">
         <div id="logo_span"></div>
         <input type="text" name="Session" style="display:none" value="<%=session.getAttribute("Session")%>">
@@ -404,7 +410,50 @@
         </div>--%>
 
     </div>
+<<<<<<< HEAD
 
+=======
+    <div id="box_back" style="display:none">
+        <div id="box_down_2_wrapper">
+            <div id="box_down_2">
+                <form action="register"  method="post">
+                    <input type="text" name="register_account" id="register_account" value="Please input your account" style ="width:80%;height:28px;padding-left:10px;margin-left:30px;margin-top:20px;border-radius: 10px;border:1px solid #999999;color:#999999;" onclick="if(value=='Please input your account'){value=''}" onblur="if(value==''){value='Please input your account'};">
+                    <input type="password" id="register_pass" name="register_pass" value="Please input your password" style="width:80%;height:28px;padding-left:10px;margin-left:30px;margin-top:10px;border-radius: 10px;border:1px solid #999999;color:#999999;" onclick="if(value=='Please input your password'){value=''};document.getElementById('register_pass').type='password'" onblur="if(value==''){value='Please input your password';document.getElementById('register_pass').type='text'};">
+                    <input type="password" id="register_pass_re" name="register_pass_re" value="Please repeat your password" style="width:80%;height:28px;padding-left:10px;margin-left:30px;margin-top:10px;border-radius: 10px;border:1px solid #999999;color:#999999;" onclick="if(value=='Please repeat your password'){value=''};document.getElementById('register_pass_re').type='password'" onblur="if(value==''){value='Please repeat your password';document.getElementById('register_pass_re').type='text'};">
+                    <input type="text" id="register_email" name="register_email" value="Please input your email address" style="width:80%;height:28px;padding-left:10px;margin-left:30px;margin-top:10px;border-radius: 10px;border:1px solid #999999;color:#999999;" onclick="if(value=='Please input your email address'){value=''};" onblur="if(value==''){value='Please input your email address'}"><br>
+                    <select id="country2" name="country2" style="width:80%;height:28px;padding-left:10px;margin-left:30px;margin-top:10px;border-radius: 10px;border:1px solid #999999;color:#999999;" ></select><br/>
+                    <input type="text" id="register_comp" name="register_comp"  value="Please input your organization" style="width:80%;height:28px;padding-left:10px;margin-left:30px;margin-top:10px;border-radius: 10px;border:1px solid #999999;color:#999999;" onclick="if(value=='Please input your organization'){value=''};" onblur="if(value==''){value='Please input your organization'}">
+                    <s:fielderror fieldName="register_user" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;margin-bottom: -15px;font-size:14px;"  />
+                    <s:fielderror fieldName="register_pass_re" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;margin-bottom: -15px;font-size:14px;"  />
+                    <s:fielderror fieldName="register_email" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;margin-bottom: -15px;font-size: 14px;"  />
+                    <input type="submit" value="Register" class="btn_submit"onclick="document.getElementById('box_back').style.display='none';" />
+                    <input type="button" value="Cancel"  class="btn_cancel" onclick="document.getElementById('box_back').style.display='none';" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="side_center_2" style="display:none">
+        <div id="center_1">
+            Welcome <span style="color:#666666; font-size:20px;"><%=session.getAttribute("account")%></span>, let's start analysing.
+            <input type="text" id="hidden_account"; value='<%=session.getAttribute("account")%>'; style="display:none">
+        </div>
+        <div id="center_2">
+            <table >
+                <thead>
+                <tr>
+                    <th>Work id</th>
+                    <th>Work time</th>
+                    <th>Tool</th>
+                    <th>Files</th>
+                </tr>
+                </thead>
+                <tbody id='tbody'>
+                </tbody>
+            </table>
+        </div>
+        <div id="center_3" style="display:none">No analysis process!</div>
+    </div>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 </div>
 </body>
 <script language="JavaScript">

@@ -14,6 +14,10 @@
         <configuration>
           <fileset id="s2fileset" name="Default File Set " removed="false">
             <file>file://$MODULE_DIR$/src/struts.xml</file>
+<<<<<<< HEAD
+=======
+            <file>jar://$MODULE_DIR$/lib/struts2-core.jar!/struts-default.xml</file>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
@@ -43,12 +47,20 @@
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
     <orderEntry type="library" name="Struts 2-2.5.13" level="project" />
     <orderEntry type="library" name="Spring-4.3.13.RELEASE" level="project" />
     <orderEntry type="library" name="Spring MVC-4.3.13.RELEASE" level="project" />
     <orderEntry type="library" name="Hibernate 4.2.2-4.2.2" level="project" />
     <orderEntry type="library" name="servlet" level="project" />
     <orderEntry type="library" name="log4j-core-2.9.1" level="project" />
+=======
+    <orderEntry type="library" name="Struts 2-2.3.20.1" level="project" />
+    <orderEntry type="library" name="Spring-4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Spring MVC-4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Hibernate 4.2.2-4.2.2" level="project" />
+    <orderEntry type="library" name="servlet" level="project" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     <orderEntry type="library" name="ant-1.6.5" level="project" />
   </component>
 </module>

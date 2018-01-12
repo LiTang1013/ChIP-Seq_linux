@@ -10,7 +10,11 @@ import java.util.Date;
 import java.util.zip.GZIPOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+<<<<<<< HEAD
                                                                                                            
+=======
+
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 import org.apache.tools.tar.TarEntry;
 import org.apache.tools.tar.TarOutputStream;
 /**
@@ -88,7 +92,10 @@ public class FileUtil {
         }
         compress(new File(targetFileName));
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     private void tarPack(TarOutputStream out, File inputFile, String base)
     {
         if (inputFile.isDirectory()) //打包文件夹

@@ -1,6 +1,9 @@
 <%@ page import="org.apache.commons.logging.LogFactory" %>
 <%@ page import="java.net.URLEncoder" %>
+<<<<<<< HEAD
 <%@ page import="ChIP_Seq.TokenProcessor" %>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <%--
   Created by IntelliJ IDEA.
   User: lily
@@ -11,10 +14,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+<<<<<<< HEAD
     <METE NAME="renderer" CONTENT="webkit|ie-comp|ie-stand"/>
     <META HTTP-EQUIV="pragma" CONTENT="no-cache"/>
     <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"/>
     <META HTTP-EQUIV="expires" CONTENT="0"/>
+=======
+    <METE NAME="renderer" CONTENT="webkit|ie-comp|ie-stand">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     <title></title>
     <link rel="stylesheet" href="./css/banner.css">
     <script src="./js/banner.js"></script>
@@ -186,6 +196,7 @@
             height:64px;
 
         }
+<<<<<<< HEAD
     </style>
 </head>
 <body>
@@ -196,6 +207,13 @@
     String token = processor.getToken(request);
 %>
 <input type="hidden" name="org.sunxin.token" value="<%=token%>"/>
+=======
+
+    </style>
+</head>
+<body>
+
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <div id="back">
 <div id="banner">
     <div id="logo_span"></div>

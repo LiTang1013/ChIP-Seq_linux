@@ -22,8 +22,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by Administrator on 2016/4/9 0009.
@@ -608,6 +611,7 @@ public class Bowtie2Action extends ActionSupport{
                     this.addFieldError("input_reads_pair1", "Please input the reads.");
                 }
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_bowtie2FileName,fileField_bowtie2)){
@@ -621,11 +625,14 @@ public class Bowtie2Action extends ActionSupport{
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
        /* xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag="3";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -643,4 +650,6 @@ public class Bowtie2Action extends ActionSupport{
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

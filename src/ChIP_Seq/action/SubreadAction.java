@@ -19,8 +19,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by lily on 7/24/16.
@@ -588,6 +591,7 @@ public class SubreadAction extends ActionSupport {
                     this.addFieldError("input_Subread_reads_pair1", "Please input the reads file.");
                 }
             }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil=new UploadUtil();
             if(!uploadUtil.Check(fileField_subreadFileName,fileField_subread)){
@@ -602,11 +606,14 @@ public class SubreadAction extends ActionSupport {
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
        /* xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag="6";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -624,4 +631,6 @@ public class SubreadAction extends ActionSupport {
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

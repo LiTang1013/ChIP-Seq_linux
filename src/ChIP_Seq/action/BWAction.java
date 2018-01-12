@@ -22,8 +22,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by Administrator on 2016/4/18 0018.
@@ -442,7 +445,11 @@ public class BWAction extends ActionSupport{
 
         //将结果压缩
         FileUtil fileUtil2=new FileUtil();
+<<<<<<< HEAD
         fileUtil2.ZipMultiFile("/home/bio/dataset/" + JobId,"/home/bio/dataset/" + JobId + ".zip");
+=======
+        fileUtil2.ZipMultiFile("/home/bio/dataset/" + JobId, "/home/bio/dataset/" + JobId + ".zip");
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         return SUCCESS;
     }
 
@@ -538,6 +545,7 @@ public class BWAction extends ActionSupport{
                 this.addFieldError("input_BWA_reads_pair1", "Please input the reads.");
             }
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_bwaFileName,fileField_bwa)){
@@ -551,11 +559,14 @@ public class BWAction extends ActionSupport{
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       /*  xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag="1";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -573,4 +584,6 @@ public class BWAction extends ActionSupport{
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

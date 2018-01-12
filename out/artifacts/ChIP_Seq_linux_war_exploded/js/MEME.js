@@ -96,9 +96,12 @@ function mouseOut(){
     document.getElementById("login_menu").style.display="none";
 }
 function fileChange(target,box){
+<<<<<<< HEAD
     var filename;
     filename=target.files[0].value().substr(target.files[0].value().lastIndexOf('/')+1);
     alert(filename);
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     var fileSize;
     var filemaxsize = 2048*1024;//1G
 
@@ -116,8 +119,18 @@ function fileChange(target,box){
         target.value ="";
         return false;
     }
+<<<<<<< HEAD
     else{
         document.getElementById(box).value=filename;
         return true;
     }
 }
+=======
+}
+function Demo_right(id){
+    for(var i=1;i<=6;i++){
+        document.getElementById("side_right_"+i).style.display='none';
+    }
+    document.getElementById("side_right_"+id).style.display='block';
+}
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c

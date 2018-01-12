@@ -45,11 +45,19 @@ public class Gomo_DemoAction extends ActionSupport{
         String time=format.format(date);
         //构建session
         xmlUtil xmlUtil = new xmlUtil();
+<<<<<<< HEAD
         xmlUtil.creatSession("JobId_annotatePeaks_demo",time);
         //写入XML文件
         xmlUtil.xmlAdd_Jobs("JobId_annotatePeaks_demo" ,"H3K4me3.bed", "annotatePeaks", "","email",time);
 
         flag="2";
+=======
+        xmlUtil.creatSession("JobId_annotatePeaks",time);
+        //写入XML文件
+        xmlUtil.xmlAdd_Jobs("JobId_annotatePeaks" ,"H3K4me3.bed", "annotatePeaks", "","email",time);
+
+        flag="4";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         flag_son="3";
         return SUCCESS;
     }

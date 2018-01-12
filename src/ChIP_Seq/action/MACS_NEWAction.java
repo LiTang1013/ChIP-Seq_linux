@@ -15,7 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+<<<<<<< HEAD
 import java.util.*;
+=======
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by lily on 11/17/16.
@@ -275,6 +281,7 @@ public class MACS_NEWAction extends ActionSupport{
         if(input_controlfile.equals("")){
             this.addFieldError("input_controlfile", "Please input control file.");
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_macsFileName,fileField_macs)){
@@ -288,11 +295,14 @@ public class MACS_NEWAction extends ActionSupport{
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
        /* xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag="9";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -310,4 +320,6 @@ public class MACS_NEWAction extends ActionSupport{
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

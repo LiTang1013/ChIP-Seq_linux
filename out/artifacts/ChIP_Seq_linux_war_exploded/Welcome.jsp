@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <%@ page import="ChIP_Seq.TokenProcessor" %>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -155,6 +158,7 @@
 </head>
 <body>
 <div id="back">
+<<<<<<< HEAD
   <%
     //获取令牌类实例
     TokenProcessor processor = TokenProcessor.getInstance();
@@ -162,6 +166,8 @@
     String token = processor.getToken(request);
   %>
   <input type="hidden" name="org.sunxin.token" value="<%=token%>"/>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
   <div id="banner">
     <div id="logo_span"></div>
     <div id="list_choose">

@@ -16,7 +16,10 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+<<<<<<< HEAD
 import javax.servlet.ServletRequest;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.DocumentBuilder;
@@ -29,7 +32,11 @@ import java.awt.*;
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+<<<<<<< HEAD
 import java.util.*;
+=======
+import java.util.Date;
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 import java.util.List;
 
 /**
@@ -972,7 +979,11 @@ public class WorkFlowAction extends ActionSupport{
     private ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
     public String customWorkflow() throws Exception {
      if(workflow_type==1 && workflowCustom_reference.equals("Escherichia_coli_K12.fasta") && workflowCustom_sequence.equals("SRR576933.fastq") && workflowCustom_control.equals("SRR576938.fastq")){
+<<<<<<< HEAD
          flag="2";
+=======
+         flag="3";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
          workflowCustom_path="/home/bio/dataset/Demo";
          sampath="/home/bio/dataset/Demo/SRR576933.sam";
          workflowCustom_reference="/home/bio/dataset/Demo/reference.fasta";
@@ -1451,7 +1462,11 @@ public class WorkFlowAction extends ActionSupport{
          FileUtil fileUtil2=new FileUtil();
          fileUtil2.ZipMultiFile("/home/bio/dataset/" + JobId, "/home/bio/dataset/" + JobId + ".zip");
      }
+<<<<<<< HEAD
         flag="2";
+=======
+        flag="3";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         return SUCCESS;
     }
 
@@ -1501,6 +1516,7 @@ public class WorkFlowAction extends ActionSupport{
         }
        /* xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil=new UploadUtil();
             if(!uploadUtil.Check(fileField_workflowFileName,fileField_workflow)){
@@ -1533,5 +1549,7 @@ public class WorkFlowAction extends ActionSupport{
                 }
             }
         return status;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     }
 }

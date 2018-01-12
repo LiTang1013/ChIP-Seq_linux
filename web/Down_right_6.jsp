@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <%@ page import="ChIP_Seq.TokenProcessor" %>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -23,6 +26,7 @@
   <script src="./jquery-1.11.1/jquery.js"></script>
   <script src="./layer/layer.js"></script>
   <script src="./js/MEME.js"></script>
+<<<<<<< HEAD
   <script language="JavaScript">
     function fileChange(target,box){
       var filename;
@@ -111,6 +115,10 @@
   String token = processor.getToken(request);
 %>
 <input type="hidden" name="org.sunxin.token" value="<%=token%>"/>
+=======
+</head>
+<body>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <div id="attention" class="blackdown_tips_1">
   The input of Demo workflow has been filled on this page. Please click the "Execute" to run the demo.
   <br>
@@ -125,15 +133,25 @@
       <input type="radio" name="exp_peak" value="1" checked="true" onclick="document.getElementById('peakfile').style.display='block';document.getElementById('expfile').style.display='none'"/>peak file
       <input type="radio" name="exp_peak" value="2" onclick="document.getElementById('peakfile').style.display='none';document.getElementById('expfile').style.display='block'"/>expression profile<br>
       <div class="file-box" style="display:block">
+<<<<<<< HEAD
         <input type="text" name="input_peakfile"  class="input_text" value="H3K4me3.bed" id="input_peakfile" />
         <input type='button' class='btn' value='Choose File' />
         <input type="file"  name="ipage_file" class="fileField"  onchange="return(fileChange(this,'input_peakfile')&& checkFileExt(this.value,'input_peakfile'))" />
+=======
+        <input type="text" name="input_peakfile"  class="input_text" value="H3K4me3.bed" id="input_peakfile"/>
+        <input type='button' class='btn' value='Choose File' />
+        <input type="file"  name="ipage_file" class="fileField"  onchange="document.getElementById('input_peakfile').value=this.value" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       </div>
 
       <div class="file-box" style="display:none">
         <input type="text" name="input_exp"  class="input_text" id="input_exp"/>
         <input type='button' class='btn' value='Choose File' />
+<<<<<<< HEAD
         <input type="file"  name="ipage_file" class="fileField"  onchange="return(fileChange(this,'input_exp')&& checkFileExt(this.value,'input_exp'))" />
+=======
+        <input type="file"  name="ipage_file" class="fileField"  onchange="document.getElementById('input_exp').value=this.value" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       </div>
 
     </div>

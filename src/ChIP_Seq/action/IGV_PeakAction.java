@@ -18,8 +18,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by lily on 11/19/16.
@@ -277,7 +280,11 @@ public class IGV_PeakAction extends ActionSupport{
             igv_peakBean.setPath(path);
             igv_peakService.setIgv_peakBean(igv_peakBean);
             stdoutlist=igv_peakService.IGV_peakcalling_visual();
+<<<<<<< HEAD
         flag="3";
+=======
+        flag="4";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         flag_command="1";
         return SUCCESS;
     }
@@ -364,7 +371,11 @@ public String visual_peakcalling() throws Exception{
         FileUtil fileUtil2=new FileUtil();
         fileUtil2.ZipMultiFile("/home/bio/dataset/" + JobId, "/home/bio/dataset/" + JobId + ".zip");
     }
+<<<<<<< HEAD
     flag="3";
+=======
+    flag="4";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     flag_command="2";
     return SUCCESS;
 }
@@ -426,6 +437,7 @@ public String visual_peakcalling() throws Exception{
             xmlUtil.login_validate();*/
         }
         else{}
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_peakFileName,fileField_peak)){
@@ -456,5 +468,7 @@ public String visual_peakcalling() throws Exception{
             }
         }
         return status;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     }
 }

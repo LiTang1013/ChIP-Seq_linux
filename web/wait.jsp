@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <%@ page import="ChIP_Seq.TokenProcessor" %>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -159,6 +162,7 @@
         </style>
 </head>
 <body>
+<<<<<<< HEAD
 <%
     //获取令牌类实例
     TokenProcessor processor = TokenProcessor.getInstance();
@@ -166,6 +170,8 @@
     String token = processor.getToken(request);
 %>
 <input type="hidden" name="org.sunxin.token" value="<%=token%>"/>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <div id="center">
     <div id="back">
         <div id="banner">

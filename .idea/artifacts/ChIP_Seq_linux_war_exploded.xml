@@ -7,11 +7,18 @@
           <element id="module-output" name="ChIP-Seq_linux" />
         </element>
         <element id="directory" name="lib">
+<<<<<<< HEAD
           <element id="library" level="project" name="Struts 2-2.5.13" />
           <element id="library" level="project" name="Spring-4.3.13.RELEASE" />
           <element id="library" level="project" name="Spring MVC-4.3.13.RELEASE" />
           <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
           <element id="library" level="project" name="log4j-core-2.9.1" />
+=======
+          <element id="library" level="project" name="Struts 2-2.3.20.1" />
+          <element id="library" level="project" name="Spring-4.2.5.RELEASE" />
+          <element id="library" level="project" name="Spring MVC-4.2.5.RELEASE" />
+          <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
           <element id="library" level="project" name="ant-1.6.5" />
         </element>
       </element>

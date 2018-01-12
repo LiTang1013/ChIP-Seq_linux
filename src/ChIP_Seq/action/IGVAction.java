@@ -17,8 +17,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by lily on 6/9/16.
@@ -432,7 +435,11 @@ public class IGVAction extends ActionSupport{
             FileUtil fileUtil2=new FileUtil();
             fileUtil2.ZipMultiFile("/home/bio/dataset/" + JobId, "/home/bio/dataset/" + JobId + ".zip");
         }
+<<<<<<< HEAD
         flag="3";
+=======
+        flag="2";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         flag_mapping="1";
         return SUCCESS;
     }
@@ -526,6 +533,7 @@ public class IGVAction extends ActionSupport{
             flag="2";
         }
         else{}
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_peakFileName,fileField_peak)){
@@ -556,5 +564,7 @@ public class IGVAction extends ActionSupport{
             }
         }
         return status;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     }
 }

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <%@ page import="ChIP_Seq.TokenProcessor" %>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <%--
   Created by IntelliJ IDEA.
   User: USER
@@ -243,6 +246,7 @@
   </style>
 </head>
 <body>
+<<<<<<< HEAD
 <%
   //获取令牌类实例
   TokenProcessor processor = TokenProcessor.getInstance();
@@ -250,6 +254,9 @@
   String token = processor.getToken(request);
 %>
 <input type="hidden" name="org.sunxin.token" value="<%=token%>"/>
+=======
+
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <div id="back">
   <div id="banner">
     <div id="logo_span"></div>
@@ -341,7 +348,11 @@
       download[i].innerHTML = html;
       (function(i){
         download[i].onclick = function(){
+<<<<<<< HEAD
           window.location.href="fileLoad?fileName="+Job[i]+".zip.tar";
+=======
+          window.location.href="fileLoad?fileName="+Job[i]+".zip";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         }
       })(i);
       tr[i].appendChild(id[i]);

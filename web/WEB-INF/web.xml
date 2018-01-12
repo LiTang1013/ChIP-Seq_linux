@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+<<<<<<< HEAD
     <welcome-file-list>
         <welcome-file>home_initial.jsp</welcome-file>
     </welcome-file-list>
@@ -30,11 +31,26 @@
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+=======
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     </filter>
     <filter-mapping>
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+<<<<<<< HEAD
+=======
+    <welcome-file-list>
+        <welcome-file>home_initial.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/Exception.jsp</location>
+    </error-page>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
     <context-param>
         <param-name>contextConfigLocation</param-name>

@@ -20,8 +20,11 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.FileOutputStream;
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -143,7 +146,11 @@ public class RegisterAction extends ActionSupport {
         //1.创建工厂
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
+<<<<<<< HEAD
         Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ROOT/User.xml");
+=======
+        Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/User.xml");
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
         //2.检索
         NodeList nl = document.getElementsByTagName("User");
@@ -164,7 +171,11 @@ public class RegisterAction extends ActionSupport {
         //1.创建工厂
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
+<<<<<<< HEAD
         Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ROOT/User.xml");
+=======
+        Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/User.xml");
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
         //创建元素以及节点
         Element userElement = document.createElement("User");
@@ -190,7 +201,11 @@ public class RegisterAction extends ActionSupport {
         //把更新后的内存写回到xml
         TransformerFactory tFactory = TransformerFactory.newInstance();
         Transformer tf = tFactory.newTransformer();
+<<<<<<< HEAD
         tf.transform(new DOMSource(document), new StreamResult(new FileOutputStream("/home/bio/software/apache-tomcat-7.0.73/webapps/ROOT/User.xml")));
+=======
+        tf.transform(new DOMSource(document), new StreamResult(new FileOutputStream("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/User.xml")));
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         return account;
     }
     public void validate(){
@@ -216,6 +231,7 @@ public class RegisterAction extends ActionSupport {
                 }
             }
         }
+<<<<<<< HEAD
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
@@ -238,4 +254,8 @@ public class RegisterAction extends ActionSupport {
         }
         return status;
     }
+=======
+        flag="2";
+    }
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

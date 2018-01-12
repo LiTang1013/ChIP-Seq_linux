@@ -16,8 +16,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by USER on 2017/4/24.
@@ -352,7 +355,11 @@ public class IGV_NEWAction extends ActionSupport {
             FileUtil fileUtil2=new FileUtil();
             fileUtil2.ZipMultiFile("/home/bio/dataset/" + JobId, "/home/bio/dataset/" + JobId + ".zip");
         }
+<<<<<<< HEAD
         flag="2";
+=======
+        flag="3";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         flag_command="2";
 
         return SUCCESS;
@@ -421,7 +428,11 @@ public class IGV_NEWAction extends ActionSupport {
             FileUtil fileUtil2=new FileUtil();
             fileUtil2.ZipMultiFile("/home/bio/dataset/" + JobId, "/home/bio/dataset/" + JobId + ".zip");
         }
+<<<<<<< HEAD
         flag="2";
+=======
+        flag="3";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         flag_command="1";
         return SUCCESS;
     }
@@ -476,6 +487,7 @@ public class IGV_NEWAction extends ActionSupport {
             }
         }
         else{}
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_peakFileName,fileField_peak)){
@@ -506,5 +518,7 @@ public class IGV_NEWAction extends ActionSupport {
             }
         }
         return status;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     }
 }

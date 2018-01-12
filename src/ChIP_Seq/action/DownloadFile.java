@@ -3,9 +3,14 @@ package ChIP_Seq.action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
+<<<<<<< HEAD
 import org.apache.struts2.dispatcher.HttpParameters;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+=======
+
+import javax.servlet.ServletContext;
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,6 +65,7 @@ public class DownloadFile extends ActionSupport {
     }
 
     public String Download() throws IOException{
+<<<<<<< HEAD
       //  HttpParameters parameters = ActionContext.getContext().getParameters();
       //  String fName1=parameters;
         HttpServletRequest req1 = ServletActionContext.getRequest();
@@ -70,6 +76,14 @@ public class DownloadFile extends ActionSupport {
         contentType = "application/octet-stream";                           //文件下载的类型
         contentDisposition = "attachment; filename = "+fName1+"";
         // ServletContext servletContext = ServletActionContext.getServletContext();
+=======
+        Map<String ,Object> map = ActionContext.getContext().getParameters();
+        String [] fName = (String[]) map.get("fileName");
+        String fName1 = fName[0];
+        contentType = "application/octet-stream";                           //文件下载的类型
+        contentDisposition = "attachment; filename = "+fName1+"";
+       // ServletContext servletContext = ServletActionContext.getServletContext();
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         String fileName = "/home/bio/dataset/"+fName1;
         inputStream = new FileInputStream(fileName);
         contentLength = inputStream.available();

@@ -19,8 +19,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by lily on 7/26/16.
@@ -593,6 +596,7 @@ public class NGMAction extends ActionSupport {
                 this.addFieldError("input_NGM_reads_pair1", "Please input the reads file.");
             }
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_ngmFileName,fileField_ngm)){
@@ -606,11 +610,14 @@ public class NGMAction extends ActionSupport {
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       /*  xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag="7";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -628,4 +635,6 @@ public class NGMAction extends ActionSupport {
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

@@ -19,8 +19,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by Administrator on 2016/4/10 0010.
@@ -342,6 +345,7 @@ public class SamToolsAction extends ActionSupport{
         if(samtobam_origin.equals("")){
             this.addFieldError("samtobam_origin", "Please input the file to be converted.");
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil=new UploadUtil();
             if(!uploadUtil.Check(fileField_samtools_originFileName,fileField_samtools_origin)){
@@ -357,11 +361,14 @@ public class SamToolsAction extends ActionSupport{
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
      /*   xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag="22";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -379,4 +386,6 @@ public class SamToolsAction extends ActionSupport{
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

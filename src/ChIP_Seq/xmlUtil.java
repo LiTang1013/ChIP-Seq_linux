@@ -31,7 +31,11 @@ public class xmlUtil {
     public void xmlAdd(String file,String tool) throws Exception{
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
+<<<<<<< HEAD
         Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ROOT/User.xml");
+=======
+        Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/User.xml");
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         HttpServletRequest request = ServletActionContext.getRequest();
         String account = (String) request.getSession().getAttribute("account");
         NodeList nl = document.getElementsByTagName("User");
@@ -64,7 +68,11 @@ public class xmlUtil {
                 root.appendChild(element);
                 TransformerFactory tFactory = TransformerFactory.newInstance();
                 Transformer tf = tFactory.newTransformer();
+<<<<<<< HEAD
                 tf.transform(new DOMSource(document), new StreamResult(new FileOutputStream("/home/bio/software/apache-tomcat-7.0.73/webapps/ROOT/User.xml")));
+=======
+                tf.transform(new DOMSource(document), new StreamResult(new FileOutputStream("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/User.xml")));
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
             }
         }
 
@@ -73,7 +81,11 @@ public class xmlUtil {
     public String xmlAdd_Jobs(String JobId,String file,String tool,String error,String email,String time) throws Exception{
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
+<<<<<<< HEAD
         Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ROOT/RecentJobs.xml");
+=======
+        Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/RecentJobs.xml");
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
             NodeList nodeNum=document.getElementsByTagName("Jobs").item(0).getChildNodes();
                 int num=nodeNum.getLength();
@@ -103,14 +115,22 @@ public class xmlUtil {
                 root.appendChild(element);
                 TransformerFactory tFactory = TransformerFactory.newInstance();
                 Transformer tf = tFactory.newTransformer();
+<<<<<<< HEAD
                 tf.transform(new DOMSource(document), new StreamResult(new FileOutputStream("/home/bio/software/apache-tomcat-7.0.73/webapps/ROOT/RecentJobs.xml")));
+=======
+                tf.transform(new DOMSource(document), new StreamResult(new FileOutputStream("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/RecentJobs.xml")));
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         return JobId;
     }
 
     public String xmlAdd_Jobs_Demo(String file,String tool,String error,String email,String time) throws Exception{
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
+<<<<<<< HEAD
         Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ROOT/RecentJobs.xml");
+=======
+        Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/RecentJobs.xml");
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         HttpServletRequest request = ServletActionContext.getRequest();
         NodeList nodeNum=document.getElementsByTagName("Jobs").item(0).getChildNodes();
         int num=nodeNum.getLength();
@@ -144,7 +164,11 @@ public class xmlUtil {
         root.appendChild(element);
         TransformerFactory tFactory = TransformerFactory.newInstance();
         Transformer tf = tFactory.newTransformer();
+<<<<<<< HEAD
         tf.transform(new DOMSource(document), new StreamResult(new FileOutputStream("/home/bio/software/apache-tomcat-7.0.73/webapps/ROOT/RecentJobs.xml")));
+=======
+        tf.transform(new DOMSource(document), new StreamResult(new FileOutputStream("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/RecentJobs.xml")));
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         return JobId;
     }
     public void login_validate(){

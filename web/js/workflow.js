@@ -44,10 +44,16 @@ function fileChange(target,box) {
         target.value ="";
         return false;
     }
+<<<<<<< HEAD
 
 }
 function Demo_right(id){
     for(var i=1;i<=3;i++){
+=======
+}
+function Demo_right(id){
+    for(var i=1;i<=4;i++){
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         document.getElementById("side_right_"+i).style.display='none';
         document.getElementById("side_son_"+i).style.backgroundColor="#dadada";
         document.getElementById("side_son_"+i).style.color="#555555";

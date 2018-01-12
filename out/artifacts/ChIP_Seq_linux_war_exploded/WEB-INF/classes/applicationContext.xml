@@ -3,8 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byType">
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
     <bean id="bowtie2Execute" class="ChIP_Seq.execute.Bowtie2Execute"></bean>
     <bean id="bowtie2Service" class="ChIP_Seq.service.Bowtie2Service"></bean>
 
@@ -88,6 +91,9 @@
 
     <bean id="multiBamSummaryExecute" class="ChIP_Seq.execute.multiBamSummaryExecute"></bean>
     <bean id="multiBamSummaryService" class="ChIP_Seq.service.multiBamSummaryService"></bean>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 </beans>

@@ -21,8 +21,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by Administrator on 2016/5/9 0009.
@@ -148,7 +151,11 @@ public class GOMoAction extends ActionSupport{
             Gomo_DemoAction gomo_demoAction=new Gomo_DemoAction();
             gomo_demoAction.Demo();
 
+<<<<<<< HEAD
             flag="2";
+=======
+            flag="4";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
             flag_son="3";
         }
         else {
@@ -208,7 +215,11 @@ public class GOMoAction extends ActionSupport{
             //将结果压缩
             FileUtil fileUtil2=new FileUtil();
             fileUtil2.ZipMultiFile("/home/bio/dataset/" + JobId, "/home/bio/dataset/" + JobId + ".zip");
+<<<<<<< HEAD
             flag = "2";
+=======
+            flag = "3";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
             flag_son = "3";
         }
         flag_validate="1";
@@ -227,6 +238,7 @@ public class GOMoAction extends ActionSupport{
         if(input_anno_peak.equals("")){
             this.addFieldError("input_anno_peak", "Please input the peak file.");
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(Gomo_peakFileName,Gomo_peak)){
@@ -263,4 +275,12 @@ public class GOMoAction extends ActionSupport{
         }
         return status;
     }
+=======
+    /*    xmlUtil xmlUtil=new xmlUtil();
+        xmlUtil.login_validate();*/
+        flag="3";
+        flag_son="3";
+        flag_validate="2";
+    }
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

@@ -1,5 +1,8 @@
 <%@ page import="java.net.URLEncoder" %>
+<<<<<<< HEAD
 <%@ page import="ChIP_Seq.TokenProcessor" %>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -23,6 +26,10 @@
     <script src="./jquery-1.11.1/jquery.js"></script>
     <script src="./layer/layer.js"></script>
   <script language="javascript">
+<<<<<<< HEAD
+=======
+
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       window.onload=function() {
           var obj1 = document.getElementById('choose_home');
           var obj2 = document.getElementById('choose_tool');
@@ -192,6 +199,7 @@
               document.getElementById("login_spanUpdate").style.display="none";
           }
       }
+<<<<<<< HEAD
       function fileChange(target,box){
           var filename;
           filename=target.files[0].name;
@@ -312,6 +320,8 @@
       }
 
 
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       var count=1;
       function Tip_click(TipId) {
           var id = "#tip" + TipId;
@@ -1249,7 +1259,29 @@
       function mouseOut(){
           document.getElementById("login_menu").style.display="none";
       }
+<<<<<<< HEAD
 
+=======
+      function fileChange(target,box) {
+          var fileSize;
+          var filemaxsize = 2048*1024;//1G
+
+          fileSize = target.files[0].size;
+
+          var size = fileSize / 1024;
+          if(size>filemaxsize){
+              alert("Upload files can not be larger than 2G!");
+              document.getElementById(box).value="";
+              target.value ="";
+              return false;
+          }
+          if(size<=0){
+              alert("Upload files can not be empty!");
+              target.value ="";
+              return false;
+          }
+      }
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       function recentShow(){
           window.location.href = "RecentJob.jsp";
       }
@@ -1791,6 +1823,7 @@
   </style>
 </head>
 <body>
+<<<<<<< HEAD
 <%
     //获取令牌类实例
     TokenProcessor processor = TokenProcessor.getInstance();
@@ -1798,6 +1831,9 @@
     String token = processor.getToken(request);
 %>
 <input type="hidden" name="org.sunxin.token" value="<%=token%>"/>
+=======
+
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <div id="back">
   <div id="banner">
     <div id="logo_span"></div>
@@ -1877,24 +1913,42 @@
           <div class="arrow-down" id="arrow-down3" style="display:block"></div>
           <div class="arrow-right" id="arrow-right3" style="display:none"></div>
           Necessary parameter</div>
+<<<<<<< HEAD
           <form action="BWA_exe" id="BWA_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('BWA_exe','btn_BWA','wait_BWA');">
               <div id="necessary_center_BWA" class="necessary_center" style="display:block" style="overflow-y:scroll; ">
                   <div class="blacktop_1" id="BWA_test">Choose the library type</div>
                   <div class="blackdown_1">
                       <input id="BWA_single"  name="BWA_type" type="radio" value="1" onclick="document.getElementById('file-box_BWA_single').style.display='block';document.getElementById('file-box_BWA_paired').style.display='none';document.getElementById('blacktop_20').style.display='none';document.getElementById('blackdown_20').style.display='none'"/>Single-end
+=======
+          <form action="BWA_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_BWA').style.backgroundColor='#666666';document.getElementById('wait_BWA').style.display='block';">
+              <div id="necessary_center_BWA" class="necessary_center" style="display:block" style="overflow-y:scroll; ">
+                  <div class="blacktop_1" id="BWA_test">Choose the library type</div>
+                  <div class="blackdown_1">
+                      <input id="BWA_single"  name="BWA_type" type="radio" value="1" checked="true" onclick="document.getElementById('file-box_BWA_single').style.display='block';document.getElementById('file-box_BWA_paired').style.display='none';document.getElementById('blacktop_20').style.display='none';document.getElementById('blackdown_20').style.display='none'"/>Single-end
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       <input id="BWA_pair" name="BWA_type" type="radio" value="2" onclick="document.getElementById('file-box_BWA_single').style.display='none';document.getElementById('file-box_BWA_paired').style.display='block';document.getElementById('blacktop_20').style.display='block';document.getElementById('blackdown_20').style.display='block'"; />Paired-end
                   </div>
                   <div class="blacktop_1">
                       Select reference to build index or use a built-in index
                       <div class="tip_out"><img class="tip" id="tip1" src="./img/tip.png" onclick="JavaScript:Tip_click(1)"></div>
+<<<<<<< HEAD
+=======
+                      <s:fielderror fieldName="input_BWA_reference" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                   </div>
                   <div class="blackdown_2_bwa">
                       <input type="radio" name="refer_index_BWA" id="BWA_refer_index_1" value="1" checked="true" onclick="document.getElementById('file-input_BWA_reference').style.display='block';document.getElementById('built_in_BWA').style.display='none';"/>Select reference to build index
                       <input type="radio" name="refer_index_BWA" id="BWA_refer_index_2" value="2" onclick="document.getElementById('file-input_BWA_reference').style.display='none';document.getElementById('built_in_BWA').style.display='block'"/>Use a built-in index
                       <div class="file-box" id="file-input_BWA_reference" style="display:block">
+<<<<<<< HEAD
                           <input type="text" name="input_BWA_reference" id="input_BWA_reference" class="input_text" id="input_BWA_reference" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_bwa" class="fileField" id="fileField_bwa_re" onchange="return (fileChange(this,'input_BWA_reference' )&& checkFileExt(this.value,'input_BWA_reference'))" />
+=======
+                          <input type="text" name="input_BWA_reference" id="input_BWA_reference" class="input_text" />
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bwa" class="fileField" id="fileField_bwa_re" onchange="document.getElementById('input_BWA_reference').value=this.value;fileChange(this,'input_BWA_reference');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                       <br>
                       <div class="built_in" id="built_in_BWA" style="display: none;">
@@ -1903,7 +1957,11 @@
                               <option value="2" disabled="true">Human(b37) hg38</option>
                           </select>
                       </div>
+<<<<<<< HEAD
                       -Choose the type of the reference genome.<br>
+=======
+                     -Choose the type of the reference genome.<br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       <input type="radio" name="long_short" value="1"/>long genome
                       <input type="radio" name="long_short" value="2" checked="true"/>short genome
                   </div>
@@ -1912,11 +1970,17 @@
                       <div class="tip_out">
                           <img class="tip" id="tip2" src="./img/tip.png" onclick="JavaScript:Tip_click(2)">
                       </div>
+<<<<<<< HEAD
+=======
+                      <s:fielderror fieldName="input_BWA_reads_single" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
+                      <s:fielderror fieldName="input_BWA_reads_pair1" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box" id="file-box_BWA_single" style="display:block;">
                           <input type="text" name="input_BWA_reads_single" class="input_text" id="input_BWA_reads_single"/>
                           <input type='button' class='btn' value='Choose File' />
+<<<<<<< HEAD
                           <input type="file" name="fileField_bwa" class="fileField" id="fileField_bwa_file" onchange="return (fileChange(this,'input_BWA_reads_single' )&& checkFileExt(this.value,'input_BWA_reads_single'))" />
                       </div>
                       <div class="file-box" id="file-box_BWA_paired" style="display:none;">
@@ -1926,6 +1990,17 @@
                           <input type="text" name="input_BWA_reads_pair2" class="input_text_pair" id="input_BWA_reads_pair2"  value="reads_2.fastq"/>
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_bwa" class="fileField_pair2" id="fileField_bwa_file2" onchange="return (fileChange(this,'input_BWA_reads_pair2' )&& checkFileExt(this.value,'input_BWA_reads_pair2'))" />
+=======
+                          <input type="file" name="fileField_bwa" class="fileField" id="fileField_bwa_file" onchange="document.getElementById('input_BWA_reads_single').value=this.value;fileChange(this,'input_BWA_reads_single');" />
+                      </div>
+                      <div class="file-box" id="file-box_BWA_paired" style="display:none;">
+                          <input type="text" name="input_BWA_reads_pair1" class="input_text_pair" id="input_BWA_reads_pair1"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bwa" class="fileField_pair1" id="fileField_bwa_file1" onchange="document.getElementById('input_BWA_reads_pair1').value=this.value;fileChange(this,'input_BWA_reads_pair1');" />
+                          <input type="text" name="input_BWA_reads_pair2" class="input_text_pair" id="input_BWA_reads_pair2"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bwa" class="fileField_pair2" id="fileField_bwa_file2" onchange="document.getElementById('input_BWA_reads_pair2').value=this.value;fileChange(this,'input_BWA_reads_pair2');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                   </div>
 
@@ -1945,6 +2020,7 @@
                       <div id="advancedPair_setting_center" class="inputOption_setting_center" style="overflow-y:scroll;">
                           Maximum insert size for a read pair to be considered being mapped properly.<br>
                           <h6>sampe -a; This option is only used when there are not enough good alignment to infer the distribution of insert sizes; default=500</h6>
+<<<<<<< HEAD
                           <input type="text" id="advancedPair_a" name="advancedPair_a" class="input_setting_text" value="500"  />
                           Maximum occurrences of a read for pairing. A read with more occurrences will be treated as a single-end read.<br>
                           <h6>sampe -o; Reducing this parameter helps faster pairing; default=100000</h6>
@@ -1958,6 +2034,21 @@
                           Prior of chimeric rate (lower bound)<br>
                           <h6>sampe -c</h6>
                           <input type="text" id="advancedPair_c" name="advancedPair_c" class="input_setting_text" value="5e-05" />
+=======
+                          <input type="text" name="advancedPair_a" class="input_setting_text" value="500"/>
+                          Maximum occurrences of a read for pairing. A read with more occurrences will be treated as a single-end read.<br>
+                          <h6>sampe -o; Reducing this parameter helps faster pairing; default=100000</h6>
+                          <input type="text" name="advancedPair_o" class="input_setting_text" value="100000"/>
+                          Maximum number of alignments to output in the XA tag for reads paired properly.<br>
+                          <h6>sampe -n; If a read has more than this many hits, the XA tag will not be written; default=3</h6>
+                          <input type="text" name="advancedPair_n" class="input_setting_text" value="3"/>
+                          Maximum number of alignments to output in the XA tag for disconcordant read pairs (excluding singletons).<br>
+                          <h6>sampe -N; If a read has more than this many hits, the XA tag will not be written; default=10</h6>
+                          <input type="text" name="advancedPair_N" class="input_setting_text" value="10"/>
+                          Prior of chimeric rate (lower bound)<br>
+                          <h6>sampe -c</h6>
+                          <input type="text" name="advancedPair_c" class="input_setting_text" value="5e-05"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('advancedPair_setting').style.display='none';JavaScript:advancedPair_radio(advancedPair_a.value,advancedPair_o.value,advancedPair_n.value,advancedPair_N.value,advancedPair_c.value)"/>
                           <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('advancedPair_setting').style.display='none'"/>
                       </div>
@@ -1973,6 +2064,7 @@
                       <div class="inputOption_setting_center" id="analysisMode_setting_center" style="overflow-y:scroll; ">
                           maximum edit distance if the value is integer, or the fraction of missing alignments given 2% uniform base error rate if float. In the latter case, the maximum edit distance is automatically chosen for different read lengths.<br>
                           <h6>aln -n; default=0.04</h6>
+<<<<<<< HEAD
                           <input type="text" id="analysisMode_n" name="analysisMode_n" class="input_setting_text" value="0.04" />
                           maximum number or gap openings<br>
                           <h6>aln -o; default=1</h6>
@@ -2016,12 +2108,61 @@
                           log-scaled gap penalty for long deletions<br>
                           <h6>aln -L; optional parameter</h6>
                           <input type="text" id="analysisMode_LL" name="analysisMode_L" class="input_setting_text" value="0"  />
+=======
+                          <input type="text" name="analysisMode_n" class="input_setting_text" value="0.04"/>
+                          maximum number or gap openings<br>
+                          <h6>aln -o; default=1</h6>
+                          <input type="text" name="analysisMode_o" class="input_setting_text" value="1"/>
+                          maximum number of gap extensions<br>
+                          <h6>aln -e; -1 disables long gaps and invokes k-difference mode; default=-1</h6>
+                          <input type="text" name="analysisMode_e" class="input_setting_text" value="-1"/>
+                          do not put an indel within this many bp towards the ends<br>
+                          <h6>aln -i; default=5</h6>
+                          <input type="text" name="analysisMode_i" class="input_setting_text" value="5"/>
+                          maximum occurrences for extending a long deletion<br>
+                          <h6>aln -d; default=10</h6>
+                          <input type="text" name="analysisMode_d" class="input_setting_text" value="10"/>
+                          seed length<br>
+                          <h6>aln -l; default=32</h6>
+                          <input type="text" name="analysisMode_l" class="input_setting_text" value="32"/>
+                          maximum differences in the seed<br>
+                          <h6>aln -k; default=2</h6>
+                          <input type="text" name="analysisMode_k" class="input_setting_text" value="2"/>
+                          maximum entries in the queue<br>
+                          <h6>aln -m; default=2000000</h6>
+                          <input type="text" name="analysisMode_m" class="input_setting_text" value="2000000"/>
+                          mismatch penalty<br>
+                          <h6>aln -M; default=3</h6>
+                          <input type="text" name="analysisMode_M" class="input_setting_text" value="3"/>
+                          gap open penalty<br>
+                          <h6>aln -O; default=11</h6>
+                          <input type="text" name="analysisMode_O" class="input_setting_text" value="11"/>
+                          gap extension penalty<br>
+                          <h6>aln -E; default=4</h6>
+                          <input type="text" name="analysisMode_E" class="input_setting_text" value="4"/>
+                          stop searching when there are more than this value of equally best hits<br>
+                          <h6>aln -R; default=30</h6>
+                          <input type="text" name="analysisMode_R" class="input_setting_text" value="30"/>
+                          quality threshold for read trimming down to 35bp<br>
+                          <h6>aln -q; default=0</h6>
+                          <input type="text" name="analysisMode_q" class="input_setting_text" value="0"/>
+                          length of barcode<br>
+                          <h6>aln -B; optional parameter</h6>
+                          <input type="text" name="analysisMode_B" class="input_setting_text"/>
+                          log-scaled gap penalty for long deletions<br>
+                          <h6>aln -L; optional parameter</h6>
+                          <input type="text" name="analysisMode_L" class="input_setting_text"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('analysisMode_setting').style.display='none';JavaScript:analysisMode_radio(analysisMode_n.value,analysisMode_o.value,analysisMode_e.value,analysisMode_i.value,analysisMode_d.value,analysisMode_l.value,analysisMode_k.value,analysisMode_m.value,analysisMode_M.value,analysisMode_O.value,analysisMode_E.value,analysisMode_R.value,analysisMode_q.value,analysisMode_B.value,analysisMode_L.value)"/>
                           <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('analysisMode_setting').style.display='none'"/>
                       </div>
                   </div>
               </div>
+<<<<<<< HEAD
               <input type="submit" value="Execute" class="Execute_btn" id="btn_BWA"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+              <input type="submit" value="Execute" class="Execute_btn" id="btn_BWA"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div id="wait_BWA" class="Upload_wait_div" style="display:none;">
                   <img src="./img/wait.gif" class="Upload_wait" />
                   Uploading and processing your file,please wait...
@@ -2049,11 +2190,21 @@
   <div class="arrow-right" id="arrow-right14" style="display:none"></div>
   Necessary parameter
 </div>
+<<<<<<< HEAD
           <form action="Bowtie_exe" id="Bowtie_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('Bowtie_exe','btn_Bowtie','wait_Bowtie');">
               <div id="necessary_center_bowtie"  class="necessary_center" style="display:block">
                   <div class="blacktop_1">Choose the library type</div>
                   <div class="blackdown_1">
                       <input type="radio" name="type" class="Bowtie_single" id="Bowtie_single" value="1" onclick="document.getElementById('file-box_bowtie_reads_single').style.display='block';document.getElementById('file-box_bowtie_reads_pair').style.display='none';document.getElementById('bowtie_best').style.display='block';document.getElementById('bowtie_best_down').style.display='block';" />Single-end
+=======
+          <form action="Bowtie_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_Bowtie').style.backgroundColor='#666666';document.getElementById('wait_Bowtie').style.display='block';">
+              <div id="necessary_center_bowtie"  class="necessary_center" style="display:block">
+                  <div class="blacktop_1">
+                      Choose the library type
+                  </div>
+                  <div class="blackdown_1">
+                      <input type="radio" name="type" class="Bowtie_single" id="Bowtie_single" value="1"checked="true" onclick="document.getElementById('file-box_bowtie_reads_single').style.display='block';document.getElementById('file-box_bowtie_reads_pair').style.display='none';document.getElementById('bowtie_best').style.display='block';document.getElementById('bowtie_best_down').style.display='block';" />Single-end
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       <input type="radio" name="type" class="Bowtie_pair" id="Bowtie_pair" value="2" onclick="document.getElementById('file-box_bowtie_reads_pair').style.display='block';document.getElementById('file-box_bowtie_reads_single').style.display='none';document.getElementById('bowtie_best').style.display='none';document.getElementById('bowtie_best_down').style.display='none';" />Paired-end
                   </div>
                   <div class="blacktop_1">
@@ -2065,9 +2216,15 @@
                       <input type="radio" name="refer_index_bowtie" id="Bowtie_refer_index_1" value="1" checked="true" onclick="document.getElementById('file-box_tools_refer').style.display='block';document.getElementById('built_in_bowtie').style.display='none';document.getElementById('bowtie_index_build').style.display='block';"/>Select reference to build index
                       <input type="radio" name="refer_index_bowtie" id="Bowtie_refer_index_2" value="2" onclick="document.getElementById('file-box_tools_refer').style.display='none';document.getElementById('built_in_bowtie').style.display='block';document.getElementById('bowtie_index_build').style.display='none';"/>Use a built-in index
                       <div class="file-box" id="file-box_tools_refer" style="display:block">
+<<<<<<< HEAD
                           <input type='text' name='input_re_bowtie' id='input_re_bowtie' class='input_text'  />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_bowtie" class="fileField" id="fileField_bowtie_re" onchange="return (fileChange(this,'input_re_bowtie' )&& checkFileExt(this.value,'input_re_bowtie'))" />
+=======
+                          <input type='text' name='input_re_bowtie' id='input_re_bowtie' class='input_text' />
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bowtie" class="fileField" id="fileField_bowtie_re" onchange="document.getElementById('input_re_bowtie').value=this.value;fileChange(this,'input_re_bowtie');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                       <div id="bowtie_index_build" style="display:block">
                           whether set bowtie-build options?<br>
@@ -2091,10 +2248,17 @@
                               <input type="radio" value="2" name="bowtie_justref">On
                               <br>To map alignments back to positions on the reference sequences, it's necessary to annotate ("mark") some or all of the Burrows-Wheeler rows with their corresponding location on the genome. -o/--offrate governs how many rows get marked: the indexer will mark every 2^ rows. Marking more rows makes reference-position lookups faster, but requires more memory to hold the annotations at runtime.<br>
                               <h6>-o/--offrate ;Default:5</h6>
+<<<<<<< HEAD
                               <input type="text" id="bowtie_offrate" name="bowtie_offrate" class="input_setting_text" value="5" /><br>
                               The ftab is the lookup table used to calculate an initial Burrows-Wheeler range with respect to the first characters of the query. A larger yields a larger lookup table but faster query times.<br>
                               <h6>-t/--ftabchars ; The default setting is 10 (ftab is 4MB).</h6>
                               <input type="text" id="bowtie_t" name="bowtie_t" class="input_setting_text" value="10" /><br>
+=======
+                              <input type="text" name="bowtie_offrate" class="input_setting_text" value="5"/><br>
+                              The ftab is the lookup table used to calculate an initial Burrows-Wheeler range with respect to the first characters of the query. A larger yields a larger lookup table but faster query times.<br>
+                              <h6>-t/--ftabchars ; The default setting is 10 (ftab is 4MB).</h6>
+                              <input type="text" name="bowtie_t" class="input_setting_text" value="10"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                               Convert Ns in the reference sequence to As before building the index.<br>
                               <h6>--ntoa By default, Ns are simply excluded from the index and bowtie will not report alignments that overlap them.</h6>
                               <input type="radio" value="1" name="bowtie_ns"  checked="true">Off
@@ -2120,6 +2284,7 @@
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box"  id="file-box_bowtie_reads_single" style="display:block;">
+<<<<<<< HEAD
                           <input type="text" id="input_reads_bowtie"  name="input_reads_bowtie"  class="input_text" id="input_reads_bowtie"/>
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_bowtie" class="fileField" id="fileField_bowtie_read" onchange="return (fileChange(this,'input_reads_bowtie' )&& checkFileExt(this.value,'input_reads_bowtie'))" />
@@ -2134,6 +2299,21 @@
                       </div>
                   </div>
 
+=======
+                          <input type="text" name="input_reads_bowtie"  class="input_text" id="input_reads_bowtie"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bowtie" class="fileField" id="fileField_bowtie_read" onchange="document.getElementById('input_reads_bowtie').value=this.value;fileChange(this,'input_reads_bowtie');" />
+                      </div>
+                      <div class="file-box" id="file-box_bowtie_reads_pair" style="display:none;">
+                          <input type="text" name="input_reads_pair1_bowtie"  class="input_text_pair" id="input_reads_pair1_bowtie"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bowtie" class="fileField_pair1" onchange="document.getElementById('input_reads_pair1_bowtie').value=this.value;fileChange(this,'input_reads_pair1_bowtie');" />
+                          <input type="text" name="input_reads_pair2_bowtie"  class="input_text_pair" id="input_reads_pair2_bowtie"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bowtie" class="fileField" onchange="document.getElementById('input_reads_pair2_bowtie').value=this.value;fileChange(this,'input_reads_pair2_bowtie');" />
+                      </div>
+                  </div>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               </div>
 
               <div class="link" onclick="JavaScript:nece_opt_show_Bowtie_op();"style="cursor:hand;">
@@ -2153,6 +2333,7 @@
                       <div class="inputOption_setting_center" id="bowtie_n_center" style="overflow-y:scroll; ">
                           Alignments may have no more than N mismatches (where N is a number 0-3, set with -n) <br>
                           <h6>-n; default=2.</h6>
+<<<<<<< HEAD
                           <input type="text" id="bowtie_mode_n" name="bowtie_mode_n" class="input_setting_text" value="2" /><br>
                           L is a number 5 or greater, set with -l on the high-quality (left) end of the read. The first L bases are called the "seed".<br>
                           <h6>-l;more than 5.</h6>
@@ -2163,6 +2344,18 @@
                           The maximum number of backtracks permitted when aligning a read in -n 2 or -n 3 mode<br>
                           <h6>--maxbts ;default: 125 without --best, 800 with --best</h6>
                           <input type="text" id="bowtie_maximun" name="bowtie_maximun" class="input_setting_text" value="125" /><br>
+=======
+                          <input type="text" name="bowtie_mode_n" class="input_setting_text" value="2"/><br>
+                          L is a number 5 or greater, set with -l on the high-quality (left) end of the read. The first L bases are called the "seed".<br>
+                          <h6>-l;more than 5.</h6>
+                          <input type="text" name="bowtie_mode_l" class="input_setting_text" value="5"/><br>
+                          The sum of the Phred quality values at all mismatched positions (not just in the seed) may not exceed E (set with -e).<br>
+                          <h6>-e;the Phred quality defaults to 40</h6>
+                          <input type="text" name="bowtie_mode_e" class="input_setting_text" value="40"/><br>
+                          The maximum number of backtracks permitted when aligning a read in -n 2 or -n 3 mode<br>
+                          <h6>--maxbts ;default: 125 without --best, 800 with --best</h6>
+                          <input type="text" name="bowtie_maximun" class="input_setting_text" value="125"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('bowtie_n').style.display='none';JavaScript:bowtie_mode_n_radio(bowtie_mode_n.value,bowtie_mode_l.value,bowtie_mode_e.value,bowtie_maximun.value)"/>
                           <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('bowtie_n').style.display='none'"/>
                       </div>
@@ -2171,15 +2364,25 @@
                       <div class="inputOption_setting_center" id="bowtie_v_center" style="overflow-y:scroll;">
                           In -v mode, alignments may have no more than V mismatches, where V may be a number from 0 through 3 set using the -v option. Quality values are ignored.<br>
                           <h6>default:2</h6>
+<<<<<<< HEAD
                           <input type="text" id="bowtie_mode_v" name="bowtie_mode_v" class="input_setting_text" value="2" /><br>
+=======
+                          <input type="text" name="bowtie_mode_v" class="input_setting_text" value="2"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('bowtie_v').style.display='none';JavaScript:bowtie_mode_v_radio(bowtie_mode_v.value);"/>
                           <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('bowtie_v').style.display='none'"/>
                       </div>
                   </div>
 
+<<<<<<< HEAD
                   <div class="blacktop_1" id="bowtie_best" style="display:none">Whether set --best/--strata or not?</div>
                   <div class="blackdown_1" id="bowtie_best_down" style="display:none">
                       <input type="radio" name="bowtie_best" value="1" checked="true" />No
+=======
+                  <div class="blacktop_1" id="bowtie_best" checked="true" style="display:none">Whether set --best/--strata or not?</div>
+                  <div class="blackdown_1" id="bowtie_best_down" style="display:none">
+                      <input type="radio" name="bowtie_best" value="1"/>No
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       <input type="radio" name="bowtie_best" value="2"/>Yes
                   </div>
 
@@ -2193,6 +2396,7 @@
                       <div class="inputOption_setting_center" style="overflow-y:scroll;">
                           Skip (i.e. do not align) the first s reads or pairs in the input.
                           <h6>-s/--skip s ;default:0</h6>
+<<<<<<< HEAD
                           <input type="text" id="bowtie_s" name="bowtie_s" class="input_setting_text" value="0" /><br>
                           Only align the first u reads or read pairs from the input (after the -s/--skip reads or pairs have been skipped). <br>
                           <h6>-u/--qupto ;Default: no limit.</h6>
@@ -2203,6 +2407,18 @@
                           Trim the bases from low-quality (right) end of each read before alignment <br>
                           <h6>-3/--trim3 ;default: 0</h6>
                           <input type="text" id="bowtie_3" name="bowtie_3" class="input_setting_text" value="0" /><br>
+=======
+                          <input type="text" name="bowtie_s" class="input_setting_text" value="0"/><br>
+                          Only align the first u reads or read pairs from the input (after the -s/--skip reads or pairs have been skipped). <br>
+                          <h6>-u/--qupto ;Default: no limit.</h6>
+                          <input type="text" name="bowtie_u" class="input_setting_text" value="100000000"/><br>
+                          Trim the bases from high-quality (left) end of each read before alignment <br>
+                          <h6>-5/--trim5 ;default: 0</h6>
+                          <input type="text" name="bowtie_5" class="input_setting_text" value="0"/><br>
+                          Trim the bases from low-quality (right) end of each read before alignment <br>
+                          <h6>-3/--trim3 ;default: 0</h6>
+                          <input type="text" name="bowtie_3" class="input_setting_text" value="0"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('bowtie_inputoption').style.display='none';JavaScript:bowtie_input_radio(bowtie_s.value,bowtie_u.value,bowtie_5.value,bowtie_3.value);"/>
                           <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('bowtie_inputoption').style.display='none'"/>
                       </div>
@@ -2222,10 +2438,17 @@
                           <input type="radio" value="2" name="bowtie_nomaqround">On
                           <br>The minimum insert size for valid paired-end alignments. E.g. if -I 60 is specified and a paired-end alignment consists of two 20-bp alignments in the appropriate orientation with a 20-bp gap between them, that alignment is considered valid (as long as -X is also satisfied). A 19-bp gap would not be valid in that case. If trimming options -3 or -5 are also used, the -I constraint is applied with respect to the untrimmed mates.<br>
                           <h6>-I/--minins ;Default: 0.</h6>
+<<<<<<< HEAD
                           <input type="text" id="bowtie_I" name="bowtie_I" class="input_setting_text" value="0" /><br>
                           The maximum insert size for valid paired-end alignments. E.g. if -X 100 is specified and a paired-end alignment consists of two 20-bp alignments in the proper orientation with a 60-bp gap between them, that alignment is considered valid (as long as -I is also satisfied). A 61-bp gap would not be valid in that case. If trimming options -3 or -5 are also used, the -X constraint is applied with respect to the untrimmed mates, not the trimmed mates.<br>
                           <h6>-X/--maxins ;Default: 250.</h6>
                           <input type="text" id="bowtie_X" name="bowtie_X" class="input_setting_text" value="250" /><br>
+=======
+                          <input type="text" name="bowtie_I" class="input_setting_text" value="0"/><br>
+                          The maximum insert size for valid paired-end alignments. E.g. if -X 100 is specified and a paired-end alignment consists of two 20-bp alignments in the proper orientation with a 60-bp gap between them, that alignment is considered valid (as long as -I is also satisfied). A 61-bp gap would not be valid in that case. If trimming options -3 or -5 are also used, the -X constraint is applied with respect to the untrimmed mates, not the trimmed mates.<br>
+                          <h6>-X/--maxins ;Default: 250.</h6>
+                          <input type="text" name="bowtie_X" class="input_setting_text" value="250"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('bowtie_alignment').style.display='none';JavaScript:bowtie_alignment_radio(bowtie_nomaqround.value,bowtie_I.value,bowtie_X.value);"/>
                           <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('bowtie_alignment').style.display='none';"/>
                       </div>
@@ -2241,7 +2464,11 @@
                       <div class="inputOption_setting_center" style="overflow-y:scroll;">
                           Report up to k valid alignments per read or pair <br>
                           <h6>-k ;default: 1 </h6>
+<<<<<<< HEAD
                           <input type="text" id="bowtie_k"  name="bowtie_k" class="input_setting_text" value="1" /><br>
+=======
+                          <input type="text" name="bowtie_k" class="input_setting_text" value="1"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           Report all valid alignments per read or pair <br>
                           <h6>-a/--all ;default: off.</h6>
                           <input type="radio" name="bowtie_a" value="1"/>Off
@@ -2252,7 +2479,11 @@
                   </div>
               </div>
 
+<<<<<<< HEAD
               <input type="submit" value="Execute" class="Execute_btn" id="btn_Bowtie"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+              <input type="submit" value="Execute" class="Execute_btn" id="btn_Bowtie"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div id="wait_Bowtie" class="Upload_wait_div" style="display:none;">
                   <img src="./img/wait.gif" class="Upload_wait" />
                   Uploading and processing your file,please wait...
@@ -2279,7 +2510,11 @@
   <div class="arrow-down" id="arrow-down1" style="display:block"></div>
   <div class="arrow-right" id="arrow-right1" style="display:none"></div>
   Necessary parameter</div>
+<<<<<<< HEAD
           <form action="Bowtie2_exe" id="Bowtie2_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('Bowtie2_exe','btn_Bowtie2','wait_Bowtie2');">
+=======
+          <form action="Bowtie2_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_Bowtie2').style.backgroundColor='#666666';document.getElementById('wait_Bowtie2').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div id="necessary_center_bowtie2" class="necessary_center"style="display:block">
                   <div class="blacktop_1">
                       Choose the library type
@@ -2300,7 +2535,11 @@
                       <div class="file-box" id="bowtie2_reference_box">
                           <input type='text' name='input_re' id='input_re' class='input_text' />
                           <input type='button' class='btn' value='Choose File' />
+<<<<<<< HEAD
                           <input type="file" name="fileField_bowtie2" class="fileField" id="fileField_bowtie2_re" onchange="return (fileChange(this,'input_re' )&& checkFileExt(this.value,'input_re'))" />
+=======
+                          <input type="file" name="fileField_bowtie2" class="fileField" id="fileField_bowtie2_re" onchange="document.getElementById('input_re').value=this.value;fileChange(this,'input_re');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                       <div class="bowtie2_select" id="bowtie2_select" style="display: none;">
                           <select name="bowtie2_select_index" class="gomo_select"/>
@@ -2317,6 +2556,7 @@
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box"  id="file-box_tools_reads_single" style="display:block;">
+<<<<<<< HEAD
                           <input type="text" id="input_reads" name="input_reads"  class="input_text" id="input_reads" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_bowtie2" class="fileField" id="fileField_bowtie2_read" onchange="return (fileChange(this,'input_reads' )&& checkFileExt(this.value,'input_reads'))" />
@@ -2331,6 +2571,21 @@
                       </div>
                   </div>
 
+=======
+                          <input type="text" name="input_reads"  class="input_text" id="input_reads"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bowtie2" class="fileField" id="fileField_bowtie2_read" onchange="document.getElementById('input_reads').value=this.value;fileChange(this,'input_reads');" />
+                      </div>
+                      <div class="file-box" id="file-box_tools_reads_pair" style="display:none;">
+                          <input type="text" name="input_reads_pair1"  class="input_text_pair" id="input_reads_pair1"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bowtie2" class="fileField_pair1" id="fileField_bowtie2_pair1" onchange="document.getElementById('input_reads_pair1').value=this.value;fileChange(this,'input_reads_pair1');" />
+                          <input type="text" name="input_reads_pair2"  class="input_text_pair" id="input_reads_pair2"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_bowtie2" class="fileField_pair2" id="fileField_bowtie2_pair2" onchange="document.getElementById('input_reads_pair2').value=this.value;fileChange(this,'input_reads_pair2');" />
+                      </div>
+                  </div>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               </div>
               <div class="link"onclick="JavaScript:nece_opt_show_op();"style="cursor:hand;">
                   <div class="arrow-right" id="arrow-right2" style="display:none"></div>
@@ -2347,6 +2602,7 @@
                       <div class="inputOption_setting_center"  style="overflow-y:scroll; ">
                           Skip the first that many reads or pairs in the input<br>
                           <h6>-s/--skip; default=0</h6>
+<<<<<<< HEAD
                           <input type="text" id="setting_skip" name="setting_skip" class="input_setting_text" value="0" /><br>
                           Align the first that many reads or read pairs from the input then stop<br>
                           <h6>-u/--qupto; for default behavior (no limit) leave this value very large</h6>
@@ -2357,6 +2613,18 @@
                           Trim that many bases from 3' (right) end of each read before alignment<br>
                           <h6>-3/--trim3; default=0</h6>
                           <input type="text"  id="setting_trim3" name="setting_trim3" class="input_setting_text" value="0" /><br>
+=======
+                          <input type="text" name="setting_skip" class="input_setting_text" value="0"/><br>
+                          Align the first that many reads or read pairs from the input then stop<br>
+                          <h6>-u/--qupto; for default behavior (no limit) leave this value very large</h6>
+                          <input type="text" name="setting_u" class="input_setting_text" value="100000000"/><br>
+                          Trim that many bases from 5' (left) end of each read before alignment<br>
+                          <h6>-5/--trim5; default=0</h6>
+                          <input type="text" name="setting_trim5" class="input_setting_text" value="0"/><br>
+                          Trim that many bases from 3' (right) end of each read before alignment<br>
+                          <h6>-3/--trim3; default=0</h6>
+                          <input type="text" name="setting_trim3" class="input_setting_text" value="0"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('inputOption_setting').style.display='none';JavaScript:optional_radio_input(setting_skip.value,setting_u.value,setting_trim5.value,setting_trim3.value);"/>
                           <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('inputOption_setting').style.display='none'"/>
                       </div>
@@ -2377,6 +2645,7 @@
                           </select><br>
                           Sets the length of the seed substrings to align during multiseed alignment<br>
                           <h6>-L; Smaller values make alignment slower but more sensitive. Default=22</h6>
+<<<<<<< HEAD
                           <input type="text" id="alignment_L" name="alignment_L" class="input_setting_text" value="22" />
                           Set a function governing the interval between seed substrings to use during multiseed alignment.Also see description of this option below in the help section.<br>
                           <h6>-i;Default=`S,1,1.15`</h6>
@@ -2390,6 +2659,21 @@
                           Disallow gaps within that many positions of the beginning or end of the read
                           <h6>--gbar; default=4</h6>
                           <input type="text" id="alignment_gbar" name="alignment_gbar"class="input_setting_text" value="4" />
+=======
+                          <input type="text" name="alignment_L" class="input_setting_text" value="22"/>
+                          Set a function governing the interval between seed substrings to use during multiseed alignment.Also see description of this option below in the help section.<br>
+                          <h6>-i;Default=`S,1,1.15`</h6>
+                          <input type="text" name="alignment_i"class="input_setting_text" value="S,1,1.15"/>
+                          Set a function governing the maximum number of ambiguous characters (usually `N`s and/or `.`s) allowed in a read as a function of read length.<br>
+                          <h6>--n-ceil;Default=`L,0,0.15`</h6>
+                          <input type="text" name="alignment_n"class="input_setting_text" value="L,0,0.15"/>
+                          Pad dynamic programming problems by that many columns on either side to allow gaps.
+                          <h6>--dpad; default=15</h6>
+                          <input type="text" name="alignment_dpad"class="input_setting_text" value="15"/>
+                          Disallow gaps within that many positions of the beginning or end of the read
+                          <h6>--gbar; default=4</h6>
+                          <input type="text" name="alignment_gbar"class="input_setting_text" value="4"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('alignmentOption_setting').style.display='none';JavaScript:alignment_radio(alignment_N.value,alignment_L.value,alignment_i.value,alignment_n.value,alignment_dpad.value,alignment_gbar.value)"/>
                           <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('alignmentOption_setting').style.display='none'"/>
                       </div>
@@ -2404,6 +2688,7 @@
                       <div class="inputOption_setting_center" id="scoreOption_setting_center" style="overflow-y:scroll; ">
                           Set the match bonus<br>
                           <h6>--ma; Default=2</h6>
+<<<<<<< HEAD
                           <input type="text" id="score_ma" name="score_ma" class="input_setting_text" value="2" />
                           Set the maximum (`MX`) and minimum (`MN`) mismatch penalties, both integers<br>
                           <h6>--mp;Default=6,2</h6>
@@ -2423,13 +2708,38 @@
                           Set the reference gap extension penalty<br>
                           <h6>--rfg; this is the second component of --rfg flag - extension penalty; Default=3</h6>
                           <input type="text" id="score_rfg3" name="score_rfg3" class="input_setting_text" value="3" />
+=======
+                          <input type="text" name="score_ma" class="input_setting_text" value="2"/>
+                          Set the maximum (`MX`) and minimum (`MN`) mismatch penalties, both integers<br>
+                          <h6>--mp;Default=6,2</h6>
+                          <input type="text" name="score_mp" class="input_setting_text" value="6,2"/>
+                          Sets penalty for positions where the read, reference, or both, contain an ambiguous character such as `N`<br>
+                          <h6>--np; Default=1</h6>
+                          <input type="text" name="score_np" class="input_setting_text" value="1"/>
+                          Set the read gap opening penalty<br>
+                          <h6>--rdg; this is the first component of --rdg flag - opening penalty; Default=5</h6>
+                          <input type="text" name="score_rdg5" class="input_setting_text" value="5"/>
+                          Set the read gap extension penalty<br>
+                          <h6>--rdg; this is the second component of --rdg flag - extension penalty; Default=3</h6>
+                          <input type="text" name="score_rdg3" class="input_setting_text" value="3"/>
+                          Set the reference gap opening penalty<br>
+                          <h6> --rfg; this is the first component of --rfg flag - opening penalty; Default=5</h6>
+                          <input type="text" name="score_rfg5" class="input_setting_text" value="5"/>
+                          Set the reference gap extension penalty<br>
+                          <h6>--rfg; this is the second component of --rfg flag - extension penalty; Default=3</h6>
+                          <input type="text" name="score_rfg3" class="input_setting_text" value="3"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('scoreOption_setting').style.display='none';JavaScript:score_radio(score_ma.value,score_mp.value,score_np.value,score_rdg5.value,score_rdg3.value,score_rfg5.value,score_rfg3.value)"/>
                           <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('scoreOption_setting').style.display='none'"/>
                       </div>
                   </div>
               </div>
+<<<<<<< HEAD
 
               <input type="submit" value="Execute" class="Execute_btn" id="btn_Bowtie2"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+              <input type="submit" value="Execute" class="Execute_btn" id="btn_Bowtie2"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div id="wait_Bowtie2" class="Upload_wait_div" style="display:none;">
                   <img src="./img/wait.gif" class="Upload_wait" />
                   Uploading and processing your file,please wait...
@@ -2456,7 +2766,11 @@
                 <div class="arrow-down" id="arrow-down30" style="display:block"></div>
                 <div class="arrow-right" id="arrow-right30" style="display:none"></div>
                 Necessary parameter</div>
+<<<<<<< HEAD
             <form action="SOAP_exe" id="SOAP_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('SOAP_exe','btn_SOAP','wait_SOAP');">
+=======
+            <form action="SOAP_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_SOAP').style.backgroundColor='#666666';document.getElementById('wait_SOAP').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="necessary_center_SOAP" class="necessary_center" style="display:block" style="overflow-y:scroll; ">
                     <div class="blacktop_1">Choose the library type</div>
                     <div class="blackdown_1">
@@ -2472,9 +2786,15 @@
                         <input type="radio" name="refer_index_SOAP"  value="1" checked="true" onclick="document.getElementById('file-box_SOAP_refer').style.display='block';document.getElementById('built_in_SOAP').style.display='none';"/>Select reference to build index
                         <input type="radio" name="refer_index_SOAP"  value="2" onclick="document.getElementById('file-box_SOAP_refer').style.display='none';document.getElementById('built_in_SOAP').style.display='block'"/>Use a built-in index
                         <div class="file-box" id="file-box_SOAP_refer" style="display:block">
+<<<<<<< HEAD
                             <input type="text" id="input_SOAP_reference" name="input_SOAP_reference"  class="input_text" id="input_SOAP_reference" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_soap" class="fileField" id="fileField_soap_re" onchange="return (fileChange(this,'input_SOAP_reference' )&& checkFileExt(this.value,'input_SOAP_reference'))" />
+=======
+                            <input type="text" name="input_SOAP_reference"  class="input_text" id="input_SOAP_reference"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_soap" class="fileField" id="fileField_soap_re" onchange="document.getElementById('input_SOAP_reference').value=this.value;fileChange(this,'input_SOAP_reference');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                         <div class="built_in" id="built_in_SOAP" style="display: none;">
                             <select name="built_in_SOAP" class="gomo_select"/>
@@ -2491,6 +2811,7 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box" id="file-box_SOAP_single" style="display:block;">
+<<<<<<< HEAD
                             <input type="text" id="input_SOAP_reads_single" name="input_SOAP_reads_single" class="input_text" id="input_SOAP_reads_single" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_soap" class="fileField" id="fileField_soap_read" onchange="return (fileChange(this,'input_SOAP_reads_single' )&& checkFileExt(this.value,'input_SOAP_reads_single'))" />
@@ -2505,6 +2826,21 @@
                         </div>
                     </div>
 
+=======
+                            <input type="text" name="input_SOAP_reads_single" class="input_text" id="input_SOAP_reads_single"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_soap" class="fileField" id="fileField_soap_read" onchange="document.getElementById('input_SOAP_reads_single').value=this.value;fileChange(this,'input_SOAP_reads_single');" />
+                        </div>
+                        <div class="file-box" id="file-box_SOAP_paired" style="display:none;">
+                            <input type="text" name="input_SOAP_reads_pair1" class="input_text_pair" id="input_SOAP_reads_pair1"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_soap" class="fileField_pair1" id="fileField_soap_pair1" onchange="document.getElementById('input_SOAP_reads_pair1').value=this.value;fileChange(this,'input_SOAP_reads_pair1');" />
+                            <input type="text" name="input_SOAP_reads_pair2" class="input_text_pair" id="input_SOAP_reads_pair2"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_soap" class="fileField_pair2" id="fileField_soap_pair2" onchange="document.getElementById('input_SOAP_reads_pair2').value=this.value;fileChange(this,'input_SOAP_reads_pair2');" />
+                        </div>
+                    </div>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 </div>
                 <div class="link" onclick="JavaScript:nece_opt_show_SOAP_op();"style="cursor:hand;">
                     <div class="arrow-down" id="arrow-down31" style="display:block"></div>
@@ -2526,6 +2862,7 @@
                                 2: 2 mismatch match only<br>
                                 4: find the best hits<br>
                             </h6>
+<<<<<<< HEAD
                             <input type="text" id="SOAP_MM" name="SOAP_M" class="input_setting_text" value="4" /><br>
                             -l
                             <h6>align the initial n bps as a seed [256] means whole length of read</h6>
@@ -2557,13 +2894,50 @@
                             -p
                             <h6>number of processors to use, [1]</h6>
                             <input type="text" id="SOAP_p" name="SOAP_p" class="input_setting_text" value="1"/><br>
+=======
+                            <input type="text" name="SOAP_M" class="input_setting_text" value="4"/><br>
+                            -l
+                            <h6>align the initial n bps as a seed [256] means whole length of read</h6>
+                            <input type="text" name="SOAP_l" class="input_setting_text" value="256"/>
+                            -n
+                            <h6>filter low-quality reads containing >n Ns before alignment, [5]</h6>
+                            <input type="text" name="SOAP_n" class="input_setting_text" value="5"/><br>
+                            -r[0,1,2]
+                            <h6>how to report repeat hits, 0=none; 1=random one; 2=all, [1]</h6>
+                            <input type="text" name="SOAP_r" class="input_setting_text" value="1"/>
+                            -m
+                            <h6>minimal insert size allowed, [400]</h6>
+                            <input type="text" name="SOAP_m" class="input_setting_text" value="400"/><br>
+                            -x
+                            <h6>maximal insert size allowed, [600]</h6>
+                            <input type="text" name="SOAP_x" class="input_setting_text" value="600"/><br>
+                            -v
+                            <h6>maximum number of mismatches allowed on a read. [5] bp</h6>
+                            <input type="text" name="SOAP_v" class="input_setting_text" value="5"/><br>
+                            -s
+                            <h6>minimal alignment length (for soft clip) [255] bp</h6>
+                            <input type="text" name="SOAP_s" class="input_setting_text" value="255"/><br>
+                            -g
+                            <h6>one continuous gap size allowed on a read. [0] bp</h6>
+                            <input type="text" name="SOAP_g" class="input_setting_text" value="0"/><br>
+                            -e
+                            <h6>will not allow gap exist inside n-bp edge of a read, default=5</h6>
+                            <input type="text" name="SOAP_e" class="input_setting_text" value="5"/><br>
+                            -p
+                            <h6>number of processors to use, [1]</h6>
+                            <input type="text" name="SOAP_p" class="input_setting_text" value="1"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('optional_center_setting_SOAP').style.display='none';JavaScript:SOAP_radio(SOAP_M.value,SOAP_l.value,SOAP_n.value,SOAP_r.value,SOAP_m.value,SOAP_x.value,SOAP_v.value,SOAP_s.value,SOAP_g.value,SOAP_e.value,SOAP_p.value)"/>
                             <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('optional_center_setting_SOAP').style.display='none'"/>
                         </div>
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_SOAP"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_SOAP"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_SOAP" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -2590,7 +2964,11 @@
                 <div class="arrow-down" id="arrow-down32" style="display:block"></div>
                 <div class="arrow-right" id="arrow-right32" style="display:none"></div>
                 Necessary parameter</div>
+<<<<<<< HEAD
             <form action="blast_exe" id="blast_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('blast_exe','btn_Blast','wait_Blast');">
+=======
+            <form action="blast_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_Blast').style.backgroundColor='#666666';document.getElementById('wait_Blast').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="necessary_center_blast" class="necessary_center" style="display:block" style="overflow-y:scroll; ">
                     <div class="blacktop_1">
                         Select the type of sequence
@@ -2609,9 +2987,15 @@
                         <input type="radio" name="refer_index_blast"  value="1" checked="true" onclick="document.getElementById('file-box_blast_refer').style.display='block';document.getElementById('built_in_blast').style.display='none';"/>Select reference to build index
                         <input type="radio" name="refer_index_blast"  value="2" onclick="document.getElementById('file-box_blast_refer').style.display='none';document.getElementById('built_in_blast').style.display='block'"/>Use a built-in index
                         <div class="file-box" id="file-box_blast_refer" style="display:block">
+<<<<<<< HEAD
                             <input type="text" id="input_blast_reference" name="input_blast_reference"  class="input_text" id="input_blast_reference"  />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_blast" class="fileField" id="fileField_blast_re" onchange="return (fileChange(this,'input_blast_reference' )&& checkFileExt(this.value,'input_blast_reference'))" />
+=======
+                            <input type="text" name="input_blast_reference"  class="input_text" id="input_blast_reference"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_blast" class="fileField" id="fileField_blast_re" onchange="document.getElementById('input_blast_reference').value=this.value;fileChange(this,'input_blast_reference');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                         <div class="built_in" id="built_in_blast" style="display: none;">
                             <select name="built_in_blast" class="gomo_select"/>
@@ -2627,9 +3011,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box" id="file-box_blast" style="display:block;">
+<<<<<<< HEAD
                             <input type="text" id="input_blast_reads" name="input_blast_reads" class="input_text" id="input_blast_reads" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_blast" class="fileField" id="fileField_blast_read" onchange="return (fileChange(this,'input_blast_reads' )&& checkFileExt(this.value,'input_blast_reads'))" />
+=======
+                            <input type="text" name="input_blast_reads" class="input_text" id="input_blast_reads"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_blast" class="fileField" id="fileField_blast_read" onchange="document.getElementById('input_blast_reads').value=this.value;fileChange(this,'input_blast_reads');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
 
@@ -2648,6 +3038,7 @@
                         <div id="optional_center_setting_blast_center" class="inputOption_setting_center" style="overflow-y:scroll;">
                             num_descriptions<br>
                             <h6>default:500;Show one-line descriptions for this number of database sequences.</h6>
+<<<<<<< HEAD
                             <input type="text" id="blast_num_descriptions" name="blast_num_descriptions" class="input_setting_text" value="500" />
                             num_alignments	<br>
                             <h6>default:250;Show alignments for this number of database sequences.</h6>
@@ -2675,10 +3066,40 @@
                                 dust<br>
                                 <h6>default:20 64 1;Filter query sequence with dust.</h6>
                                 <input type="text" id="blast_dust" name="blast_dust" class="input_setting_text" value="20 64 1" />
+=======
+                            <input type="text" name="blast_num_descriptions" class="input_setting_text" value="500"/>
+                            num_alignments	<br>
+                            <h6>default:250;Show alignments for this number of database sequences.</h6>
+                            <input type="text" name="blast_num_align" class="input_setting_text" value="250"/>
+                            max_target_seqs<br>
+                            <h6>default:500	Number of aligned sequences to keep.
+                                Use with report formats that do not have separate definition line and alignment sections such as tabular (all outfmt > 4). Not compatible with num_descriptions or num_alignments.</h6>
+                            <input type="text" name="blast_max_target_seqs" class="input_setting_text" value="500"/>
+                            <div id="optional_center_setting_blastn" style="display:block">
+                                word_size<br>
+                                <h6>default:11;Length of initial exact match.</h6>
+                                <input type="text" name="blast_word_size" class="input_setting_text" value="11"/>
+                                gapopen	<br>
+                                <h6>default:5;Cost to open a gap. See appendix “BLASTN reward/penalty values”.</h6>
+                                <input type="text" name="blast_gapopen" class="input_setting_text" value="5"/>
+                                reward	<br>
+                                <h6>default:2;Reward for a nucleotide match.</h6>
+                                <input type="text" name="blast_reward" class="input_setting_text" value="2"/>
+                                penalty	<br>
+                                <h6>default:-3;Penalty for a nucleotide mismatch.</h6>
+                                <input type="text" name="blast_penalty" class="input_setting_text" value="-3"/>
+                                strand<br>
+                                <h6>default:both;Query strand(s) to search against database/subject. Choice of both, minus, or plus.</h6>
+                                <input type="text" name="blast_strand" class="input_setting_text" value="both"/>
+                                dust<br>
+                                <h6>default:20 64 1;Filter query sequence with dust.</h6>
+                                <input type="text" name="blast_dust" class="input_setting_text" value="20 64 1"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             </div>
                             <div id="optional_center_setting_blastp" style="display:block">
                                 word_size	<br>
                                 <h6>default:3;Word size of initial match. Valid word sizes are 2-7.</h6>
+<<<<<<< HEAD
                                 <input type="text" id="blast_word_sizep" name="blast_word_sizep" class="input_setting_text" value="3" />
                                 gapextend	<br>
                                 <h6>default:1;Cost to extend a gap.</h6>
@@ -2686,6 +3107,15 @@
                                 threshold	<br>
                                 <h6>default:11;Minimum score to add a word to the BLAST lookup table.</h6>
                                 <input type="text" id="blast_threshold" name="blast_threshold" class="input_setting_text" value="11" />
+=======
+                                <input type="text" name="blast_word_sizep" class="input_setting_text" value="3"/>
+                                gapextend	<br>
+                                <h6>default:1;Cost to extend a gap.</h6>
+                                <input type="text" name="blast_gapextend" class="input_setting_text" value="1"/>
+                                threshold	<br>
+                                <h6>default:11;Minimum score to add a word to the BLAST lookup table.</h6>
+                                <input type="text" name="blast_threshold" class="input_setting_text" value="11"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                                 comp_based_stats	<br>
                                 <h6>default:2;Use composition-based statistics:<br>
                                     D or d: default (equivalent to 2)<br>
@@ -2694,6 +3124,7 @@
                                     2 or T or t : Composition-based score adjustment as in Bioinformatics<br>
                                     21:902-911, 2005, conditioned on sequence properties<br>
                                     3: Composition-based score adjustment as in Bioinformatics 21:902-911, 2005, unconditionally<br></h6>
+<<<<<<< HEAD
                                 <input type="text"  id="blast_comp_based_stats" name="blast_comp_based_stats" class="input_setting_text" value="2" />
                                 seg<br>
                                 <h6>default:no;	Filter query sequence with SEG (Format: 'yes', 'window locut hicut', or 'no' to disable).</h6>
@@ -2704,13 +3135,29 @@
                                 window_size	<br>
                                 <h6>default:40;Multiple hits window size, use 0 to specify 1-hit algorithm.</h6>
                                 <input type="text" id="blast_window_size" name="blast_window_size" class="input_setting_text" value="40" />
+=======
+                                <input type="text" name="blast_comp_based_stats" class="input_setting_text" value="2"/>
+                                seg<br>
+                                <h6>default:no;	Filter query sequence with SEG (Format: 'yes', 'window locut hicut', or 'no' to disable).</h6>
+                                <input type="text" name="blast_seg" class="input_setting_text" value="no"/>
+                                soft_masking	<br>
+                                <h6>default:false;Apply filtering locations as soft masks (i.e., only for finding initial matches).</h6>
+                                <input type="text" name="blast_soft_masking" class="input_setting_text" value="false"/>
+                                window_size	<br>
+                                <h6>default:40;Multiple hits window size, use 0 to specify 1-hit algorithm.</h6>
+                                <input type="text" name="blast_window_size" class="input_setting_text" value="40"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             </div>
                             <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('optional_center_setting_blast').style.display='none'"/>
                             <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('optional_center_setting_blast').style.display='none'"/>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_Blast"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_Blast"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_Blast" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -2733,7 +3180,11 @@
                 <div class="arrow-down" id="arrow-down34" style="display:block"></div>
                 <div class="arrow-right" id="arrow-right34" style="display:none"></div>
                 Necessary parameter</div>
+<<<<<<< HEAD
             <form action="Subread_exe" id="Subread_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('Subread_exe','btn_subread','wait_subread');">
+=======
+            <form action="Subread_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_subread').style.backgroundColor='#666666';document.getElementById('wait_subread').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="necessary_center_Subread" class="necessary_center" style="display:block" style="overflow-y:scroll; ">
                     <div class="blacktop_1">Choose the library type</div>
                     <div class="blackdown_1">
@@ -2749,9 +3200,15 @@
                         <input type="radio" name="refer_index_subread"  value="1" checked="true" onclick="document.getElementById('file-box_subread_refer').style.display='block';document.getElementById('built_in_subread').style.display='none';"/>Select reference to build index
                         <input type="radio" name="refer_index_subread"  value="2" onclick="document.getElementById('file-box_subread_refer').style.display='none';document.getElementById('built_in_subread').style.display='block'"/>Use a built-in index
                         <div class="file-box" id="file-box_subread_refer" style="display:block">
+<<<<<<< HEAD
                             <input type="text" id="input_subread_reference" name="input_subread_reference"  class="input_text" id="input_subread_reference" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_subread" class="fileField" id="fileField_subread_re" onchange="return (fileChange(this,'input_subread_reference' )&& checkFileExt(this.value,'input_subread_reference'))" />
+=======
+                            <input type="text" name="input_subread_reference"  class="input_text" id="input_subread_reference"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_subread" class="fileField" id="fileField_subread_re" onchange="document.getElementById('input_subread_reference').value=this.value;fileChange(this,'input_subread_reference');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                         <div class="built_in" id="built_in_subread" style="display: none;">
                             <select name="built_in_subread" class="gomo_select"/>
@@ -2768,6 +3225,7 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box" id="file-box_Subread_single" style="display:block;">
+<<<<<<< HEAD
                             <input type="text" id="input_Subread_reads_single" name="input_Subread_reads_single" class="input_text" id="input_Subread_reads_single"/>
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_subread" class="fileField" id="fileField_subread_read" onchange="return (fileChange(this,'input_Subread_reads_single' )&& checkFileExt(this.value,'input_Subread_reads_single'))" />
@@ -2779,6 +3237,19 @@
                             <input type="text" id="input_Subread_reads_pair2" name="input_Subread_reads_pair2" class="input_text_pair" id="input_Subread_reads_pair2"  value="reads_2.fastq"/>
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_subread" class="fileField_pair2" id="fileField_subread_pair2" onchange="return (fileChange(this,'input_Subread_reads_pair2' )&& checkFileExt(this.value,'input_Subread_reads_pair2'))" />
+=======
+                            <input type="text" name="input_Subread_reads_single" class="input_text" id="input_Subread_reads_single"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_subread" class="fileField" id="fileField_subread_read" onchange="document.getElementById('input_Subread_reads_single').value=this.value;fileChange(this,'input_Subread_reads_single');" />
+                        </div>
+                        <div class="file-box" id="file-box_Subread_paired" style="display:none;">
+                            <input type="text" name="input_Subread_reads_pair1" class="input_text_pair" id="input_Subread_reads_pair1"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_subread" class="fileField_pair1" id="fileField_subread_pair1" onchange="document.getElementById('input_Subread_reads_pair1').value=this.value;fileChange(this,'input_Subread_reads_pair1');" />
+                            <input type="text" name="input_Subread_reads_pair2" class="input_text_pair" id="input_Subread_reads_pair2"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_subread" class="fileField_pair2" id="fileField_subread_pair2" onchange="document.getElementById('input_Subread_reads_pair2').value=this.value;fileChange(this,'input_Subread_reads_pair2');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
 
@@ -2808,7 +3279,11 @@
                                 repetitive 16bp mers). Subreads will be excluded from the index if
                                 they occur more than threshold number of times in the reference
                                 genome. Default value is 100.</h6>
+<<<<<<< HEAD
                             <input type="text" id="Subread_f" name="Subread_f" class="input_setting_text" value="100" /><br>
+=======
+                            <input type="text" name="Subread_f" class="input_setting_text" value="100"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             -F( gappedIndex=FALSE )<br>
                             <h6>Build a full index for the reference genome. 16bp mers (subreads)
                                 will be extracted from every position of the reference genome.</h6>
@@ -2817,7 +3292,11 @@
                             -M < int >( memory )<br>
                             <h6>Specify the Size of requested memory(RAM) in megabytes, 8000MB
                                 by default.</h6>
+<<<<<<< HEAD
                             <input type="text" id="Subread_MM" name="Subread_M" class="input_setting_text" value="8000" />
+=======
+                            <input type="text" name="Subread_M" class="input_setting_text" value="8000"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" value="submit" checked="true" class="btn_submit" onclick="document.getElementById('optional_center_setting_Subread').style.display='none';JavaScript:Subread_index_radio(Subread_B.value,Subread_f.value,Subread_F.value,Subread_M.value)"/>
                             <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('optional_center_setting_Subread').style.display='none'"/>
                         </div>
@@ -2835,6 +3314,7 @@
                             <h6>Specify the maximal number of equally-best mapping locations al-
                                 lowed to be reported for each read. 1 by default.
                             </h6>
+<<<<<<< HEAD
                             <input type="text" id="Subread_B2" name="Subread_B2" class="input_setting_text" value="1" ><br>
                             -d < int >( minFragLength )<br>
                             <h6>Specify the minimum fragment/template length, 50 by default.</h6>
@@ -2850,10 +3330,28 @@
                             <h6>Specify the consensus threshold, which is the minimal number of
                                 consensus subreads required for reporting a hit.3 by default.</h6>
                             <input type="text" id="Subread_m" name="Subread_m" class="input_setting_text" value="3" /><br>
+=======
+                            <input type="text" name="Subread_B2" class="input_setting_text" value="1"><br>
+                            -d < int >( minFragLength )<br>
+                            <h6>Specify the minimum fragment/template length, 50 by default.</h6>
+                            <input type="text" name="Subread_d" class="input_setting_text" value="50"/><br>
+                            -D < int >( maxFragLength )<br>
+                            <h6>Specify the maximum fragment/template length, 600 by default.</h6>
+                            <input type="text" name="Subread_D" class="input_setting_text" value="600"/><br>
+                            -I < int >( indels )<br>
+                            <h6>Specify the number of INDEL bases allowed in the mapping. 5 by
+                                default. Indels of up to 200bp long can be detected.</h6>
+                            <input type="text" name="Subread_I" class="input_setting_text" value="5"/><br>
+                            -m < int >( TH1 )<br>
+                            <h6>Specify the consensus threshold, which is the minimal number of
+                                consensus subreads required for reporting a hit.3 by default.</h6>
+                            <input type="text" name="Subread_m" class="input_setting_text" value="3"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             -M < int >( maxMismatches )<br>
                             <h6>Specify the maximum number of mis-matched bases allowed in the
                                 alignment. 3 by default. Mis-matches found in soft-clipped bases
                                 are not counted.</h6>
+<<<<<<< HEAD
                             <input type="text" id="Subread_M2" name="Subread_M2" class="input_setting_text" value="3" /><br>
                             -n < int >( nsubreads )<br>
                             <h6>Specify the number of subreads extracted from each read, 10 by
@@ -2867,10 +3365,26 @@
                             <h6>Specify the format of Phred scores used in the input data, ’3’ for
                                 phred+33 and ’6’ for phred+64. ’3’ by default.</h6>
                             <input type="text" id="Subread_PP" name="Subread_P" class="input_setting_text" value="3" /><br>
+=======
+                            <input type="text" name="Subread_M2" class="input_setting_text" value="3"/><br>
+                            -n < int >( nsubreads )<br>
+                            <h6>Specify the number of subreads extracted from each read, 10 by
+                                default.</h6>
+                            <input type="text" name="Subread_n" class="input_setting_text" value="10"/><br>
+                            -p < int >( TH2 )<br>
+                            <h6>Specify the minimum number of consensus subreads both reads
+                                from the same pair must have.1 by default.</h6>
+                            <input type="text" name="Subread_p" class="input_setting_text" value="1"/><br>
+                            -P < 3 : 6 >( phredOffset )<br>
+                            <h6>Specify the format of Phred scores used in the input data, ’3’ for
+                                phred+33 and ’6’ for phred+64. ’3’ by default.</h6>
+                            <input type="text" name="Subread_P" class="input_setting_text" value="3"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             -S < f f : f r : rf >( PE orientation )<br>
                             <h6>Specify the orientation of the two reads from the same pair. It has
                                 three possible values including ‘fr’, ‘ff’ and ‘’rf. Letter ‘f’ denotes
                                 the forward strand and letter ‘r’ the reverse strand. ‘fr’ by default</h6>
+<<<<<<< HEAD
                             <input type="text" id="Subread_S" name="Subread_S" class="input_setting_text" value="fr" /><br>
                             -T < int >( nthreads )<br>
                             <h6>Specify the number of threads/CPUs used for mapping. The value
@@ -2884,13 +3398,32 @@
                             <h6>Trim off < int > number of bases from 3’ end of each read. 0 by
                                 default.</h6>
                             <input type="text" id="Subread_trim3" name="Subread_trim3" class="input_setting_text" value="0" /><br>
+=======
+                            <input type="text" name="Subread_S" class="input_setting_text" value="fr"/><br>
+                            -T < int >( nthreads )<br>
+                            <h6>Specify the number of threads/CPUs used for mapping. The value
+                                should be between 1 and 32. 1 by default.</h6>
+                            <input type="text" name="Subread_T" class="input_setting_text" value="1"/><br>
+                            −−trim5 < int >( nTrim5 )<br>
+                            <h6>Trim off < int > number of bases from 5’ end of each read. 0 by
+                                default.</h6>
+                            <input type="text" name="Subread_trim5" class="input_setting_text" value="0"/><br>
+                            −−trim3 < int >( nTrim3 )<br>
+                            <h6>Trim off < int > number of bases from 3’ end of each read. 0 by
+                                default.</h6>
+                            <input type="text" name="Subread_trim3" class="input_setting_text" value="0"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" value="submit" class="btn_submit" onclick="document.getElementById('optional_center_setting_align_Subread').style.display='none';JavaScript:Subread_align_radio(Subread_B2.value,Subread_d.value,Subread_D.value,Subread_I.value,Subread_m.value,Subread_M.value,Subread_n.value,Subread_p.value,Subread_P.value,Subread_S.value,Subread_T.value,Subread_trim5.value,Subread_trim3.value)"/>
                             <input type="button" value="cancel" class="btn_cancel" onclick="document.getElementById('optional_center_setting_align_Subread').style.display='none'"/>
                         </div>
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_subread"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_subread"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_subread" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -2917,20 +3450,32 @@
                 <div class="arrow-down" id="arrow-down36" style="display:block"></div>
                 <div class="arrow-right" id="arrow-right36" style="display:none"></div>
                 Necessary parameter</div>
+<<<<<<< HEAD
             <form action="NGM_exe" id="NGM_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('NGM_exe','btn_NGM','wait_NGM');">
+=======
+            <form action="NGM_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_NGM').style.backgroundColor='#666666';document.getElementById('wait_NGM').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="necessary_center_NGM" class="necessary_center" style="display:block" style="overflow-y:scroll; ">
                     <div class="blacktop_1">Select the type of sequence</div>
                     <div class="blackdown_1">
                         <input type="radio" name="NGM_type" value="1" checked="true" onclick="document.getElementById('file-box_NGM_single').style.display='block';document.getElementById('file-box_NGM_paired').style.display='none'"/>single-end
+<<<<<<< HEAD
                         <input type="radio" name="NGM_type" value="2" onclick="document.getElementById('file-box_NGM_single').style.display='none';document.getElementById('file-box_NGM_paired').style.display='block'"/>paired-end
                     </div>
                     <div class="blacktop_1">
                         Select reference to build index or use a built-in index
+=======
+                        <input type="radio" name="NGM_type" value="2"   onclick="document.getElementById('file-box_NGM_single').style.display='none';document.getElementById('file-box_NGM_paired').style.display='block'"/>paired-end
+                    </div>
+                    <div class="blacktop_1">
+                        Select reference to build index (NGM combines the step of indexing and aligning)
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         <div class="tip_out"><img class="tip" id="tip13" src="./img/tip.png" onclick="JavaScript:Tip_click(13)"></div>
                         <s:fielderror fieldName="input_NGM_reference" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
                     </div>
                     <div class="blackdown_2_bowtie2">
                         <input type="radio" name="refer_index_NGM"  value="1" checked="true" onclick="document.getElementById('file-box_NGM_refer').style.display='block';document.getElementById('built_in_NGM').style.display='none';"/>Select reference to build index
+<<<<<<< HEAD
                         <input type="radio" name="refer_index_NGM"  value="2" onclick="document.getElementById('file-box_NGM_refer').style.display='none';document.getElementById('built_in_NGM').style.display='block'"/>Use a built-in index
                         <div class="file-box" id="file-box_NGM_refer" style="display:block">
                             <input type="text" id="input_NGM_reference" name="input_NGM_reference"  class="input_text" id="input_NGM_reference"/>
@@ -2943,6 +3488,15 @@
                             <option value="2">Human(b37) hg38</option>
                             </select><br>
                         </div>
+=======
+                        <input type="radio" name="refer_index_NGM"  value="2" disabled="true" onclick="document.getElementById('file-box_NGM_refer').style.display='none';document.getElementById('built_in_NGM').style.display='block'"/>Use a built-in index
+                        <div class="file-box" id="file-box_NGM_refer" style="display:block">
+                            <input type="text" name="input_NGM_reference"  class="input_text" id="input_NGM_reference"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_ngm" class="fileField" id="fileField_ngm_re" onchange="document.getElementById('input_NGM_reference').value=this.value;fileChange(this,'input_NGM_reference');" />
+                        </div>
+
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                     </div>
                     <div class="blacktop_1">
                         Select reads file
@@ -2952,6 +3506,7 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box" id="file-box_NGM_single" style="display:block;">
+<<<<<<< HEAD
                             <input type="text" id="input_NGM_reads" name="input_NGM_reads" class="input_text" id="input_NGM_reads" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_ngm" class="fileField" id="fileField_ngm_read" onchange="return (fileChange(this,'input_NGM_reads' )&& checkFileExt(this.value,'input_NGM_reads'))" />
@@ -2966,6 +3521,21 @@
                         </div>
                     </div>
 
+=======
+                            <input type="text" name="input_NGM_reads" class="input_text" id="input_NGM_reads"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_ngm" class="fileField" id="fileField_ngm_read" onchange="document.getElementById('input_NGM_reads').value=this.value;fileChange(this,'input_NGM_reads');" />
+                        </div>
+                        <div class="file-box" id="file-box_NGM_paired" style="display:none;">
+                            <input type="text" name="input_NGM_reads_pair1" class="input_text_pair" id="input_NGM_reads_pair1"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_ngm" class="fileField_pair1" id="fileField_ngm_pair1" onchange="document.getElementById('input_NGM_reads_pair1').value=this.value;fileChange(this,'input_NGM_reads_pair1');" />
+                            <input type="text" name="input_NGM_reads_pair2" class="input_text_pair" id="input_NGM_reads_pair2"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_ngm" class="fileField_pair2" id="fileField_ngm_pair2" onchange="document.getElementById('input_NGM_reads_pair2').value=this.value;fileChange(this,'input_NGM_reads_pair2');" />
+                        </div>
+                    </div>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 </div>
                 <div class="link" onclick="JavaScript:nece_opt_show_NGM_op();"style="cursor:hand;">
                     <div class="arrow-down" id="arrow-down37" style="display:block"></div>
@@ -2987,7 +3557,11 @@
                             -n/--topn <br>
                             <h6>Prints the n best alignments sorted by
                                 alignment score (default: 1)</h6>
+<<<<<<< HEAD
                             <input type="text" id="NGM_n" name="NGM_n" class="input_setting_text" value="1" /><br>
+=======
+                            <input type="text" name="NGM_n" class="input_setting_text" value="1"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             --keep-tags <br>
                             <h6>Copy BAM/SAM tags present in input file to
                                 output file (default: off)</h6>
@@ -2995,7 +3569,11 @@
                             <input type="radio" name="NGM_kt" value="2" checked="true">off<br>
                             -t/--threads <br>
                             <h6>Number of candidate search threads</h6>
+<<<<<<< HEAD
                             <input type="text" id="NGM_t" name="NGM_t" class="input_setting_text" value="1" /><br>
+=======
+                            <input type="text" name="NGM_t" class="input_setting_text" value="1"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             Scale estimated sensitivity:<br>
                             <h6>--very fast;Much faster, much less accurate<br>
                                 --fast;Scale estimated sensitivity: Faster, less accurate<br>
@@ -3009,11 +3587,16 @@
                             <h6>All reads mapped with an identity lower than
                                 this threshold will be reported as unmapped
                                 (default: 0.65)</h6>
+<<<<<<< HEAD
                             <input type="text" id="NGM_i" name="NGM_i" class="input_setting_text" value="0.65" /><br>
+=======
+                            <input type="text" name="NGM_i" class="input_setting_text" value="0.65"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             -R/--min-residues <br>
                             <h6>All reads mapped with lower than
                                 * read length residues
                                 will be reported as unmapped. (default: 0.5)</h6>
+<<<<<<< HEAD
                             <input type="text" id="NGM_R" name="NGM_R" class="input_setting_text" value="0.5" /><br>
                             -Q/--min-mq <br>
                             <h6>All reads mapped with lower than n mapping quality will be reported as unmapped.
@@ -3034,6 +3617,28 @@
                             <h6>Minimal number of k-mer hits required to
                                 consider a region a CMR. (default: 0)</h6>
                             <input type="text"  id="NGM_km" name="NGM_km" class="input_setting_text" value="0" /><br>
+=======
+                            <input type="text" name="NGM_R" class="input_setting_text" value="0.5"/><br>
+                            -Q/--min-mq <br>
+                            <h6>All reads mapped with lower than n mapping quality will be reported as unmapped.
+                                (default: 0)</h6>
+                            <input type="text" name="NGM_Q" class="input_setting_text" value="0"/><br>
+                            --bs-cutoff <br>
+                            <h6>Max. number of Ts in a k-mer. All k-mers were
+                                the number of Ts is higher than b are ignored (default: 8)</h6>
+                            <input type="text" name="NGM_bc" class="input_setting_text" value="8"/><br>
+                            -k/--kmer [10-14] <br>
+                            <h6>Kmer length in bases. (default: 13)</h6>
+                            <input type="text" name="NGM_k" class="input_setting_text" value="13"/><br>
+                            --kmer-skip <br>
+                            <h6>Number of k-mers to skip when building the
+                                lookup table from the reference(default: 2)</h6>
+                            <input type="text" name="NGM_ks" class="input_setting_text" value="2"/><br>
+                            --kmer-min <br>
+                            <h6>Minimal number of k-mer hits required to
+                                consider a region a CMR. (default: 0)</h6>
+                            <input type="text" name="NGM_km" class="input_setting_text" value="0"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             -l/--local <br>
                             <h6>Perform local alignment. Ends might get clipped.
                                 (default: on)</h6>
@@ -3061,7 +3666,11 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_NGM"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_NGM"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_NGM" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -3084,7 +3693,11 @@
         </div>
         <!-------------------------------------------------multi-------------------------------------------------------------------------------------------->
         <div id="side_right_8" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="Tools_multiBamSummary" id="Tools_multiBamSummary" enctype="multipart/form-data" method="post" onsubmit="return searchData('Tools_multiBamSummary','btn_multi','wait_multi');">
+=======
+            <form action="Tools_multiBamSummary" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_multi').style.backgroundColor='#666666';document.getElementById('wait_multi').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:multi_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right44" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down44" style="display:block"></div>
@@ -3099,18 +3712,31 @@
                         <input type="radio" name="multi_mode"  value="2" onclick="document.getElementById('multi_bed').style.display='block'"/>BED-file
                     </div>
                     <div class="blacktop_1">
+<<<<<<< HEAD
                         Input BAM files
+=======
+                        Input SAM files
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         <div class="tip_out"><img class="tip" id="tip53" src="./img/tip.png" onclick="JavaScript:Tip_click(53)"></div>
                         <s:fielderror fieldName="multi_bins_bamfile1" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text"  name="multi_bins_bamfile1" id="multi_bins_bamfile1" class="input_text_pair"   value="reads_1.fastq"/>
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_multi" class="fileField_pair1" id="fileField_bins_multi_bam1" onchange="return (fileChange(this,'multi_bins_bamfile1' )&& checkFileExt(this.value,'multi_bins_bamfile1'))" />
                             <input type="text"  name="multi_bins_bamfile2" id="multi_bins_bamfile2" class="input_text_pair"   value="reads_2.fastq"/>
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_multi" class="fileField_pair2" id="fileField_bins_multi_bam2" onchange="return (fileChange(this,'multi_bins_bamfile2' )&& checkFileExt(this.value,'multi_bins_bamfile2'))" />
+=======
+                            <input type="text" name="multi_bins_bamfile1" id="multi_bins_bamfile1" class="input_text_pair"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_multi" class="fileField_pair1" id="fileField_bins_multi_bam1" onchange="document.getElementById('multi_bins_bamfile1').value=this.value;fileChange(this,'multi_bins_bamfile1');" />
+                            <input type="text" name="multi_bins_bamfile2" id="multi_bins_bamfile2" class="input_text_pair"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_multi" class="fileField_pair2" id="fileField_bins_multi_bam2" onchange="document.getElementById('multi_bins_bamfile2').value=this.value;fileChange(this,'multi_bins_bamfile2');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div id="multi_bed" style="display:none">
@@ -3121,14 +3747,23 @@
                         </div>
                         <div class="blackdown_1">
                             <div class="file-box">
+<<<<<<< HEAD
                                 <input type="text" id="multi_bed_text" name="multi_bed_text" id="multi_bed_text" class="input_text" />
                                 <input type='button' class='btn' value='Choose File' />
                                 <input type="file" name="fileField_multi" class="fileField" id="fileField_multi_bed" onchange="return (fileChange(this,'multi_bed_text' )&& checkFileExt(this.value,'multi_bed_text'))" />
+=======
+                                <input type="text" name="multi_bed_text" id="multi_bed_text" class="input_text"/>
+                                <input type='button' class='btn' value='Choose File' />
+                                <input type="file" name="fileField_multi" class="fileField" id="fileField_multi_bed" onchange="document.getElementById('multi_bed_text').value=this.value;fileChange(this,'multi_bed_text');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             </div>
                         </div>
                     </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 </div>
                 <div class="link"onclick="JavaScript:multi_option_op();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right45" style="display:none"></div>
@@ -3138,13 +3773,19 @@
                 <div id="optional_center_multi" class="optional_center" style="display:block">
                     <div class="blacktop_1">optional parameters</div>
                     <div class="blackdown_1">
+<<<<<<< HEAD
                         <input type="radio" name="optionalParameters_multi" id="multi_optionalParameters_default" class="optionalParameters_default" value="1" checked="true" onclick="document.getElementById('multi_optional_setting').style.display='none'"/>default
                         <input type="radio" name="optionalParameters_multi" id=",ulti_optionalParameters_set" class="optionalParameters_set" value="2" onclick="document.getElementById('multi_optional_setting').style.display='block'"/>set the parameters by yourself
+=======
+                        <input type="radio" name="optionalParameters" id="multi_optionalParameters_default" class="optionalParameters_default" value="1" checked="true" onclick="document.getElementById('multi_optional_setting').style.display='none'"/>default
+                        <input type="radio" name="optionalParameters" id=",ulti_optionalParameters_set" class="optionalParameters_set" value="2" onclick="document.getElementById('multi_optional_setting').style.display='block'"/>set the parameters by yourself
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                     </div>
                     <div id="multi_optional_setting" class="inputOption_setting" style="display:none">
                         <div id="multi_optional_setting_center" class="inputOption_setting_center" style="overflow-y:scroll;">
                             --labels, -l<br>
                             <h6>User defined labels instead of default labels from file names. Multiple labels have to be separated by a space, e.g. –labels sample1 sample2 sample3</h6>
+<<<<<<< HEAD
                             <input type="text" id="multi_l" name="multi_l" class="input_setting_text" /><br>
                             --binSize, -bs<br>
                             <h6>Length in bases of the window used to sample the genome.</h6>
@@ -3168,6 +3809,31 @@
                             <h6>This parameter allows the extension of reads to fragment size. If set, each read is extended, without exception.</h6>
                             <input type="text" id="multi_e" name="multi_e" class="input_setting_text" /><br>
                             <br>  --ignoreDuplicates<br>
+=======
+                            <input type="text" name="multi_l" class="input_setting_text"/><br>
+                            --binSize, -bs<br>
+                            <h6>Length in bases of the window used to sample the genome.</h6>
+                            <input type="text" name="multi_bs"  class="input_setting_text"/><br>
+                            --distanceBetweenBins, -n<br>
+                            <h6>By default, multiBamSummary considers consecutive bins of the specified –binSize. However, to reduce the computation time, a larger distance between bins can by given. Larger distances result in fewer bins considered.</h6>
+                            <input type="text" name="multi_n" class="input_setting_text"/><br>
+                            --region, -r<br>
+                            <h6>Region of the genome to limit the operation to - this is useful when testing parameters to reduce the computing time. The format is chr:start:end, for example –region chr10 or –region chr10:456700:891000.</h6>
+                            <input type="text" name="multi_r" class="input_setting_text"/><br>
+                            --blackListFileName, -bl<br>
+                            <h6>A BED or GTF file containing regions that should be excluded from all analyses. Currently this works by rejecting genomic chunks that happen to overlap an entry. Consequently, for BAM files, if a read partially overlaps a blacklisted region or a fragment spans over it, then the read/fragment might still be considered. Please note that you should adjust the effective genome size, if relevant.</h6>
+                            <input type="text" name="multi_bl" class="input_setting_text"/><br>
+                            --numberOfProcessors, -p<br>
+                            <h6>Number of processors to use. Type “max/2” to use half the maximum number of processors or “max” to use all available processors.</h6>
+                            <input type="text" name="multi_p" class="input_setting_text"/><br>
+                            --outRawCounts<br>
+                            <h6>Save the counts per region to a tab-delimited file.</h6>
+                            <input type="text" name="multi_out" class="input_setting_text"/><br>
+                            --extendReads, -e<br>
+                            <h6>This parameter allows the extension of reads to fragment size. If set, each read is extended, without exception.</h6>
+                            <input type="text" name="multi_e" class="input_setting_text"/><br>
+                           <br> --ignoreDuplicates<br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <h6>If set, reads that have the same orientation and start position will be considered only once. If reads are paired, the mate’s position also has to coincide to ignore a read.</h6>
                             <input type="radio" name="multi_ignore" value="1"/>on
                             <input type="radio" name="multi_ignore" value="2" checked="true"/>off<br>
@@ -3175,6 +3841,7 @@
                             <h6>If set, only reads that have a mapping quality score of at least this are considered.</h6>
                             <input type="radio" name="multi_minmapping" value="1"/>on
                             <input type="radio" name="multi_minmapping" value="2" checked="true"/>off<br>
+<<<<<<< HEAD
                             <br> --centerReads<br>
                             <h6>By adding this option, reads are centered with respect to the fragment length. For paired-end data, the read is centered at the fragment length defined by the two ends of the fragment. For single-end data, the given fragment length is used. This option is useful to get a sharper signal around enriched regions.</h6>
                             <input type="radio" name="multi_center" value="1"/>on
@@ -3184,6 +3851,17 @@
                             <input type="radio" name="multi_samFlagInclude" value="1"/>on
                             <input type="radio" name="multi_samFlagInclude" value="2" checked="true"/>off<br>
                             <br> --samFlagExclude<br>
+=======
+                            <br>--centerReads<br>
+                            <h6>By adding this option, reads are centered with respect to the fragment length. For paired-end data, the read is centered at the fragment length defined by the two ends of the fragment. For single-end data, the given fragment length is used. This option is useful to get a sharper signal around enriched regions.</h6>
+                            <input type="radio" name="multi_center" value="1"/>on
+                            <input type="radio" name="multi_center" value="2" checked="true"/>off<br>
+                           <br> --samFlagInclude<br>
+                            <h6>Include reads based on the SAM flag. For example, to get only reads that are the first mate, use a flag of 64. This is useful to count properly paired reads only once, as otherwise the second mate will be also considered for the coverage.</h6>
+                            <input type="radio" name="multi_samFlagInclude" value="1"/>on
+                            <input type="radio" name="multi_samFlagInclude" value="2" checked="true"/>off<br>
+                            <br>--samFlagExclude<br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <h6>Exclude reads based on the SAM flag. For example, to get only reads that map to the forward strand, use –samFlagExclude 16, where 16 is the SAM flag for reads that map to the reverse strand.</h6>
                             <input type="radio" name="multi_samFlagExclude" value="1"/>on
                             <input type="radio" name="multi_samFlagExclude" value="2" checked="true"/>off<br>
@@ -3191,7 +3869,11 @@
                             <h6>The minimum fragment length needed for read/pair inclusion. Note that a value other than 0 will exclude all single-end reads. This option is primarily useful in ATACseq experiments, for filtering mono- or di-nucleosome fragments.</h6>
                             <input type="radio" name="multi_minFragmentLength" value="1"/>on
                             <input type="radio" name="multi_minFragmentLength" value="2" checked="true"/>off<br>
+<<<<<<< HEAD
                             <br> --maxFragmentLength<br>
+=======
+                           <br> --maxFragmentLength<br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <h6>
                                 The maximum fragment length needed for read/pair inclusion. A value of 0 disables filtering and is needed for including single-end and orphan reads.
                             </h6>
@@ -3203,7 +3885,11 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_multi"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_multi"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_multi" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -3226,7 +3912,11 @@
         </div>
       <!------------------------MACS-------------------------------------------------------------->
       <div id="side_right_9" class="side_right" style="display:none">
+<<<<<<< HEAD
           <form action="Tools_MACS_PeakCalling" id="Tools_MACS_PeakCalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('Tools_MACS_PeakCalling','btn_MACS','wait_MACS');">
+=======
+          <form action="Tools_MACS_PeakCalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_MACS').style.backgroundColor='#666666';document.getElementById('wait_MACS').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div class="link" onclick="JavaScript:macs_option_ne();"style="cursor:hand;">
                   <div class="arrow-right" id="arrow-right8" style="display:none"></div>
                   <div class="arrow-down"  id="arrow-down8" style="display:block"></div>
@@ -3235,7 +3925,11 @@
               <div id="necessary_center_macs" class="necessary_center" style="display:block">
                   <div class="blacktop_1">Choose the format of the input</div>
                   <div class="blackdown_1">
+<<<<<<< HEAD
                       <input type="radio" name="macs_format"  value="1"/>Sam
+=======
+                      <input type="radio" name="macs_format"  value="1" checked="true"/>Sam
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       <input type="radio" name="macs_format"  value="2"/>Bam
                       <input type="radio" name="macs_format"  valie="3"/>Bed
                   </div>
@@ -3245,9 +3939,15 @@
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box">
+<<<<<<< HEAD
                           <input type="text" name="input_tagfile" id="input_tagfile" class="input_text" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_macs" class="fileField" id="fileField_macs_tag" onchange="return (fileChange(this,'input_tagfile' )&& checkFileExt(this.value,'input_tagfile'))" />
+=======
+                          <input type="text" name="input_tagfile" id="input_tagfile" class="input_text"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_macs" class="fileField" id="fileField_macs_tag" onchange="document.getElementById('input_tagfile').value=this.value;fileChange(this,'input_tagfile');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                   </div>
                   <div class="blacktop_1">
@@ -3257,9 +3957,15 @@
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box">
+<<<<<<< HEAD
                           <input type="text" name="input_controlfile" id="input_controlfile" class="input_text" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_macs" class="fileField" id="fileField_macs_control" onchange="return (fileChange(this,'input_controlfile' )&& checkFileExt(this.value,'input_controlfile'))" />
+=======
+                          <input type="text" name="input_controlfile" id="input_controlfile" class="input_text"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_macs" class="fileField" id="fileField_macs_control" onchange="document.getElementById('input_controlfile').value=this.value;fileChange(this,'input_controlfile');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                   </div>
 
@@ -3280,6 +3986,7 @@
                       <div id="macs_optional_setting_center" class="inputOption_setting_center" style="overflow-y:scroll;">
                           Tag size<br>
                           <h6>This will overide the auto detected tag size.default:25</h6>
+<<<<<<< HEAD
                           <input type="text" id="macs_s" name="macs_s" value="25" class="input_setting_text"  />
                           Band width<br>
                           <h6>This value is only used while building the shifting model. DEFAULT: 300</h6>
@@ -3290,13 +3997,29 @@
                           Effective genome size:this is the size of the genome considered "usable" for peak calling.
                           <h6>default:2700000000.0</h6>
                           <input type="text" id="macs_gs" name="macs_gs" value="2700000000.0" class="input_setting_text" /><br>
+=======
+                          <input type="text" name="macs_s" value="25" class="input_setting_text"/>
+                          Band width<br>
+                          <h6>This value is only used while building the shifting model. DEFAULT: 300</h6>
+                          <input type="text" name="macs_bw" value="300" class="input_setting_text"/>
+                          Pvalue cutoff for peak detection<br>
+                          <h6>Pvalue cutoff for peak detection. DEFAULT: 1e-5</h6>
+                          <input type="text" name="macs_p" value="1e-5" class="input_setting_text"/>
+                          Effective genome size:this is the size of the genome considered "usable" for peak calling.
+                          <h6>default:2700000000.0</h6>
+                          <input type="text" name="macs_gs" value="2700000000.0" class="input_setting_text"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('macs_optional_setting').style.display='none';JavaScript:macs_radio(macs_g.value,macs_s.value,macs_bw.value,macs_p.value);"/>
                           <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('macs_optional_setting').style.display='none';"/>
                       </div>
                   </div>
               </div>
 
+<<<<<<< HEAD
               <input type="submit" value="Execute" class="Execute_btn" id="btn_MACS"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+              <input type="submit" value="Execute" class="Execute_btn" id="btn_MACS"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div id="wait_MACS" class="Upload_wait_div" style="display:none;">
                   <img src="./img/wait.gif" class="Upload_wait" />
                   Uploading and processing your file,please wait...
@@ -3319,7 +4042,11 @@
       </div>
         <!------------------------MACS2-------------------------------------------------------------->
         <div id="side_right_10" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="Tools_MACS2_PeakCalling" id="Tools_MACS2_PeakCalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('Tools_MACS2_PeakCalling','btn_MACS2','wait_MACS2');">
+=======
+            <form action="PeakCalling_macs2" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_MACS2').style.backgroundColor='#666666';document.getElementById('wait_MACS2').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:macs2_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right12" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down12" style="display:block"></div>
@@ -3345,9 +4072,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text"name="input_tagfile_macs2" id="input_tagfile_macs2" class="input_text"/>
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_macs2" class="fileField" id="fileField_macs2_tag" onchange="return (fileChange(this,'input_tagfile_macs2' )&& checkFileExt(this.value,'input_tagfile_macs2'))" />
+=======
+                            <input type="text" name="input_tagfile_macs2" id="input_tagfile_macs2" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_macs2" class="fileField" id="fileField_macs2_tag" onchange="document.getElementById('input_tagfile_macs2').value=this.value;fileChange(this,'input_tagfile_macs2');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -3357,9 +4090,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_controlfile_macs2" id="input_controlfile_macs2" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_macs2" class="fileField" id="fileField_macs2_control" onchange="return (fileChange(this,'input_controlfile_macs2' )&& checkFileExt(this.value,'input_controlfile_macs2'))" />
+=======
+                            <input type="text" name="input_controlfile_macs2" id="input_controlfile_macs2" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_macs2" class="fileField" id="fileField_macs2_control" onchange="document.getElementById('input_controlfile_macs2').value=this.value;fileChange(this,'input_controlfile_macs2');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
 
@@ -3380,6 +4119,7 @@
                         <div id="macs2_optional_setting_center" class="inputOption_setting_center" style="overflow-y:scroll;">
                             Effective genome size<br>
                             <h6>default: hs</h6>
+<<<<<<< HEAD
                             <input type="text" id="macs2_g" name="macs2_g" value="hs" class="input_setting_text"  />
                             Tag size<br>
                             <h6>This will overide the auto detected tag size.default:25</h6>
@@ -3393,6 +4133,21 @@
                             This parameter is used to select the regions within MFOLD range of high-confidence enrichment ratio against background to build model.<br>
                             <h6>-m/–mfold,default:5,50</h6>
                             <input type="text" id="macs2_m" name="macs2_m" value="5 50" class="input_setting_text" />
+=======
+                            <input type="text" name="macs2_g" value="hs" class="input_setting_text"/>
+                            Tag size<br>
+                            <h6>This will overide the auto detected tag size.default:25</h6>
+                            <input type="text" name="macs2_s" value="25" class="input_setting_text"/>
+                            Band width<br>
+                            <h6>This value is only used while building the shifting model. DEFAULT: 300</h6>
+                            <input type="text" name="macs2_bw" value="300" class="input_setting_text"/>
+                            The qvalue (minimum FDR) cutoff to call significant regions.<br>
+                            <h6>Default is 0.01. For broad marks, you can try 0.05 as cutoff. Q-values are calculated from p-values using Benjamini-Hochberg procedure.</h6>
+                            <input type="text" name="macs2_q" value="0.01" class="input_setting_text"/>
+                            This parameter is used to select the regions within MFOLD range of high-confidence enrichment ratio against background to build model.<br>
+                            <h6>-m/–mfold,default:5,50</h6>
+                            <input type="text" name="macs2_m" value="5 50" class="input_setting_text"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('macs2_optional_setting').style.display='none';JavaScript:macs2_radio(macs2_g.value,macs2_s.value,macs2_bw.value,macs2_q.value,macs2_m.value);"/>
                             <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('macs2_optional_setting').style.display='none';"/>
                         </div>
@@ -3400,7 +4155,11 @@
                 </div>
 
 
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_MACS2"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_MACS2"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_MACS2" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -3423,7 +4182,11 @@
         </div>
       <!------------------------PeakSeq-------------------------------------------------------------->
       <div id="side_right_11" class="side_right" style="display:none">
+<<<<<<< HEAD
           <form action="peakseq_exe" id="peakseq_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('peakseq_exe','btn_peakseq','wait_peakseq');">
+=======
+          <form action="peakseq_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_peakseq').style.backgroundColor='#666666';document.getElementById('wait_peakseq').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div class="link"onclick="JavaScript:peakseq_option_ne();"style="cursor:hand;">
                   <div class="arrow-right" id="arrow-right16" style="display:none"></div>
                   <div class="arrow-down"  id="arrow-down16" style="display:block"></div>
@@ -3441,9 +4204,15 @@
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box">
+<<<<<<< HEAD
                           <input type="text" name="input_tagfile_peakseq" id="input_tagfile_peakseq" class="input_text" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_peakseq" class="fileField" id="fileField_peakseq_tag" onchange="return (fileChange(this,'input_tagfile_peakseq' )&& checkFileExt(this.value,'input_tagfile_peakseq'))" />
+=======
+                          <input type="text" name="input_tagfile_peakseq" id="input_tagfile_peakseq" class="input_text"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_peakseq" class="fileField" id="fileField_peakseq_tag" onchange="document.getElementById('input_tagfile_peakseq').value=this.value;fileChange(this,'input_tagfile_peakseq');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                   </div>
                   <div class="blacktop_1">
@@ -3453,9 +4222,15 @@
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box">
+<<<<<<< HEAD
                           <input type="text" name="input_controlfile_peakseq" id="input_controlfile_peakseq" class="input_text" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_peakseq" class="fileField" id="fileField_peakseq_control" onchange="return (fileChange(this,'input_controlfile_peakseq' )&& checkFileExt(this.value,'input_controlfile_peakseq'))" />
+=======
+                          <input type="text" name="input_controlfile_peakseq" id="input_controlfile_peakseq" class="input_text"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_peakseq" class="fileField" id="fileField_peakseq_control" onchange="document.getElementById('input_controlfile_peakseq').value=this.value;fileChange(this,'input_controlfile_peakseq');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                   </div>
 
@@ -3477,6 +4252,7 @@
                       <div  class="inputOption_setting_center" style="overflow-y:scroll;" >
                           Enrichment fragment length For tag extension, this is the value of average fragment length.<br>
                           <h6>Enrichment_fragment_length ;default:200</h6>
+<<<<<<< HEAD
                           <input type="text" id="peakseq_length" name="peakseq_length" value="200" class="input_setting_text" />
                           Target FDR in the simulations.<br>
                           <h6>target_FDR ;default:0.05</h6>
@@ -3490,6 +4266,21 @@
                           Q-value threshold applied on the final set of peaks.<br>
                           <h6>max_Qvalue ;default:0.05</h6>
                           <input type="text" id="peakseq_qvalue" name="peakseq_qvalue" value="0.05" class="input_setting_text" />
+=======
+                          <input type="text" name="peakseq_length" value="200" class="input_setting_text"/>
+                          Target FDR in the simulations.<br>
+                          <h6>target_FDR ;default:0.05</h6>
+                          <input type="text" name="peakseq_fdr" value="0.05" class="input_setting_text"/>
+                          Number of simulations performed while estimating the putative peaks.<br>
+                          <h6>N_Simulations ;default:10</h6>
+                          <input type="text" name="peakseq_N" value="10" class="input_setting_text"/>
+                          Minimum distance between consecutive peaks<br>
+                          <h6>Minimum_interpeak_distance ;default:200</h6>
+                          <input type="text" name="peakseq_Min" value="200" class="input_setting_text"/>
+                          Q-value threshold applied on the final set of peaks.<br>
+                          <h6>max_Qvalue ;default:0.05</h6>
+                          <input type="text" name="peakseq_qvalue" value="0.05" class="input_setting_text"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           There are currently two models for simulating the background for threshold selection<br>
                           <input type="radio" name="peakseq_mode" value="1"/>Poisson
                           <input type="radio" name="peakseq_mode" value="2"/>Simulated<br>
@@ -3499,7 +4290,11 @@
                   </div>
               </div>
 
+<<<<<<< HEAD
               <input type="submit" value="Execute" class="Execute_btn" id="btn_peakseq"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+              <input type="submit" value="Execute" class="Execute_btn" id="btn_peakseq"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div id="wait_peakseq" class="Upload_wait_div" style="display:none;">
                   <img src="./img/wait.gif" class="Upload_wait" />
                   Uploading and processing your file,please wait...
@@ -3522,7 +4317,11 @@
       </div>
       <!------------------------PeakRanger-------------------------------------------------------------->
       <div id="side_right_12" class="side_right" style="display:none">
+<<<<<<< HEAD
           <form action="peakranger_exe" id="peakranger_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('peakranger_exe','btn_PeakRanger','wait_PeakRanger');">
+=======
+          <form action="peakranger_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_PeakRanger').style.backgroundColor='#666666';document.getElementById('wait_PeakRanger').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div class="link"onclick="JavaScript:peakranger_option_ne();"style="cursor:hand;">
                   <div class="arrow-right" id="arrow-right18" style="display:none"></div>
                   <div class="arrow-down"  id="arrow-down18" style="display:block"></div>
@@ -3542,20 +4341,36 @@
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box">
+<<<<<<< HEAD
                           <input type="text" name="input_tagfile_peakranger" id="input_tagfile_peakranger" class="input_text" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_peakranger" class="fileField" id="fileField_peakranger_tag" onchange="return (fileChange(this,'input_tagfile_peakranger' )&& checkFileExt(this.value,'input_tagfile_peakranger'))" />
+=======
+                          <input type="text" name="input_tagfile_peakranger" id="input_tagfile_peakranger" class="input_text"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_peakranger" class="fileField" id="fileField_peakranger_tag" onchange="document.getElementById('input_tagfile_peakranger').value=this.value;fileChange(this,'input_tagfile_peakranger');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                   </div>
                   <div class="blacktop_1">
                       ChIP-Seq Control file
                       <div class="tip_out"><img class="tip" id="tip22" src="./img/tip.png" onclick="JavaScript:Tip_click(22)"></div>
+<<<<<<< HEAD
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box">
                           <input type="text" name="input_controlfile_peakranger" id="input_controlfile_peakranger" class="input_text" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_peakranger" class="fileField" id="fileField_peakranger_control" onchange="return (fileChange(this,'input_controlfile_peakranger' )&& checkFileExt(this.value,'input_controlfile_peakranger'))" />
+=======
+                      <s:fielderror fieldName="input_controlfile_peakranger" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
+                  </div>
+                  <div class="blackdown_1">
+                      <div class="file-box">
+                          <input type="text" name="input_controlfile_peakranger" id="input_controlfile_peakranger" class="input_text"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_peakranger" class="fileField" id="fileField_peakranger_control" onchange="document.getElementById('input_controlfile_peakranger').value=this.value;fileChange(this,'input_controlfile_peakranger');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                   </div>
 
@@ -3569,7 +4384,11 @@
               <div id="optional_center_peakranger" class="optional_center" style="display:block">
                   <div class="blacktop_1">Select the tool to call peaks</div>
                   <div class="blackdown_1">
+<<<<<<< HEAD
                       <input type="radio" name="select_peakranger" id="optionalParameters_ranger"  value="1" checked="true" onclick="document.getElementById('peakranger_ranger').style.display='block';document.getElementById('peakranger_ccat').style.display='none';document.getElementById('peakranger_bcp').style.display='none';"/>ranger
+=======
+                      <input type="radio" name="select_peakranger" id="optionalParameters_ranger"  value="1"  checked="true" onclick="document.getElementById('peakranger_ranger').style.display='block';document.getElementById('peakranger_ccat').style.display='none';document.getElementById('peakranger_bcp').style.display='none';"/>ranger
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       <input type="radio" name="select_peakranger" id="optionalParameters_ccat"  value="2" onclick="document.getElementById('peakranger_ranger').style.display='none';document.getElementById('peakranger_ccat').style.display='block';document.getElementById('peakranger_bcp').style.display='none';"/>ccat
                       <input type="radio" name="select_peakranger" id="optionalParameters_bcp"  value="3" onclick="document.getElementById('peakranger_ranger').style.display='none';document.getElementById('peakranger_ccat').style.display='none';document.getElementById('peakranger_bcp').style.display='block';"/>bcp
                   </div>
@@ -3579,6 +4398,7 @@
                           <h6>`--report`</h6>
                           <input type="radio" name="peakranger_mode" value="1"/>Yes
                           <input type="radio" name="peakranger_mode" value="2"/>No<br>
+<<<<<<< HEAD
                           <br>the length of the snapshort regions in the HTML report.<br>
                           <h6>`--plot_region`;It also controls the search span for nearby genes.</h6>
                           <input type="text" id="peakranger_length" name="peakranger_length" value="" class="input_setting_text" />
@@ -3606,6 +4426,35 @@
                           number of threads.<br>
                           <h6>`-t`  ;default: 1</h6>
                           <input type="text" id="peakranger_t" name="peakranger_t" value="" class="input_setting_text" />
+=======
+                         <br> the length of the snapshort regions in the HTML report.<br>
+                          <h6>`--plot_region`;It also controls the search span for nearby genes.</h6>
+                          <input type="text" name="peakranger_length" value="" class="input_setting_text"/>
+                          the gene annotation file<br>
+                          <h6>`--gene_annot_file`</h6>
+                          <input type="text" name="peakranger_annofile" value="" class="input_setting_text"/>
+                          <br>p value cut off<br>
+                          <h6>`-p,--pval` </h6>
+                          <input type="text" name="peakranger_pvalue" value="" class="input_setting_text"/>
+                          FDR cut off<br>
+                          <h6>`-q,--FDR` </h6>
+                          <input type="text" name="peakranger_fdr" value="" class="input_setting_text"/>
+                          read extension length<br>
+                          <h6>`-l,--ext_length` </h6>
+                          <input type="text" name="peakranger_relength" value="" class="input_setting_text"/>
+                          sensitivity of the summit detector<br>
+                          <h6>`-r,--delta`</h6>
+                          <input type="text" name="peakranger_delta" value="" class="input_setting_text"/>
+                          smoothing bandwidth.<br>
+                          <h6>`-b,--bandwidth` </h6>
+                          <input type="text" name="peakranger_bandwidth" value="" class="input_setting_text"/>
+                          pad read coverage to avoid false positive summits<br>
+                          <h6>`--pad` </h6>
+                          <input type="text" name="peakranger_pad" value="" class="input_setting_text"/>
+                          number of threads.<br>
+                          <h6>`-t`  ;default: 1</h6>
+                          <input type="text" name="peakranger_t" value="" class="input_setting_text"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('peakranger_ranger').style.display='none';JavaScript:peakranger_radio(peakseq_length.value,peakseq_fdr.value,peakseq_N.value,peakseq_Min.value,peakseq_mode.value,peakseq_qvalue.value);"/>
                           <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('peakranger_ranger').style.display='none';"/>
                       </div>
@@ -3618,6 +4467,7 @@
                           <input type="radio" name="peakranger_mode1" value="2"/>No<br>
                           <br>the length of the snapshort regions in the HTML report.<br>
                           <h6>`--plot_region`;It also controls the search span for nearby genes.</h6>
+<<<<<<< HEAD
                           <input type="text" id="peakranger_length1" name="peakranger_length1" value="" class="input_setting_text" />
                           the gene annotation file<br>
                           <h6>`--gene_annot_file`</h6>
@@ -3643,6 +4493,33 @@
                           p value cut off<br>
                           <h6>`-p,--pval` </h6>
                           <input type="text" id="peakranger_pvalue1" name="peakranger_pvalue1" value="" class="input_setting_text"/>
+=======
+                          <input type="text" name="peakranger_length1" value="" class="input_setting_text"/>
+                          the gene annotation file<br>
+                          <h6>`--gene_annot_file`</h6>
+                          <input type="text" name="peakranger_annofile1" value="" class="input_setting_text"/>
+                          FDR cut off<br>
+                          <h6>`-q,--FDR`</h6>
+                          <input type="text" name="peakranger_fdr1" value="" class="input_setting_text"/>
+                          sliding window size<br>
+                          <h6>`--win_size`</h6>
+                          <input type="text" name="peakranger_winsize1" value="" class="input_setting_text"/>
+                          window moving step<br>
+                          <h6>`--win_step`</h6>
+                          <input type="text" name="peakranger_winstep1" value="" class="input_setting_text"/>
+                          minimum window reads count<br>
+                          <h6>`--min_count`</h6>
+                          <input type="text" name="peakranger_imcount1" value="" class="input_setting_text"/>
+                          minimum window reads fold change<br>
+                          <h6>`--min_score`</h6>
+                          <input type="text" name="peakranger_minscore" value="" class="input_setting_text"/>
+                          read extension length<br>
+                          <h6>`-l,--ext_length` </h6>
+                          <input type="text" name="peakranger_relength1" value="" class="input_setting_text"/>
+                          p value cut off<br>
+                          <h6>`-p,--pval` </h6>
+                          <input type="text" name="peakranger_pvalue1" value="" class="input_setting_text"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('peakranger_ccat').style.display='none';JavaScript:peakranger_radio(peakseq_length.value,peakseq_fdr.value,peakseq_N.value,peakseq_Min.value,peakseq_mode.value,peakseq_qvalue.value);"/>
                           <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('peakranger_ccat').style.display='none';"/>
                       </div>
@@ -3655,6 +4532,7 @@
                           <input type="radio" name="peakranger_mode2" value="2"/>No<br>
                           <br>the length of the snapshort regions in the HTML report.<br>
                           <h6>`--plot_region`;It also controls the search span for nearby genes.</h6>
+<<<<<<< HEAD
                           <input type="text" id="peakranger_length2" name="peakranger_length2" value="" class="input_setting_text" />
                           the gene annotation file<br>
                           <h6>`--gene_annot_file`</h6>
@@ -3665,12 +4543,28 @@
                           read extension length<br>
                           <h6>`-l,--ext_length` </h6>
                           <input type="text" id="peakranger_relength2"  name="peakranger_relength2" value="" class="input_setting_text" /><br>
+=======
+                          <input type="text" name="peakranger_length2" value="" class="input_setting_text"/>
+                          the gene annotation file<br>
+                          <h6>`--gene_annot_file`</h6>
+                          <input type="text" name="peakranger_annofile2" value="" class="input_setting_text"/>
+                          sliding window size<br>
+                          <h6>`--win_size`</h6>
+                          <input type="text" name="peakranger_winsize2" value="" class="input_setting_text"/>
+                          read extension length<br>
+                          <h6>`-l,--ext_length` </h6>
+                          <input type="text" name="peakranger_relength2" value="" class="input_setting_text"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('peakranger_bcp').style.display='none';JavaScript:peakranger_radio(peakseq_length.value,peakseq_fdr.value,peakseq_N.value,peakseq_Min.value,peakseq_mode.value,peakseq_qvalue.value);"/>
                           <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('peakranger_bcp').style.display='none';"/>
                       </div>
                   </div>
               </div>
+<<<<<<< HEAD
               <input type="submit" value="Execute" class="Execute_btn" id="btn_PeakRanger"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+              <input type="submit" value="Execute" class="Execute_btn" id="btn_PeakRanger"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div id="wait_PeakRanger" class="Upload_wait_div" style="display:none;">
                   <img src="./img/wait.gif" class="Upload_wait" />
                   Uploading and processing your file,please wait...
@@ -3693,7 +4587,11 @@
       </div>
       <!------------------------SICER-------------------------------------------------------------->
       <div id="side_right_13" class="side_right" style="display:none">
+<<<<<<< HEAD
           <form action="SICER_peakcalling" id="SICER_peakcalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('SICER_peakcalling','btn_SICER','wait_SICER');">
+=======
+          <form action="SICER_peakcalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_SICER').style.backgroundColor='#666666';document.getElementById('wait_SICER').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div class="link" onclick="JavaScript:sicer_option_ne();"style="cursor:hand;">
                   <div class="arrow-right" id="arrow-right10" style="display:none"></div>
                   <div class="arrow-down"  id="arrow-down10" style="display:block"></div>
@@ -3706,9 +4604,15 @@
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box">
+<<<<<<< HEAD
                           <input type="text" id="input_sicer_tagfile" name="input_sicer_tagfile" id="input_sicer_tagfile" class="input_text" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_sicer" class="fileField" id="fileField_sicer_tag" onchange="return (fileChange(this,'input_sicer_tagfile' )&& checkFileExt(this.value,'input_sicer_tagfile'))" />
+=======
+                          <input type="text" name="input_sicer_tagfile" id="input_sicer_tagfile" class="input_text"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_sicer" class="fileField" id="fileField_sicer_tag" onchange="document.getElementById('input_sicer_tagfile').value=this.value;fileChange(this,'input_sicer_tagfile');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                       </div>
                   </div>
                   <div class="blacktop_1">
@@ -3718,11 +4622,20 @@
                   </div>
                   <div class="blackdown_1">
                       <div class="file-box">
+<<<<<<< HEAD
                           <input type="text" id="input_sicer_controlfile" name="input_sicer_controlfile" id="input_sicer_controlfile" class="input_text" />
                           <input type='button' class='btn' value='Choose File' />
                           <input type="file" name="fileField_sicer" class="fileField" id="fileField_sicer_control" onchange="return (fileChange(this,'input_sicer_controlfile' )&& checkFileExt(this.value,'input_sicer_controlfile'))" />
                       </div>
                   </div>
+=======
+                          <input type="text" name="input_sicer_controlfile" id="input_sicer_controlfile" class="input_text"/>
+                          <input type='button' class='btn' value='Choose File' />
+                          <input type="file" name="fileField_sicer" class="fileField" id="fileField_sicer_control" onchange="document.getElementById('input_sicer_controlfile').value=this.value;fileChange(this,'input_sicer_controlfile');" />
+                      </div>
+                  </div>
+
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               </div>
 
               <div class="link"onclick="JavaScript:sicer_option_op();"style="cursor:hand;">
@@ -3741,6 +4654,7 @@
                       <div class="inputOption_setting_center" style="overflow-y:scroll;">
                           Species: allowed species and genome versions are listed in GenomeData.py.<br> <h6>You
                           can add your own species and/or genome versions and relevant data there.</h6>
+<<<<<<< HEAD
                           <input type="text" id="sicer_sp" value="hg18" class="input_setting_text" name="sicer_sp" >
                           Redundancy Threshold<br>
                           <h6>The number of copies of identical reads allowed in a library</h6>
@@ -3760,13 +4674,38 @@
                           Statistic threshold value<br>
                           <h6>FDR (with control) or E-value (without control)</h6>
                           <input type="text" id="sicer_fdr" value="0.01" class="input_setting_text" name="sicer_fdr" >
+=======
+                          <input type="text" value="hg18" class="input_setting_text" name="sicer_sp">
+                          Redundancy Threshold<br>
+                          <h6>The number of copies of identical reads allowed in a library</h6>
+                          <input type="text" value="1" class="input_setting_text" name="sicer_RT">
+                          Window size<br>
+                          <h6>Resolution of SICER algorithm. For histone modifications, one can use 200 bp.Default:200</h6>
+                          <input type="text" value="200" class="input_setting_text" name="sicer_ws">
+                          Fragment size<br>
+                          <h6>for determination of the amount of shift from the beginning of a read to the center of the DNA fragment represented by the read. FRAGMENT_SIZE=150 means the shift is 75.</h6>
+                          <input type="text" value="150" class="input_setting_text" name="sicer_fs">
+                          Effective genome fraction<br>
+                          <h6>Effective Genome as fraction of the genome size. It depends on read length.</h6>
+                          <input type="text" value="0.74" class="input_setting_text" name="sicer_egf">
+                          Gap size<br>
+                          <h6>Needs to be multiples of window size. Namely if the window size is 200, the gap size should be 0, 200, 400, 600, ...</h6>
+                          <input type="text" value="600" class="input_setting_text"name="sicer_gs">
+                          Statistic threshold value<br>
+                          <h6>FDR (with control) or E-value (without control)</h6>
+                          <input type="text" value="0.01" class="input_setting_text" name="sicer_fdr">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                           <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('sicer_optional_setting').style.display='none';JavaScript:sicer_radio(sicer_sp.value,sicer_RT.value,sicer_ws.value,sicer_fs.value,sicer_egf.value,sicer_gs.value,sicer_fdr.value);"/>
                           <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('sicer_optional_setting').style.display='none';"/>
                       </div>
                   </div>
               </div>
 
+<<<<<<< HEAD
               <input type="submit" value="Execute" class="Execute_btn" id="btn_SICER"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+              <input type="submit" value="Execute" class="Execute_btn" id="btn_SICER"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
               <div id="wait_SICER" class="Upload_wait_div" style="display:none;">
                   <img src="./img/wait.gif" class="Upload_wait" />
                   Uploading and processing your file,please wait...
@@ -3789,7 +4728,11 @@
       </div>
         <!------------------------PePr-------------------------------------------------------------->
         <div id="side_right_14" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="PePr_peakcalling" id="PePr_peakcalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('PePr_peakcalling','btn_Pepr','wait_Pepr');">
+=======
+            <form action="PePr_peakcalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_Pepr').style.backgroundColor='#666666';document.getElementById('wait_Pepr').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:pepr_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right20" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down20" style="display:block"></div>
@@ -3802,9 +4745,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_pepr_tagfile1" id="input_pepr_tagfile1" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_pepr" class="fileField" id="fileField_pepr_tag1" onchange="return (fileChange(this,'input_pepr_tagfile1' )&& checkFileExt(this.value,'input_pepr_tagfile1'))" />
+=======
+                            <input type="text" name="input_pepr_tagfile1" id="input_pepr_tagfile1" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_pepr" class="fileField" id="fileField_pepr_tag1" onchange="document.getElementById('input_pepr_tagfile1').value=this.value;fileChange(this,'input_pepr_tagfile1');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -3813,9 +4762,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_pepr_tagfile2" id="input_pepr_tagfile2" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_pepr" class="fileField" id="fileField_pepr_tag2" onchange="return (fileChange(this,'input_pepr_tagfile2' )&& checkFileExt(this.value,'input_pepr_tagfile2'))" />
+=======
+                            <input type="text" name="input_pepr_tagfile2" id="input_pepr_tagfile2" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_pepr" class="fileField" id="fileField_pepr_tag2" onchange="document.getElementById('input_pepr_tagfile2').value=this.value;fileChange(this,'input_pepr_tagfile2');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -3824,9 +4779,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_pepr_controlfile1" id="input_pepr_controlfile1" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_pepr" class="fileField" id="fileField_pepr_control1" onchange="return (fileChange(this,'input_pepr_controlfile1' )&& checkFileExt(this.value,'input_pepr_controlfile1'))" />
+=======
+                            <input type="text" name="input_pepr_controlfile1" id="input_pepr_controlfile1" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_pepr" class="fileField" id="fileField_pepr_control1" onchange="document.getElementById('input_pepr_controlfile1').value=this.value;fileChange(this,'input_pepr_controlfile1');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -3835,9 +4796,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_pepr_controlfile2" id="input_pepr_controlfile2" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_pepr" class="fileField" id="fileField_pepr_control2" onchange="return (fileChange(this,'input_pepr_controlfile2' )&& checkFileExt(this.value,'input_pepr_controlfile2'))" />
+=======
+                            <input type="text" name="input_pepr_controlfile2" id="input_pepr_controlfile2" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_pepr" class="fileField" id="fileField_pepr_control2" onchange="document.getElementById('input_pepr_controlfile2').value=this.value;fileChange(this,'input_pepr_controlfile2');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
 
@@ -3859,6 +4826,7 @@
                         <div class="inputOption_setting_center" style="overflow-y:scroll;">
                             --peaktype.sharp or broad. <br>
                             <h6>Default is broad.</h6>
+<<<<<<< HEAD
                             <input type="text" id="pepr_peaktype" value="broad" class="input_setting_text" name="pepr_peaktype" ><br>
                             --threshold<br>
                             <h6>p-value cutoff. Default:1e-5.</h6>
@@ -3869,12 +4837,28 @@
                             --num-processors<br>
                             <h6>Number of CPUs to run in parallel.</h6>
                             <input type="text" id="pepr_num" value="1" class="input_setting_text" name="pepr_num" ><br>
+=======
+                            <input type="text" value="broad" class="input_setting_text" name="pepr_peaktype"><br>
+                            --threshold<br>
+                            <h6>p-value cutoff. Default:1e-5.</h6>
+                            <input type="text" value="1e-5" class="input_setting_text" name="pepr_p"><br>
+                            --keep-max-dup<br>
+                            <h6>maximum number of duplicated reads at each single position to keep. If not specified, will not remove any duplicate.</h6>
+                            <input type="text" value="2" class="input_setting_text" name="pepr_keep"><br>
+                            --num-processors<br>
+                            <h6>Number of CPUs to run in parallel.</h6>
+                            <input type="text" value="1" class="input_setting_text" name="pepr_num"><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('pepr_optional_setting').style.display='none';JavaScript:pepr_radio(pepr_peaktype.value,pepr_p.value,pepr_keep.value,pepr_num.value);"/>
                             <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('pepr_optional_setting').style.display='none';"/>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_Pepr"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_Pepr"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_Pepr" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -3897,7 +4881,11 @@
         </div>
         <!------------------------BCP-------------------------------------------------------------->
         <div id="side_right_15" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="BCP_peakcalling" id="BCP_peakcalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('BCP_peakcalling','btn_BCP','wait_BCP');">
+=======
+            <form action="BCP_peakcalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_BCP').style.backgroundColor='#666666';document.getElementById('wait_BCP').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:BCP_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right22" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down22" style="display:block"></div>
@@ -3918,9 +4906,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_BCP_tagfile" id="input_BCP_tagfile" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_bcp" class="fileField" id="fileField_bcp_tag" onchange="return (fileChange(this,'input_BCP_tagfile' )&& checkFileExt(this.value,'input_BCP_tagfile'))" />
+=======
+                            <input type="text" name="input_BCP_tagfile" id="input_BCP_tagfile" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_bcp" class="fileField" id="fileField_bcp_tag" onchange="document.getElementById('input_BCP_tagfile').value=this.value;fileChange(this,'input_BCP_tagfile');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -3930,9 +4924,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_BCP_controlfile" id="input_BCP_controlfile" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_bcp" class="fileField" id="fileField_bcp_control" onchange="return (fileChange(this,'input_BCP_controlfile' )&& checkFileExt(this.value,'input_BCP_controlfile'))" />
+=======
+                            <input type="text" name="input_BCP_controlfile" id="input_BCP_controlfile" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_bcp" class="fileField" id="fileField_bcp_control" onchange="document.getElementById('input_BCP_controlfile').value=this.value;fileChange(this,'input_BCP_controlfile');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
 
@@ -3953,6 +4953,7 @@
                         <div class="inputOption_setting_center" id="BCP_HM" style="overflow-y:scroll;">
                             fragment size<br>
                             <h6>-f;Here fragment size is decided by the ChIP experiment sonication size (default value is 200bp)</h6>
+<<<<<<< HEAD
                             <input type="text" id="BCP_f" value="200" class="input_setting_text" name="BCP_f" >
                             window size<br>
                             <h6>Window size is a resolution parameter that is decided by user.We recommend 200bp as the default value because it isapproximately the size of a single nucleosome. </h6>
@@ -3960,10 +4961,20 @@
                             p-value<br>
                             <h6>P-values are used when calling signicant segments compared to control data (default is 1e-3). </h6>
                             <input type="text" id="BCP_p" value="1e-3" class="input_setting_text" name="BCP_p" >
+=======
+                            <input type="text" value="200" class="input_setting_text" name="BCP_f">
+                            window size<br>
+                            <h6>Window size is a resolution parameter that is decided by user.We recommend 200bp as the default value because it isapproximately the size of a single nucleosome. </h6>
+                            <input type="text" value="200" class="input_setting_text" name="BCP_W">
+                            <br> p-value<br>
+                            <h6>P-values are used when calling signicant segments compared to control data (default is 1e-3). </h6>
+                            <input type="text" value="1e-3" class="input_setting_text" name="BCP_p">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('BCP_optional_setting').style.display='none';JavaScript:BCP_radio_HM(BCP_f.value,BCP_W.value,BCP_p.value);"/>
                             <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('BCP_optional_setting').style.display='none';"/>
                         </div>
 
+<<<<<<< HEAD
                         <div class="inputOption_setting_center" id="BCP_TF" style="overflow-y:scroll;display:none" >
                             old enrichment<br>
                             <h6>-e;Fold enrichment is used when estimating shift size.The default value is 10 and we recommend users restrict within the range of 5
@@ -3972,12 +4983,26 @@
                             p-value<br>
                             <h6>p-value is also used to choose really significant peaks compared to the control data.The default p-value in the TFBS case is 1e-8. </h6>
                             <input type="text" id="BCP_p2" value="1e-8" class="input_setting_text" name="BCP_p2" >
+=======
+                        <div class="inputOption_setting_center" id="BCP_TF" style="overflow-y:scroll;display:none">
+                            old enrichment<br>
+                            <h6>-e;Fold enrichment is used when estimating shift size.The default value is 10 and we recommend users restrict within the range of 5
+                            </h6>
+                            <input type="text" value="10" class="input_setting_text" name="BCP_e">
+                            <br>p-value<br>
+                            <h6>p-value is also used to choose really significant peaks compared to the control data.The default p-value in the TFBS case is 1e-8. </h6>
+                            <input type="text" value="1e-8" class="input_setting_text" name="BCP_p2">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('BCP_optional_setting').style.display='none';JavaScript:BCP_radio_TF(BCP_e.value,BCP_p2.value);"/>
                             <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('BCP_optional_setting').style.display='none';"/>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_BCP"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_BCP"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_BCP" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -3996,7 +5021,11 @@
         </div>
         <!------------------------diffReps-------------------------------------------------------------->
         <div id="side_right_16" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="diff_peakcalling" id="diff_peakcalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('diff_peakcalling','btn_diff','wait_diff');">
+=======
+            <form action="diff_peakcalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_diff').style.backgroundColor='#666666';document.getElementById('wait_diff').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:diff_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right24" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down24" style="display:block"></div>
@@ -4009,9 +5038,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_diff_tagfile" id="input_diff_tagfile" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_diff" class="fileField" id="fileField_diff_tag" onchange="return (fileChange(this,'input_diff_tagfile' )&& checkFileExt(this.value,'input_diff_tagfile'))" />
+=======
+                            <input type="text" name="input_diff_tagfile" id="input_diff_tagfile" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_diff" class="fileField" id="fileField_diff_tag" onchange="document.getElementById('input_diff_tagfile').value=this.value;fileChange(this,'input_diff_tagfile');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -4021,9 +5056,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_diff_controlfile" id="input_diff_controlfile" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_diff" class="fileField" id="fileField_diff_control" onchange="return (fileChange(this,'input_diff_controlfile' )&& checkFileExt(this.value,'input_diff_controlfile'))" />
+=======
+                            <input type="text" name="input_diff_controlfile" id="input_diff_controlfile" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_diff" class="fileField" id="fileField_diff_control" onchange="document.getElementById('input_diff_controlfile').value=this.value;fileChange(this,'input_diff_controlfile');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">Choose the currently built-in genomes</div>
@@ -4032,7 +5073,10 @@
                         <input type="radio" value="2" name="diff_gn" checked="true"/>hg19
                         <input type="radio" value="3" name="diff_gn"/>rn4
                     </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 </div>
                 <div class="link" onclick="JavaScript:diff_option_op();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right25" style="display:none"></div>
@@ -4060,6 +5104,7 @@
                             <input type="radio" value="3" name="diff_mode">block<br>
                             --window(1000)<br>
                             <h6>Window size (default=Histone mark peak size).</h6>
+<<<<<<< HEAD
                             <input type="text" id="diff_w" value="1000" class="input_setting_text" name="diff_w" ><br>
                             --step(1/10 win) <br>
                             <h6>Window moving step size.</h6>
@@ -4067,6 +5112,15 @@
                             --gap(0)<br>
                             <h6>Gap allowed between two consecutive windows.</h6>
                             <input type="text" id="diff_gap" value="0" class="input_setting_text" name="diff_gap" ><br>
+=======
+                            <input type="text" value="1000" class="input_setting_text" name="diff_w"><br>
+                            --step(1/10 win) <br>
+                            <h6>Window moving step size.</h6>
+                            <input type="text" value="1" class="input_setting_text" name="diff_step"><br>
+                            --gap(0)<br>
+                            <h6>Gap allowed between two consecutive windows.</h6>
+                            <input type="text" value="0" class="input_setting_text" name="diff_gap"><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             --nsd(broad)<br>
                             <h6>Z-score cutoff for low read count. Choose from two default modes or set your own.<br>
                                 (b)road     (=2)   Broad peak such as H3K36me3.<br>
@@ -4075,10 +5129,17 @@
                             <input type="radio" value="2" name="diff_nsd">sharp<br>
                             --alpha(0.05)  <br>
                             <h6>Alpha for right-trimmed mean, must be in: [0, 0.5).</h6>
+<<<<<<< HEAD
                             <input type="text" id="diff_alpha" value="0.05" class="input_setting_text" name="diff_alpha" ><br>
                             --bkg(0)<br>
                             <h6>Use fold enrichment vs. background as filter instead. Set a float number such as 2.0 here.</h6>
                             <input type="text" id="diff_bkg" value="0" class="input_setting_text" name="diff_bkg" >
+=======
+                            <input type="text" value="0.05" class="input_setting_text" name="diff_alpha"><br>
+                            --bkg(0)<br>
+                            <h6>Use fold enrichment vs. background as filter instead. Set a float number such as 2.0 here.</h6>
+                            <input type="text" value="0" class="input_setting_text" name="diff_bkg">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
                             <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('diff_optional_setting').style.display='none';JavaScript:diff_radio(diff_mode.value,diff_w.value,diff_step.value,diff_gap.value,diff_nsd.value,diff_alpha.value,diff_bkg.value);"/>
                             <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('diff_optional_setting').style.display='none';"/>
@@ -4086,7 +5147,11 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_diff"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_diff"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_diff" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -4109,7 +5174,11 @@
         </div>
         <!------------------------SISSRs-------------------------------------------------------------->
         <div id="side_right_17" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="SISSR_peakcalling" id="SISSR_peakcalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('SISSR_peakcalling','btn_SISSR','wait_SISSR');">
+=======
+            <form action="SISSR_peakcalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_SISSR').style.backgroundColor='#666666';document.getElementById('wait_SISSR').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:SISSR_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right26" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down26" style="display:block"></div>
@@ -4123,9 +5192,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_SISSR_tagfile" id="input_SISSR_tagfile" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_sissr" class="fileField" id="fileField_sissr_tag" onchange="return (fileChange(this,'input_SISSR_tagfile' )&& checkFileExt(this.value,'input_SISSR_tagfile'))" />
+=======
+                            <input type="text" name="input_SISSR_tagfile" id="input_SISSR_tagfile" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_sissr" class="fileField" id="fileField_sissr_tag" onchange="document.getElementById('input_SISSR_tagfile').value=this.value;fileChange(this,'input_SISSR_tagfile');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -4135,9 +5210,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_SISSR_controlfile" id="input_SISSR_controlfile" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_sissr" class="fileField" id="fileField_sissr_control" onchange="return (fileChange(this,'input_SISSR_controlfile' )&& checkFileExt(this.value,'input_SISSR_controlfile'))" />
+=======
+                            <input type="text" name="input_SISSR_controlfile" id="input_SISSR_controlfile" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_sissr" class="fileField" id="fileField_sissr_control" onchange="document.getElementById('input_SISSR_controlfile').value=this.value;fileChange(this,'input_SISSR_controlfile');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -4168,42 +5249,74 @@
                             <h6>
                                 i.e., no background data is available.Default: 0.001
                             </h6>
+<<<<<<< HEAD
                             <input type="text" id="SISSR_D" value="0.001" class="input_setting_text" name="SISSR_D" ><br>
                             e-value threshold.<br>
                             <h6>It is the maximum number of “enriched regions” one can expect to see by
                                 chance (Poisson probabilities), when analyzing a similar-sized dataset.Default: 10</h6>
                             <input type="text" id="SISSR_e" value="10" class="input_setting_text" name="SISSR_e" ><br>
+=======
+                            <input type="text" value="0.001" class="input_setting_text" name="SISSR_D"><br>
+                            e-value threshold.<br>
+                            <h6>It is the maximum number of “enriched regions” one can expect to see by
+                                chance (Poisson probabilities), when analyzing a similar-sized dataset.Default: 10</h6>
+                            <input type="text" value="10" class="input_setting_text" name="SISSR_e"><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             p-value threshold.<br>
                             <h6>For a given F value (average DNA fragment length) and a candidate binding
                                 site (represented as genomic coordinate t in Fig 1 of Jothi et al [1]), let u be the number of tags
                                 mapped to the region [t - F, t] on the sense strand, and let v be the number of tags mapped to the
                                 region [t, t + F] on the anti-sense strand.Default: 0.001</h6>
+<<<<<<< HEAD
                             <input type="text" id="SISSR_p" value="0.001" class="input_setting_text" name="SISSR_p" ><br>
                             Fraction of genome (0.0 to 1.0) mappable by reads.<br>
                             <h6>Default: 0.8 for hg18, assuming ELAND was used for mapping. This could be different for
                                 different organisms and other mapping algorithms.</h6>
                             <input type="text" id="SISSR_m" value="0.8" class="input_setting_text" name="SISSR_m" ><br>
+=======
+                            <input type="text" value="0.001" class="input_setting_text" name="SISSR_p"><br>
+                            Fraction of genome (0.0 to 1.0) mappable by reads.<br>
+                            <h6>Default: 0.8 for hg18, assuming ELAND was used for mapping. This could be different for
+                                different organisms and other mapping algorithms.</h6>
+                            <input type="text" value="0.8" class="input_setting_text" name="SISSR_m"><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             Size of the overlapping/sliding scanning window (must be an even number >1), which is one of
                             the parameters that attempts to control for noise in the data<br>
                             <h6>The amount of background noise in the data is a important factor one needs to
                                 consider before setting the size of the window.
                                 Default: 20</h6>
+<<<<<<< HEAD
                             <input type="text" id="SISSR_w" value="20" class="input_setting_text" name="SISSR_w" ><br>
+=======
+                            <input type="text" value="20" class="input_setting_text" name="SISSR_w"><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             Number of “directional” reads required within F base pairs on either side of the inferred
                             binding site.<br>
                             <h6>Default: 2 (assuming that the data file contains ~2 to ~5 million reads; the value may need to
                                 be increased if the total number of reads is much larger).</h6>
+<<<<<<< HEAD
                             <input type="text" id="SISSR_EE" value="2" class="input_setting_text" name="SISSR_E" ><br>
                             Upper-bound on the DNA fragment length. It is the approximate length/size of the longest
                             DNA fragment that was sequenced.<br>
                             <h6>Default: 500</h6>
                             <input type="text" id="SISSR_L" value="500" class="input_setting_text" name="SISSR_L" >
+=======
+                            <input type="text" value="2" class="input_setting_text" name="SISSR_E">
+                            Upper-bound on the DNA fragment length. It is the approximate length/size of the longest
+                            DNA fragment that was sequenced.<br>
+                            <h6>Default: 500</h6>
+                            <input type="text" value="500" class="input_setting_text" name="SISSR_L">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('SISSR_optional_setting').style.display='none';JavaScript:SISSR_radio(SISSR_D.value,SISSR_e.value,SISSR_p.value,SISSR_m.value,SISSR_w.value,SISSR_E.value,SISSR_L.value);"/>
                             <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('SISSR_optional_setting').style.display='none';"/>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_SISSR"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_SISSR"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_SISSR" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -4226,7 +5339,11 @@
         </div>
         <!------------------------findpeaks-------------------------------------------------------------->
         <div id="side_right_18" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="findpeaks_peakcalling" id="findpeaks_peakcalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('findpeaks_peakcalling','btn_find','wait_find');">
+=======
+            <form action="findpeaks_peakcalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_find').style.backgroundColor='#666666';document.getElementById('wait_find').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:findpeak_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right28" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down28" style="display:block"></div>
@@ -4246,9 +5363,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_findpeaks_file" id="input_findpeaks_file" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_find" class="fileField" id="fileField_find_tag" onchange="return (fileChange(this,'input_findpeaks_file' )&& checkFileExt(this.value,'input_findpeaks_file'))" />
+=======
+                            <input type="text" name="input_findpeaks_file" id="input_findpeaks_file" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_find" class="fileField" id="fileField_find_tag" onchange="document.getElementById('input_findpeaks_file').value=this.value;fileChange(this,'input_findpeaks_file');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
 
@@ -4257,7 +5380,11 @@
                         <s:fielderror fieldName="input_findpeaks_gs" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
                     </div>
                     <div class="blackdown_1">
+<<<<<<< HEAD
                         <input type="text" name="input_findpeaks_gs" id="input_findpeaks_gs" class="input_text" />
+=======
+                        <input type="text" name="input_findpeaks_gs" id="input_findpeaks_gs" class="input_text"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                     </div>
 
                 </div>
@@ -4290,26 +5417,43 @@
                                 3: Native mode<br>
                                 default:1 200
                             </h6>
+<<<<<<< HEAD
                             <input type="text" id="findpeak_type" value="1 200" class="input_setting_text" name="findpeak_type"  />
                             <br>-filter<br>
+=======
+                            <input type="text" value="1 200" class="input_setting_text" name="findpeak_type"/>
+                           <br> -filter<br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <h6>Turns on duplicate filtering. Filtering is currently only performed to remove reads in the same direction
                                 that share a start location.
                                 If flag is omitted: duplicate filtering is off.
                             </h6>
                             <input type="radio" name="findpeak_filter" value="1"/>on
                             <input type="radio" name="findpeak_filter" value="2" checked="true"/>off
+<<<<<<< HEAD
                             <br> -hist_size<br>
+=======
+                            <br>-hist_size<br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <h6>The number of cells in the output FDR histogram. The length of the histogram does not affect the running
                                 of the FindPeaks application, but only the maximum height for which data is shown in the final summary.
                                 Histogram always starts at one.
                                 If flag is omitted: histogram size is set to 30.</h6>
+<<<<<<< HEAD
                             <input type="text" id="findpeak_hs" value="30" class="input_setting_text" name="findpeak_hs" />
+=======
+                            <input type="text" value="30" class="input_setting_text" name="findpeak_hs"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('findpeaks_optional_setting').style.display='none';JavaScript:findpeak_radio(findpeak_dir.value,findpeak_type.value,findpeak_filter.value,findpeak_hs.value);"/>
                             <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('findpeaks_optional_setting').style.display='none';"/>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_find"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_find"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_find" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -4332,7 +5476,11 @@
         </div>
         <!------------------------AREM------------------------------------------------------------->
         <div id="side_right_19" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="AREM_peakcalling" id="AREM_peakcalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('AREM_peakcalling','btn_AREM','wait_AREM');">
+=======
+            <form action="AREM_peakcalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_AREM').style.backgroundColor='#666666';document.getElementById('wait_AREM').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:AREM_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right38" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down38" style="display:block"></div>
@@ -4346,14 +5494,21 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_AREM_file" id="input_AREM_file" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_arem" class="fileField" id="fileField_arem_tag" onchange="return (fileChange(this,'input_AREM_file' )&& checkFileExt(this.value,'input_AREM_file'))" />
+=======
+                            <input type="text" name="input_AREM_file" id="input_AREM_file" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_arem" class="fileField" id="fileField_arem_tag" onchange="document.getElementById('input_AREM_file').value=this.value;fileChange(this,'input_AREM_file');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
                         Input the control file
                         <div class="tip_out"><img class="tip" id="tip32" src="./img/tip.png" onclick="JavaScript:Tip_click(32)"></div>
+<<<<<<< HEAD
 
                     </div>
                     <div class="blackdown_1">
@@ -4361,6 +5516,15 @@
                             <input type="text" name="input_AREM_control" id="input_AREM_control" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_arem" class="fileField" id="fileField_arem_control" onchange="return (fileChange(this,'input_AREM_control' )&& checkFileExt(this.value,'input_AREM_control'))" />
+=======
+                        <s:fielderror fieldName="input_AREM_control" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
+                    </div>
+                    <div class="blackdown_1">
+                        <div class="file-box">
+                            <input type="text" name="input_AREM_control" id="input_AREM_control" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_arem" class="fileField" id="fileField_arem_control" onchange="document.getElementById('input_AREM_control').value=this.value;fileChange(this,'input_AREM_control');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
 
@@ -4384,6 +5548,7 @@
                                 or shortcuts:'hs' for human (2.7e9), 'mm' for mouse
                                 (1.87e9), 'ce' for C. elegans (9e7) and 'dm' for
                                 fruitfly (1.2e8), Default:hs</h6>
+<<<<<<< HEAD
                             <input type="text" id="AREM_g" value="hs" class="input_setting_text" name="AREM_g" ><br>
                             -s TSIZE, --tsize=TSIZE<br>
                             <h6>Tag size. This will overide the auto detected tag
@@ -4396,27 +5561,54 @@
                             -p PVALUE, --pvalue=PVALUE<br>
                             <h6>Pvalue cutoff for peak detection. DEFAULT: 1e-5</h6>
                             <input type="text" id="AREM_p" value="1e-5" class="input_setting_text" name="AREM_p" ><br>
+=======
+                            <input type="text" value="hs" class="input_setting_text" name="AREM_g"><br>
+                            -s TSIZE, --tsize=TSIZE<br>
+                            <h6>Tag size. This will overide the auto detected tag
+                                size. DEFAULT: 25</h6>
+                            <input type="text" value="25" class="input_setting_text" name="AREM_s"><br>
+                            --bw=BW       <br>
+                            <h6>Band width. This value is only used while building the
+                                shifting model. DEFAULT: 300</h6>
+                            <input type="text" value="300" class="input_setting_text" name="AREM_bw"><br>
+                            -p PVALUE, --pvalue=PVALUE<br>
+                            <h6>Pvalue cutoff for peak detection. DEFAULT: 1e-5</h6>
+                            <input type="text" value="1e-5" class="input_setting_text" name="AREM_p"><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             -m MFOLD, --mfold=MFOLD<br>
                             <h6>Select the regions within MFOLD range of high-
                                 confidence enrichment ratio against background to
                                 build model. The regions must be lower than upper
                                 limit, and higher than the lower limit. DEFAULT:10,30</h6>
+<<<<<<< HEAD
                             <input type="text" id="AREM_m" value="10,30" class="input_setting_text" name="AREM_m" ><br>
+=======
+                            <input type="text" value="10,30" class="input_setting_text" name="AREM_m"><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             --slocal=SMALLLOCAL <br>
                             <h6>The small nearby region in basepairs to calculate
                                 dynamic lambda. This is used to capture the bias near
                                 the peak summit region. Invalid if there is no control
                                 data. DEFAULT: 1000</h6>
+<<<<<<< HEAD
                             <input type="text" id="AREM_slocal" value="1000" class="input_setting_text" name="AREM_slocal" ><br>
+=======
+                            <input type="text" value="1000" class="input_setting_text" name="AREM_slocal"><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             --shiftsize=SHIFTSIZE<br>
                             <h6>The arbitrary shift size in bp. When nomodel is true,
                                 MACS will use this value as 1/2 of fragment size.
                                 DEFAULT: 100</h6>
+<<<<<<< HEAD
                             <input type="text" id="AREM_shift" value="100" class="input_setting_text" name="AREM_shift" ><br>
+=======
+                            <input type="text" value="100" class="input_setting_text" name="AREM_shift"><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             --verbose=VERBOSE   <br>
                             <h6>Set verbose level. 0: only show critical message, 1:
                                 show additional warning message, 2: show process
                                 information, 3: show debug messages. DEFAULT:2</h6>
+<<<<<<< HEAD
                             <input type="text" id="AREM_verbose" value="2" class="input_setting_text" name="AREM_verbose" ><br>
                             --fe-min=FEMIN     <br>
                             <h6>For diagnostics, min fold enrichment to consider.
@@ -4434,13 +5626,36 @@
                             <h6>Prior probability that a SNP occurs at any base in the
                                 genome. DEFAULT : 0.001</h6>
                             <input type="text" id="AREM_ps" value="0.001" class="input_setting_text" name="AREM_ps" ><br>
+=======
+                            <input type="text" value="2" class="input_setting_text" name="AREM_verbose"><br>
+                            --fe-min=FEMIN     <br>
+                            <h6>For diagnostics, min fold enrichment to consider.
+                                DEFAULT: 0</h6>
+                            <input type="text" value="0" class="input_setting_text" name="AREM_femin"><br>
+                            --EM-converge-diff=MIN_CHANGE<br>
+                            <h6>The minimum entropy change between iterations before
+                                halting E-M steps. DEFAULT : 1e-05</h6>
+                            <input type="text" value="1e-05" class="input_setting_text" name="AREM_EM_cd"><br>
+                            --EM-min-score=MIN_SCORE<br>
+                            <h6>Minimum enrichment score. Windows below this threshold
+                                will all look the same to the aligner. DEFAULT : 1.5</h6>
+                            <input type="text" value="1.5" class="input_setting_text" name="AREM_EM_min"><br>
+                            --prior-snp=PRIOR_PROB_SNP<br>
+                            <h6>Prior probability that a SNP occurs at any base in the
+                                genome. DEFAULT : 0.001</h6>
+                            <input type="text" value="0.001" class="input_setting_text" name="AREM_ps">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('AREM_optional_setting').style.display='none';JavaScript:AREM_radio(findpeak_dir.value,findpeak_type.value,findpeak_filter.value,findpeak_hs.value);"/>
                             <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('AREM_optional_setting').style.display='none';"/>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_AREM"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_AREM"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_AREM" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -4459,7 +5674,11 @@
         </div>
         <!------------------------Fseq------------------------------------------------------------->
         <div id="side_right_20" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="Fseq_peakcalling" id="Fseq_peakcalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('Fseq_peakcalling','btn_fseq','wait_fseq');">
+=======
+            <form action="Fseq_peakcalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_fseq').style.backgroundColor='#666666';document.getElementById('wait_fseq').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:Fseq_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right40" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down40" style="display:block"></div>
@@ -4473,13 +5692,20 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_Fseq_file" id="input_Fseq_file" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_fseq" class="fileField" id="fileField_fseq_tag" onchange="return (fileChange(this,'input_Fseq_file' )&& checkFileExt(this.value,'input_Fseq_file'))" />
+=======
+                            <input type="text" name="input_Fseq_file" id="input_Fseq_file" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_fseq" class="fileField" id="fileField_fseq_tag" onchange="document.getElementById('input_Fseq_file').value=this.value;fileChange(this,'input_Fseq_file');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
                         Input the control file
+<<<<<<< HEAD
                         <div class="tip_out"><img class="tip" id="tip34" src="./img/tip.png" onclick="JavaScript:Tip_click(34)"></div>
                     </div>
                     <div class="blackdown_1">
@@ -4487,6 +5713,18 @@
                             <input type="text" name="input_Fseq_control" id="input_Fseq_control" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_fseq" class="fileField" id="fileField_fseq_control" onchange="return (fileChange(this,'input_Fseq_control' )&& checkFileExt(this.value,'input_Fseq_control'))" />
+=======
+                        <div class="tip_out">
+                            <img class="tip" id="tip34" src="./img/tip.png" onclick="JavaScript:Tip_click(34)">
+                        </div>
+                        <s:fielderror fieldName="input_Fseq_control" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
+                    </div>
+                    <div class="blackdown_1">
+                        <div class="file-box">
+                            <input type="text" name="input_Fseq_control" id="input_Fseq_control" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_fseq" class="fileField" id="fileField_fseq_control" onchange="document.getElementById('input_Fseq_control').value=this.value;fileChange(this,'input_Fseq_control');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
 
@@ -4507,6 +5745,7 @@
                         <div class="inputOption_setting_center" style="overflow-y:scroll;">
                             -l <br>
                             <h6>feature length (default=600)</h6>
+<<<<<<< HEAD
                             <input type="text" id="Fseq_l" value="600" class="input_setting_text" name="Fseq_l" /><br>
                             -s <br>
                             <h6>wiggle track step (default=1)</h6>
@@ -4514,6 +5753,15 @@
                             -t <br>
                             <h6>threshold (standard deviations) (default=4.0)</h6>
                             <input type="text" id="Fseq_t" value="4.0" class="input_setting_text" name="Fseq_t" /><br>
+=======
+                            <input type="text" value="600" class="input_setting_text" name="Fseq_l"/><br>
+                            -s <br>
+                            <h6>wiggle track step (default=1)</h6>
+                            <input type="text" value="1" class="input_setting_text" name="Fseq_s"/><br>
+                            -t <br>
+                            <h6>threshold (standard deviations) (default=4.0)</h6>
+                            <input type="text" value="4.0" class="input_setting_text" name="Fseq_t"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             -v   <br>
                             <h6>verbose output</h6>
                             <input type="radio" name="Fseq_v" value="1"/>on
@@ -4523,7 +5771,11 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_fseq"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_fseq"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_fseq" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -4546,7 +5798,11 @@
         </div>
         <!------------------------BroadPeak------------------------------------------------------------->
         <div id="side_right_21" class="side_right" style="display:none">
+<<<<<<< HEAD
             <form action="BroadPeak_peakcalling" id="BroadPeak_peakcalling" enctype="multipart/form-data" method="post" onsubmit="return searchData('BroadPeak_peakcalling','btn_broad','wait_broad');">
+=======
+            <form action="BroadPeak_peakcalling" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_broad').style.backgroundColor='#666666';document.getElementById('wait_broad').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="link" onclick="JavaScript:BroadPeak_option_ne();"style="cursor:hand;">
                     <div class="arrow-right" id="arrow-right42" style="display:none"></div>
                     <div class="arrow-down"  id="arrow-down42" style="display:block"></div>
@@ -4561,9 +5817,15 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text"  name="input_BroadPeak_file" id="input_BroadPeak_file" class="input_text"/>
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_broad" class="fileField" id="fileField_broad_tag" onchange="return (fileChange(this,'input_BroadPeak_file' )&& checkFileExt(this.value,'input_BroadPeak_file'))" />
+=======
+                            <input type="text" name="input_BroadPeak_file" id="input_BroadPeak_file" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_broad" class="fileField" id="fileField_broad_tag" onchange="document.getElementById('input_BroadPeak_file').value=this.value;fileChange(this,'input_BroadPeak_file');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -4575,7 +5837,11 @@
                         <div class="file-box">
                             <input type="text" name="input_BroadPeak_control" id="input_BroadPeak_control" class="input_text"/>
                             <input type='button' class='btn' value='Choose File' />
+<<<<<<< HEAD
                             <input type="file" name="fileField_broad" class="fileField" id="fileField_broad_control" onchange="return (fileChange(this,'input_BroadPeak_control' )&& checkFileExt(this.value,'input_BroadPeak_control'))" />
+=======
+                            <input type="file" name="fileField_broad" class="fileField" id="fileField_broad_control" onchange="document.getElementById('input_BroadPeak_control').value=this.value;fileChange(this,'input_BroadPeak_control');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
 
@@ -4596,17 +5862,29 @@
                         <div class="inputOption_setting_center" style="overflow-y:scroll;">
                             -b: The size of bin<br>
                             <h6>default value 200 (bp). It should be consistent with the bedGraph format input file</h6>
+<<<<<<< HEAD
                             <input type="text" id="BroadPeak_b" value="200" class="input_setting_text" name="BroadPeak_b" /><br>
                             -g: The size of the genome under consideration<br>
                             <h6>default value 3107677273 (bp) for the human genome
                                 (hg18).</h6>
                             <input type="text" id="BroadPeak_g"value="3107677273" class="input_setting_text" name="BroadPeak_g" />
+=======
+                            <input type="text" value="200" class="input_setting_text" name="BroadPeak_b"/><br>
+                            -g: The size of the genome under consideration<br>
+                            <h6>default value 3107677273 (bp) for the human genome
+                                (hg18).</h6>
+                            <input type="text" value="3107677273" class="input_setting_text" name="BroadPeak_g"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                             <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('BroadPeak_optional_setting').style.display='none';JavaScript:BroadPeak_radio(BroadPeak_b.value,BroadPeak_g.value);"/>
                             <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('BroadPeak_optional_setting').style.display='none';"/>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_broad"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_broad"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="wait_broad" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait...
@@ -4632,8 +5910,13 @@
                 Format convert<h8>(convert SAM to BAM/convert BAM to SAM)
             </h8>
             </div>
+<<<<<<< HEAD
             <div id="samtools_center_1" class="necessary_center" style="display:block">
                 <form action="SAM_TO_BAM" id="SAM_TO_BAM" enctype="multipart/form-data" method="post" onsubmit="return searchData('SAM_TO_BAM','btn_sam1','wait_sam1')">
+=======
+            <form action="SAM_TO_BAM" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_sam1').style.backgroundColor='#666666';document.getElementById('wait_sam1').style.display='block';">
+            <div id="samtools_center_1" class="necessary_center" style="display:block">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                     <div class="blacktop_1">
                         Choose the convert type
                         <s:fielderror fieldName="samtools_convert_type" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
@@ -4648,6 +5931,7 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box" style="display:block">
+<<<<<<< HEAD
                             <input type="text" name="samtobam_origin" class="input_text" id="samtobam_origin" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_samtools_origin" class="fileField" id="fileField_samtools_origin" onchange="return (fileChange(this,'samtobam_origin' )&& checkFileExt(this.value,'samtobam_origin'))" />
@@ -4661,12 +5945,31 @@
                     </div>
                 </form>
             </div>
+=======
+                            <input type="text" name="samtobam_origin" class="input_text" id="samtobam_origin"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_samtools_origin" class="fileField" id="fileField_samtools_origin" onchange="document.getElementById('samtobam_origin').value=this.value;fileChange(this,'samtobam_origin');" />
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Execute" class="Execute_btn_samtools" id="btn_sam1"/>
+                    <div id="wait_sam1" class="Upload_wait_div" style="display:none;">
+                        <img src="./img/wait.gif" class="Upload_wait" />
+                        Uploading and processing your file,please wait...
+                    </div>
+            </div>
+        </form>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
             <div class="link" onclick="JavaScript:samtools_option(2);"style="cursor:hand;">
                 <div class="arrow-right" id="arrow-right6" style="display:none"></div>
                 <div class="arrow-down"  id="arrow-down6" style="display:block"></div>
                 Sort BAM dataset
             </div>
+<<<<<<< HEAD
             <form action="samtools_sort" id="samtools_sort" enctype="multipart/form-data" method="post" onsubmit="return searchData('samtools_sort','btn_sam2','wait_sam2');">
+=======
+            <form action="samtools_sort" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_sam2').style.backgroundColor='#666666';document.getElementById('wait_sam2').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="samtools_center_2" class="necessary_center" style="display:none">
                     <div class="blacktop_1">
                         Input .bam file
@@ -4674,6 +5977,7 @@
                     </div>
                     <div class="blackdown_1">
                         <div class="file-box">
+<<<<<<< HEAD
                             <input type="text" name="input_samtools_sort" id="input_samtools_sort" class="input_text" />
                             <input type='button' class='btn' value='Choose File' />
                             <input type="file" name="fileField_samtools_sort" class="fileField" id="fileField_samtools_sort" onchange="return (fileChange(this,'input_samtools_sort' )&& checkFileExt(this.value,'input_samtools_sort'))" />
@@ -4687,6 +5991,21 @@
                     </div>
                 </div>
             </form>
+=======
+                            <input type="text" name="input_samtools_sort" id="input_samtools_sort" class="input_text"/>
+                            <input type='button' class='btn' value='Choose File' />
+                            <input type="file" name="fileField_samtools_sort" class="fileField" id="fileField_samtools_sort" onchange="document.getElementById('input_samtools_sort').value=this.value;fileChange(this,'input_samtools_sort');" />
+                        </div>
+                    </div>
+
+                <input type="submit" value="Execute" class="Execute_btn_samtools" id="btn_sam2"/>
+                <div id="wait_sam2" class="Upload_wait_div" style="display:none;">
+                    <img src="./img/wait.gif" class="Upload_wait" />
+                    Uploading and processing your file,please wait...
+                </div>
+                </div>
+                </form>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 
             <div class="link" onclick="JavaScript:samtools_option(3);"style="cursor:hand;">
@@ -4694,21 +6013,35 @@
                 <div class="arrow-down"  id="arrow-down7" style="display:block"></div>
                 Index reference sequence in the FASTA ,BAM  or CRAM format.
             </div>
+<<<<<<< HEAD
             <form action="samtools_index" id="samtools_index" enctype="multipart/form-data" method="post" onsubmit="return searchData('samtools_index','btn_sam3','wait_sam3');">
                 <div id="samtools_center_3" class="necessary_center" style="display:block">
+=======
+        <form action="samtools_index" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_sam3').style.backgroundColor='#666666';document.getElementById('wait_sam3').style.display='block';">
+            <div id="samtools_center_3" class="necessary_center" style="display:block">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="blacktop_1">
                     Choose the input format.
                     <s:fielderror fieldName="samtools_index_radio" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
                 </div>
+<<<<<<< HEAD
                     <div class="blackdown_1">
                         <input type="radio" name="samtools_index_radio" value="1" onclick="document.getElementById('samtools_index_fa').style.display='block';document.getElementById('samtools_index_bam').style.display='none';document.getElementById('samtools_index_cram').style.display='none';"/>FASTA
                         <input type="radio" name="samtools_index_radio" value="2" onclick="document.getElementById('samtools_index_bam').style.display='block';document.getElementById('samtools_index_fa').style.display='none';document.getElementById('samtools_index_cram').style.display='none';"/>BAM
                         <input type="radio" name="samtools_index_radio" value="3" onclick="document.getElementById('samtools_index_cram').style.display='block';document.getElementById('samtools_index_fa').style.display='none';document.getElementById('samtools_index_bam').style.display='none';"/>CRAM
                     </div>
+=======
+                <div class="blackdown_1">
+                    <input type="radio" name="samtools_index_radio" value="1" onclick="document.getElementById('samtools_index_fa').style.display='block';document.getElementById('samtools_index_bam').style.display='none';document.getElementById('samtools_index_cram').style.display='none';"/>FASTA
+                    <input type="radio" name="samtools_index_radio" value="2" onclick="document.getElementById('samtools_index_bam').style.display='block';document.getElementById('samtools_index_fa').style.display='none';document.getElementById('samtools_index_cram').style.display='none';"/>BAM
+                    <input type="radio" name="samtools_index_radio" value="3" onclick="document.getElementById('samtools_index_cram').style.display='block';document.getElementById('samtools_index_fa').style.display='none';document.getElementById('samtools_index_bam').style.display='none';"/>CRAM
+                </div>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div class="blacktop_1">
                     Input file to build index
                     <s:fielderror fieldName="input_samtools_index" cssStyle="color:red;float:right;margin-top:0px;margin-right:10px;"  />
                 </div>
+<<<<<<< HEAD
                     <div class="blackdown_1">
                         <div class="file-box" style="display:block">
                             <input type="text" name="input_samtools_index" id="input_samtools_index" class="input_text"/>
@@ -4723,6 +6056,22 @@
                     </div>
                 </div>
             </form>
+=======
+                <div class="blackdown_1">
+                    <div class="file-box" style="display:block">
+                        <input type="text" name="input_samtools_index" id="input_samtools_index" class="input_text"/>
+                        <input type='button' class='btn' value='Choose File' />
+                        <input type="file" name="fileField_samtools_index" class="fileField" id="fileField_samtools_index" onchange="document.getElementById('input_samtools_index').value=this.value;fileChange(this,'input_samtools_index');" />
+                    </div>
+                </div>
+                <input type="submit" value="Execute" class="Execute_btn_samtools" id="btn_sam3"/>
+                <div id="wait_sam3" class="Upload_wait_div" style="display:none;">
+                    <img src="./img/wait.gif" class="Upload_wait" />
+                    Uploading and processing your file,please wait...
+                </div>
+            </div>
+        </form>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
             <div id="detail_text_22" class="detail_tip" style="display:none" >
                 If you want to get detail information about the operation which just finished, please <a href="JavaScript:operation_detail(22);" style="text-decoration: none;color:#666666">click here</a>.
                 And the result files will be sent to you by email as soon as possible.
@@ -4740,7 +6089,11 @@
         </div>
         <!------------------------bamCoverage-------------------------------------------------------->
         <div id="side_right_23" class="side_right" style="display: none">
+<<<<<<< HEAD
             <form action="bamCoverage_exe" id="bamCoverage_exe" enctype="multipart/form-data" method="post" onsubmit="return searchData('bamCoverage_exe','btn_bam','wait_bam');">
+=======
+            <form action="bamCoverage_exe" enctype="multipart/form-data" method="post" onsubmit="document.getElementById('btn_bam').style.backgroundColor='#666666';document.getElementById('wait_bam').style.display='block';">
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 <div id="bamCoverage_center" class="necessary_center" >
                     <div class="blacktop_1">
                         Choose the format of the input file
@@ -4758,7 +6111,11 @@
                         <div class="file-box" style="display:block">
                             <input type="text" name="convert_file" class="input_text" id="convert_file"/>
                             <input type='button' class='btn' value='Choose File' />
+<<<<<<< HEAD
                             <input type="file" name="fileField_samtools_convert" class="fileField" id="fileField_samtools_convert" onchange="return (fileChange(this,'convert_file' )&& checkFileExt(this.value,'convert_file'))" />
+=======
+                            <input type="file" name="fileField_samtools_convert" class="fileField" id="fileField_samtools_convert" onchange="document.getElementById('convert_file').value=this.value;fileChange(this,'convert_file');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                         </div>
                     </div>
                     <div class="blacktop_1">
@@ -4771,10 +6128,17 @@
                     </div>
 
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Execute" class="Execute_btn" id="btn_bam"/><s:fielderror fieldName="check1" cssStyle="color:red;float:left;margin-top:0px;margin-right:10px;"  />
                 <div id="wait_bam" class="Upload_wait_div" style="display:none;">
                     <img src="./img/wait.gif" class="Upload_wait" />
                     Uploading and processing your file,please wait.You may click the "Recent Jobs" at the top to access your job's results after the processing.
+=======
+                <input type="submit" value="Execute" class="Execute_btn" id="btn_bam"/>
+                <div id="wait_bam" class="Upload_wait_div" style="display:none;">
+                    <img src="./img/wait.gif" class="Upload_wait" />
+                    Uploading and processing your file,please wait...
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
                 </div>
             </form>
             <div id="detail_text_23" class="detail_tip" style="display:none" >

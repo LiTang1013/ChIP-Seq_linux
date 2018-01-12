@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by USER on 2017/4/26.
@@ -45,6 +48,7 @@ public class iPAGE_DemoAction extends ActionSupport {
         String time=format.format(date);
         //构建session
         xmlUtil xmlUtil = new xmlUtil();
+<<<<<<< HEAD
         xmlUtil.creatSession("JobId_iPAGE_demo",time);
         xmlUtil.xmlAdd_Jobs("JobId_iPAGE_demo","H3K4me3.bed", "iPAGE", "","email",time);
 
@@ -53,4 +57,13 @@ public class iPAGE_DemoAction extends ActionSupport {
         return  SUCCESS;
     }
 
+=======
+        xmlUtil.creatSession("JobId_iPAGE",time);
+        xmlUtil.xmlAdd_Jobs("JobId_iPAGE","H3K4me3.bed", "iPAGE", "","email",time);
+
+        flag="6";
+        flag_son="5";
+        return  SUCCESS;
+    }
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

@@ -20,8 +20,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by Administrator on 2016/5/7 0007.
@@ -368,6 +371,7 @@ public class PeakSeqAction extends ActionSupport {
         if (input_controlfile_peakseq.equals("")) {
             this.addFieldError("input_controlfile_peakseq", "Please input control file.");
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_peakseqFileName,fileField_peakseq)){
@@ -381,11 +385,14 @@ public class PeakSeqAction extends ActionSupport {
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
      /*   xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag = "11";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -403,4 +410,6 @@ public class PeakSeqAction extends ActionSupport {
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

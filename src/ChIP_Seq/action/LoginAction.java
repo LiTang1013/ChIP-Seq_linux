@@ -15,8 +15,11 @@ import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -147,7 +150,11 @@ public class LoginAction extends ActionSupport{
         //1.创建工厂
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
+<<<<<<< HEAD
         Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/User.xml");
+=======
+        Document document = builder.parse("/home/bio/software/apache-tomcat-7.0.73/webapps/ChIP-Seq_linux_war/User.xml");
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         //2.检索
         NodeList nl = document.getElementsByTagName("User");
         System.out.println("^^^^^^^^^nl.getLength()"+nl.getLength());
@@ -176,6 +183,7 @@ public class LoginAction extends ActionSupport{
         if(login_user_pass.equals("Please input your password")&&login_user_name.equals("Please input your account")){
             this.addFieldError("login_user", "Account or password cannot be empty.");
         }
+<<<<<<< HEAD
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
@@ -198,4 +206,9 @@ public class LoginAction extends ActionSupport{
         }
         return status;
     }
+=======
+
+        flag="1";
+    }
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

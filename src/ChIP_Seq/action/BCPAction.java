@@ -21,8 +21,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by lily on 7/12/16.
@@ -336,6 +339,7 @@ public class BCPAction extends ActionSupport {
         if(input_BCP_controlfile.equals("")){
             this.addFieldError("input_BCP_controlfile", "Please input the control file.");
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_bcpFileName,fileField_bcp)){
@@ -349,11 +353,14 @@ public class BCPAction extends ActionSupport {
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       /*  xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag="15";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -371,4 +378,6 @@ public class BCPAction extends ActionSupport {
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

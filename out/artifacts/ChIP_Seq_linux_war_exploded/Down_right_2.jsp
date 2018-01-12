@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <%@ page import="ChIP_Seq.TokenProcessor" %>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -23,6 +26,7 @@
   <script src="./jquery-1.11.1/jquery.js"></script>
   <script src="./layer/layer.js"></script>
   <script src="./js/MEME.js"></script>
+<<<<<<< HEAD
   <script language="JavaScript">
     function fileChange(target,box){
       var filename;
@@ -122,6 +126,10 @@
   String token = processor.getToken(request);
 %>
 <input type="hidden" name="org.sunxin.token" value="<%=token%>"/>
+=======
+</head>
+<body>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <div id="attention" class="blackdown_tips_1">
   The input of Demo workflow has been filled on this page. Please click the "Execute" to run the demo.
   <br>
@@ -137,9 +145,15 @@
     </div>
     <div class="blackdown_1">
       <div class="file-box" >
+<<<<<<< HEAD
         <input type="text" name="input_HOMER_peak"  class="input_text" value="H3K4me3.bed" id="input_HOMER_peak" />
         <input type='button' class='btn' value='Choose File' />
         <input type="file" name="fileField_HOMER" class="fileField" id="fileField_HOMER_peak" onchange="return(fileChange(this,'input_HOMER_peak')&& checkFileExt(this.value,'input_HOMER_peak'))" />
+=======
+        <input type="text" name="input_HOMER_peak"  class="input_text" value="H3K4me3.bed" id="input_HOMER_peak"/>
+        <input type='button' class='btn' value='Choose File' />
+        <input type="file" name="fileField_HOMER" class="fileField" id="fileField_HOMER_peak" onchange="document.getElementById('input_HOMER_peak').value=this.value;fileChange(this,'input_HOMER_peak');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       </div>
     </div>
     <div class="blacktop_1">
@@ -156,9 +170,15 @@
       </select>
       <div class="blackdown_1" id="HOMER_fasta" style="display:none">
         <div class="file-box" >
+<<<<<<< HEAD
           <input type="text" name="input_HOMER_fasta"  class="input_text" id="input_HOMER_fasta" />
           <input type='button' class='btn' value='Choose File' />
           <input type="file" name="fileField_HOMER" class="fileField" id="fileField_HOMER_fasta" onchange="return(fileChange(this,'input_HOMER_fasta')&& checkFileExt(this.value,'input_HOMER_fasta'));" />
+=======
+          <input type="text" name="input_HOMER_fasta"  class="input_text" id="input_HOMER_fasta"/>
+          <input type='button' class='btn' value='Choose File' />
+          <input type="file" name="fileField_HOMER" class="fileField" id="fileField_HOMER_fasta" onchange="document.getElementById('input_HOMER_fasta').value=this.value;fileChange(this,'input_HOMER_fasta');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         </div>
       </div>
     </div>
@@ -169,7 +189,11 @@
     </div>
     <div class="blackdown_1">
       <div class="file-box" >
+<<<<<<< HEAD
         <input type="text" name="input_HOMER_size"  value="400" class="input_text" id="input_HOMER_size" />
+=======
+        <input type="text" name="input_HOMER_size"  value="400" class="input_text" id="input_HOMER_size"/>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       </div>
     </div>
   </div>
@@ -193,6 +217,7 @@
         genomic positions to be used as background,removes background positions overlapping with target positions
         <br>
         <h6>-bg;default=automatic</h6>
+<<<<<<< HEAD
         <input type="text" id="HOMER_bg"  name="HOMER_bg" class="input_setting_text" value="automatic"/><br>
         motif length <br>
         <h6>-len;default=8,10,12</h6>
@@ -203,11 +228,26 @@
         global optimization: searches for strings with # mismatches<br>
         <h6> -mis;default: 2</h6>
         <input type="text" id="HOMER_mis" name="HOMER_mis" class="input_setting_text" value="2" /><br>
+=======
+        <input type="text" name="HOMER_bg" class="input_setting_text" value="automatic"/><br>
+        motif length <br>
+        <h6>-len;default=8,10,12</h6>
+        <input type="text" name="HOMER_len" class="input_setting_text" value="8,10,12"/><br>
+        Number of motifs to optimize <br>
+        <h6>-S;default: 25</h6>
+        <input type="text" name="HOMER_S" class="input_setting_text" value="25"/><br>
+        global optimization: searches for strings with # mismatches<br>
+        <h6> -mis;default: 2</h6>
+        <input type="text" name="HOMER_mis" class="input_setting_text" value="2"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('HOMER_option_input_setting').style.display='none';JavaScript:GLAM2_radio(GLAM2_r.value,GLAM2_n.value,GLAM2_z.value,GLAM2_w.value,GLAM2_a.value,GLAM2_b.value,GLAM2_D.value,GLAM2_E.value,GLAM2_I.value,GLAM2_J.value,GLAM2_q.value,GLAM2_t.value,GLAM2_c.value,GLAM2_u.value,GLAM2_m.value,GLAM2_x.value,GLAM2_s.value)"/>
         <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('HOMER_option_input_setting').style.display='none';"/>
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 </body>
 </html>

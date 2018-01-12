@@ -18,8 +18,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by Administrator on 2017/1/11 0011.
@@ -390,6 +393,7 @@ public class multiBamSummaryAction extends ActionSupport {
                 this.addFieldError("multi_bed_text", "Please input bamfile.");
             }
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(fileField_multiFileName,fileField_multi)){
@@ -403,11 +407,14 @@ public class multiBamSummaryAction extends ActionSupport {
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
        /* xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag="8";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -425,4 +432,6 @@ public class multiBamSummaryAction extends ActionSupport {
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }

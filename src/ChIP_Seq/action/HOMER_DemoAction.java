@@ -51,11 +51,19 @@ public class HOMER_DemoAction extends ActionSupport {
         String time=format.format(date);
         //构建session
         xmlUtil xmlUtil = new xmlUtil();
+<<<<<<< HEAD
         xmlUtil.creatSession("JobId_findMotifs_demo",time);
         //写入XML文件
         xmlUtil.xmlAdd_Jobs("JobId_findMotifs_demo","H3K4me3.bed", "findMotifs", "","email",time);
 
         flag="1";
+=======
+        xmlUtil.creatSession("JobId_findMotifs",time);
+        //写入XML文件
+        xmlUtil.xmlAdd_Jobs("JobId_findMotifs","H3K4me3.bed", "findMotifs", "","email",time);
+
+        flag="2";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         flag_son="1";
         flag_validate="1";
         return SUCCESS;

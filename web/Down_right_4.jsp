@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <%@ page import="ChIP_Seq.TokenProcessor" %>
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -23,6 +26,7 @@
   <script src="./jquery-1.11.1/jquery.js"></script>
   <script src="./layer/layer.js"></script>
   <script src="./js/MEME.js"></script>
+<<<<<<< HEAD
   <script language="JavaScript">
     function fileChange(target,box){
       var filename;
@@ -99,6 +103,10 @@
   String token = processor.getToken(request);
 %>
 <input type="hidden" name="org.sunxin.token" value="<%=token%>"/>
+=======
+</head>
+<body>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 <div id="attention" class="blackdown_tips_1">
   The input of Demo workflow has been filled on this page. Please click the "Execute" to run the demo.
   <br>
@@ -116,7 +124,11 @@
       <div class="file-box">
         <input type="text" name="input_anno_peak" value="H3K4me3.bed" class="input_text" id="input_anno_peak"/>
         <input type='button' class='btn' value='Choose File' />
+<<<<<<< HEAD
         <input type="file"  name="Gomo_peak" class="fileField"  onchange="return(fileChange(this,'input_anno_peak')&& checkFileExt(this.value,'input_anno_peak'))" />
+=======
+        <input type="file"  name="Gomo_peak" class="fileField"  onchange="document.getElementById('input_anno_peak').value=this.value;fileChange(this,'input_anno_peak');" />
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
       </div>
     </div>
     <div class="blacktop_1">Select the appropriate genome</div>
@@ -146,10 +158,17 @@
       <div class="inputOption_setting_center"  style="overflow-y:scroll;">
         Genome size for genomeOntology analysis<br>
         <h6> -gsize;default: 2e9</h6>
+<<<<<<< HEAD
         <input type="text" id="anno_gsize" name="anno_gsize" class="input_setting_text" value="2e9"/><br>
         Fragment length, default=auto, might want to set to 1 for 5'RNA<br>
         <h6>-len / -fragLength</h6>
         <input type="text" id="anno_len" name="anno_len" class="input_setting_text" value="auto" /><br>
+=======
+        <input type="text" name="anno_gsize" class="input_setting_text" value="2e9"/><br>
+        Fragment length, default=auto, might want to set to 1 for 5'RNA<br>
+        <h6>-len / -fragLength</h6>
+        <input type="text" name="anno_len" class="input_setting_text" value="auto"/><br>
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         <input type="button" class="btn_submit" value="submit" onclick="document.getElementById('GOMo_option_input_setting').style.display='none';"/>
         <input type="button" class="btn_cancel" value="cancel" onclick="document.getElementById('GOMo_option_input_setting').style.display='none';"/>
       </div>

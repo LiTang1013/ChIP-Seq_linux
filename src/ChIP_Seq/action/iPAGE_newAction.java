@@ -18,8 +18,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.Set;
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 
 /**
  * Created by lily on 11/3/16.
@@ -137,7 +140,11 @@ public class iPAGE_newAction extends ActionSupport {
             iPAGE_DemoAction iPAGE_demoAction = new iPAGE_DemoAction();
             iPAGE_demoAction.Demo();
 
+<<<<<<< HEAD
             flag = "3";
+=======
+            flag = "6";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
             flag_son = "5";
         }
         else{
@@ -231,7 +238,11 @@ public class iPAGE_newAction extends ActionSupport {
             FileUtil fileUtil2=new FileUtil();
             fileUtil2.ZipMultiFile("/home/bio/dataset/" + JobId, "/home/bio/dataset/" + JobId + ".zip");
 
+<<<<<<< HEAD
         flag = "3";
+=======
+        flag = "5";
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         flag_son = "5";
     }
         flag_validate="1";
@@ -247,6 +258,10 @@ public class iPAGE_newAction extends ActionSupport {
         }
     }
     public void validate(){
+<<<<<<< HEAD
+=======
+
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
         if(exp_peak==1){
             if(input_peakfile.equals("")){
                 this.addFieldError("input_peakfile", "Please input peak file.");
@@ -257,6 +272,7 @@ public class iPAGE_newAction extends ActionSupport {
                 this.addFieldError("input_exp", "Please input peak file.");
             }
         }
+<<<<<<< HEAD
         try{
             UploadUtil uploadUtil2=new UploadUtil();
             if(!uploadUtil2.Check(ipage_fileFileName,ipage_file)){
@@ -270,12 +286,15 @@ public class iPAGE_newAction extends ActionSupport {
         if(check()){
             this.addFieldError("check1", "The input contain invalid characters! ");
         }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
      /*   xmlUtil xmlUtil=new xmlUtil();
         xmlUtil.login_validate();*/
         flag="3";
         flag_son="5";
         flag_validate="2";
     }
+<<<<<<< HEAD
     public boolean check() {
         String[] characterParams = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "{", "}", "[", "]", "(", ")", ";", "\"", "'", "\\", "<", ">", "?", "/", "<<", ">>", "+"};
         boolean status = false;
@@ -293,4 +312,6 @@ public class iPAGE_newAction extends ActionSupport {
         }
         return status;
     }
+=======
+>>>>>>> e936dd87b716fe25aca999e6e8b1f4143e34194c
 }
