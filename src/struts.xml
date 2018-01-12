@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <constant name="struts.multipart.maxSize" value="2000000000"/>
+
+    <package name="ChIP-Seq" extends="struts-default" strict-method-invocation="false">
+        <global-allowed-methods>regex:.*</global-allowed-methods>
+        <action name="Bowtie_exe" class="ChIP_Seq.action.BowtieAction" method="Bowtie_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="Bowtie2_exe" class="ChIP_Seq.action.Bowtie2Action" method="Bowtie2_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="SAM_TO_BAM" class="ChIP_Seq.action.SamToolsAction" method="SamToBam">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="BWA_exe" class="ChIP_Seq.action.BWAction" method="BWA_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="samtools_sort" class="ChIP_Seq.action.SamTools_sortAction" method="Sort">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./Tools.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="samtools_index" class="ChIP_Seq.action.SamTools_indexAction" method="Index">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="bamCoverage_exe" class="ChIP_Seq.action.BamCoverageAction" method="bamCoverage">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="Tools_MACS_PeakCalling" class="ChIP_Seq.action.MACS_NEWAction" method="MACS_peakcalling">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="SICER_peakcalling" class="ChIP_Seq.action.SICERAction" method="PeakCalling">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="peakseq_exe" class="ChIP_Seq.action.PeakSeqAction" method="peakseq_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="peakranger_exe" class="ChIP_Seq.action.PeakRangerAction" method="peakranger_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="HOMER_exe" class="ChIP_Seq.action.HOMERAction" method="HOMER_exe_upload">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./MEME.jsp</result>
+            <result name="input">./MEME.jsp</result>
+        </action>
+
+        <action name="GOMo_exe" class="ChIP_Seq.action.GOMoAction" method="GOMo_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./MEME.jsp</result>
+            <result name="input">./MEME.jsp</result>
+        </action>
+
+        <action name="customWorkflow_exe" class="ChIP_Seq.action.WorkFlowAction" method="customWorkflow">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./WorkFlow.jsp</result>
+            <result name="input">./WorkFlow.jsp</result>
+        </action>
+
+        <action name="iPAGE_NEW" class="ChIP_Seq.action.iPAGE_newAction" method="IPAGE_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./MEME.jsp</result>
+            <result name="input">./MEME.jsp</result>
+        </action>
+
+        <action name="login_user" class="ChIP_Seq.action.LoginAction" method="Login">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./home.jsp</result>
+            <result name="input">./home.jsp</result>
+        </action>
+
+        <action name="register" class="ChIP_Seq.action.RegisterAction" method="Register">
+            <result name="success">./home.jsp</result>
+            <result name="input">./home.jsp</result>
+        </action>
+
+        <action name="Tools_MACS2_PeakCalling" class="ChIP_Seq.action.MACS2_NEWAction" method="macs2_peakcalling">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="PePr_peakcalling" class="ChIP_Seq.action.PePrAction" method="PePr_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="BCP_peakcalling" class="ChIP_Seq.action.BCPAction" method="BCP_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="diff_peakcalling" class="ChIP_Seq.action.diffRepsAction" method="diffReps_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="SISSR_peakcalling" class="ChIP_Seq.action.SISSRAction" method="SISSR_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="findpeaks_peakcalling" class="ChIP_Seq.action.FindPeaksAction" method="FindPeaks_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="SOAP_exe" class="ChIP_Seq.action.SOAPAction" method="SOAP_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="blast_exe" class="ChIP_Seq.action.BlastAction" method="Blast_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="Subread_exe" class="ChIP_Seq.action.SubreadAction" method="Subread_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="NGM_exe" class="ChIP_Seq.action.NGMAction" method="NGM_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="AREM_peakcalling" class="ChIP_Seq.action.AREMAction" method="AREM_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="Fseq_peakcalling" class="ChIP_Seq.action.FseqAction" method="Fseq_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="BroadPeak_peakcalling" class="ChIP_Seq.action.BroadPeakAction" method="BroadPeak_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="peakcalling_visual_new" class="ChIP_Seq.action.IGV_PeakAction" method="visual_peakcalling">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./WorkFlow.jsp</result>
+            <result name="input">./WorkFlow.jsp</result>
+        </action>
+
+        <action name="visual_mapping_new" class="ChIP_Seq.action.IGV_NEWAction" method="mapping_visual_new">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result  name="success">./WorkFlow.jsp</result>
+            <result name="input">./WorkFlow.jsp</result>
+        </action>
+
+        <action name="Tools_multiBamSummary" class="ChIP_Seq.action.multiBamSummaryAction" method="multi_exe">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./RecentJob.jsp</result>
+            <result name="input">./Tools.jsp</result>
+        </action>
+
+        <action name="Exit" class="ChIP_Seq.action.Exit" method="Exit">
+            <result name="success">./home_initial.jsp</result>
+        </action>
+
+        <action name="demo_workflow_exe" class="ChIP_Seq.action.TestAction" method="Test">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./WorkFlow.jsp</result>
+            <result name="input">./WorkFlow.jsp</result>
+        </action>
+
+        <action name="HOMER_exe_Demo" class="ChIP_Seq.action.HOMER_DemoAction" method="Demo">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./MEME.jsp</result>
+            <result name="input">./MEME.jsp</result>
+        </action>
+
+        <action name="GOMo_exe_Demo" class="ChIP_Seq.action.Gomo_DemoAction" method="Demo">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./MEME.jsp</result>
+            <result name="input">./MEME.jsp</result>
+        </action>
+
+        <action name="iPAGE_NEW_Demo" class="ChIP_Seq.action.iPAGE_DemoAction" method="Demo">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">text/plain</param>
+                <param name="fileUpload.allowedExtensions">txt,fasta,fastq,fa,fq</param>
+                <param name="maximumSize">2000000000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <result name="success">./MEME.jsp</result>
+            <result name="input">./MEME.jsp</result>
+        </action>
+
+        <action name="fileLoad" class="ChIP_Seq.action.DownloadFile" method="Download">
+            <result type="stream">
+                <param name="bufferSize">100024</param>
+            </result>
+        </action>
+    </package>
+</struts>
